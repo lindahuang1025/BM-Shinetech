@@ -33,6 +33,9 @@ export default defineConfig({
   theme: {
     'primary-color': defaultSettings.primaryColor,
   },
+  define: {
+    apiUrl: 'http://localhost:2020'
+  },
   title: false,
   ignoreMomentLocale: true,
   proxy: proxy[REACT_APP_ENV || 'dev'],

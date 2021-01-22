@@ -1,0 +1,66 @@
+
+Exception Time：2021-01-21 11:03:35,923 [48] 
+Exception Level：ERROR 
+Exception Detail: 
+ 
+ System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'sa'.
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(DbConnection connection, DbInterceptionContext interceptionContext)
+   在 System.Data.Entity.SqlServer.SqlProviderServices.<>c__DisplayClass60_0.<UsingConnection>b__0()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<>c__DisplayClass2_0.<Execute>b__0()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.SqlServer.SqlProviderServices.UsingMasterConnection(DbConnection sqlConnection, Action`1 act)
+   在 System.Data.Entity.SqlServer.SqlProviderServices.CreateDatabaseFromScript(Nullable`1 commandTimeout, DbConnection sqlConnection, String createDatabaseScript)
+   在 System.Data.Entity.SqlServer.SqlProviderServices.DbCreateDatabase(DbConnection connection, Nullable`1 commandTimeout, StoreItemCollection storeItemCollection)
+   在 System.Data.Entity.Migrations.Utilities.DatabaseCreator.Create(DbConnection connection)
+   在 System.Data.Entity.Migrations.DbMigrator.EnsureDatabaseExists(Action mustSucceedToKeepDatabase)
+   在 System.Data.Entity.Migrations.DbMigrator.Update(String targetMigration)
+   在 System.Data.Entity.Internal.DatabaseCreator.CreateDatabase(InternalContext internalContext, Func`3 createMigrator, ObjectContext objectContext)
+   在 System.Data.Entity.Database.Create(DatabaseExistenceState existenceState)
+   在 System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   在 System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   在 System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   在 System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Data.Entity.QueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   在 System.Data.Entity.QueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BM.DAL.SysUserAgent.<GetByUserName>d__3.MoveNext() 位置 E:\Project\BMSite-AngularJs\BM\BM.DAL\SysUserAgent.cs:行号 48
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 BM.BLL.SysUserBLL.<Login>d__10.MoveNext() 位置 E:\Project\BMSite-AngularJs\BM\BM.BLL\SysUserBLL.cs:行号 123
+ClientConnectionId:bd96c9c8-3490-461d-9ad6-f007f743199b
+Error Number:18456,State:1,Class:14
+
+Exception Time：2021-01-21 14:06:09,750 [10] 
+Exception Level：ERROR 
+Exception Detail: 
+ 
+ System.InvalidOperationException: The model backing the 'BMDbContext' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269).
+   在 System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   在 System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   在 System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   在 System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Data.Entity.QueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   在 System.Data.Entity.QueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BM.DAL.SysUserAgent.<GetByUserName>d__3.MoveNext() 位置 E:\Project\BMSite-AngularJs\BM\BM.DAL\SysUserAgent.cs:行号 48
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 BM.BLL.SysUserBLL.<Login>d__10.MoveNext() 位置 E:\Project\BMSite-AngularJs\BM\BM.BLL\SysUserBLL.cs:行号 123
