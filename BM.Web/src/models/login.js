@@ -4,7 +4,7 @@ import { AccountLogin } from '@/services/login';
 import { setAuthority } from '@/utils/authority';
 import { getPageQuery } from '@/utils/utils';
 import { message } from 'antd';
-import storageUtil from '@/utils/storageUtil'
+import { setStoredUser, setToken } from '@/utils/utils';
 
 const Model = {
     namespace: 'login',
@@ -22,6 +22,10 @@ const Model = {
             if (response && response.Status === 0) {
                 const urlParams = new URL(window.location.href);
                 const params = getPageQuery();
+                //save user data
+                setStoredUser({...response.Data });
+                //save Bearer token
+                setToken(response.Data.AccessToken);
                 message.success('🎉 🎉 🎉  登录成功！');
                 window.location.href = '/';
                 let { redirect } = params;
@@ -66,11 +70,8 @@ const Model = {
             // if(payload){
             //   setAuthority(payload.Data.RoleName === 'management' ? 'admin' : 'guest');
             // }
-
             setAuthority('admin');
-            //save user data
-            storageUtil.saveUser(payload.Data);
-            return {...state, status: payload.Status, message: payload.Message, currentAuthority: 'admin', currentUser: payload.Data };
+            return {...state, status: payload.Status, message: payload.Message, currentAuthority: 'admin' };
         },
     },
 };

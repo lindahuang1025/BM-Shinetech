@@ -54,7 +54,6 @@ class AvatarDropdown extends React.Component {
         </Menu.Item>
       </Menu>
     );
-    console.log(currentUser)
     return currentUser && currentUser.UserName ? (
       <HeaderDropdown overlay={menuHeaderDropdown}>
         <span className={`${styles.action} ${styles.account}`}>

@@ -2,7 +2,7 @@ import React from 'react';
 import { PageLoading } from '@ant-design/pro-layout';
 import { Redirect, connect } from 'umi';
 import { stringify } from 'querystring';
-import storageUtil from '@/utils/storageUtil'
+import { getStoredUser } from '@/utils/utils';
 
 class SecurityLayout extends React.Component {
   state = {
@@ -29,7 +29,8 @@ class SecurityLayout extends React.Component {
 
     // const isLogin = currentUser && currentUser.userid;
 
-    const isLogin=storageUtil.getUser();
+    const isLogin= getStoredUser();
+    ;
     
     const queryString = stringify({
       redirect: window.location.href,

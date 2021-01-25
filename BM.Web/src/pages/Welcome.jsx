@@ -1,8 +1,9 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Alert, Typography } from 'antd';
+import { Card, Alert, Typography,message } from 'antd';
 import { useIntl, FormattedMessage } from 'umi';
 import styles from './Welcome.less';
+import { queryBookList} from './TableList/service';
 
 const CodePreview = ({ children }) => (
   <pre className={styles.pre}>
@@ -14,6 +15,16 @@ const CodePreview = ({ children }) => (
 
 export default () => {
   const intl = useIntl();
+
+  //   useEffect(() => {
+  //      async function load(){
+  //       const response= await queryBookList({ keyword:'',pageSize: 5, pageIndex:1 });
+  //         message.success('获取成功');
+  //         console.log(response)
+  //     };
+  //     load();
+  // }, []);
+
   return (
     <PageContainer>
       <Card>

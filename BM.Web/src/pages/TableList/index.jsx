@@ -1,6 +1,7 @@
 import { PlusOutlined } from '@ant-design/icons';
 import { Button, message, Input, Drawer } from 'antd';
-import React, { useState, useRef } from 'react';
+import { ListView } from 'antd-mobile';
+import React, { useState, useRef,useEffect } from 'react';
 import { useIntl, FormattedMessage } from 'umi';
 import { PageContainer, FooterToolbar } from '@ant-design/pro-layout';
 import ProTable from '@ant-design/pro-table';
@@ -12,6 +13,8 @@ import { queryRule, updateRule, addRule, removeRule ,queryBookList} from './serv
  * 添加节点
  * @param fields
  */
+
+ 
 
 const handleAdd = async (fields) => {
   const hide = message.loading('正在添加');
@@ -90,6 +93,12 @@ const TableList = () => {
   /**
    * 国际化配置
    */
+
+  // useEffect(() => {
+  //   props.dispatch({
+  //     type: 'TableList/query',
+  //   });
+  // }, []);
 
   const intl = useIntl();
   const columns = [
@@ -226,7 +235,7 @@ const TableList = () => {
             <PlusOutlined /> <FormattedMessage id="pages.searchTable.new" defaultMessage="新建" />
           </Button>,
         ]}
-        request={(params, sorter, filter) => queryBookList({keyword:'', pageSize:'', pageIndex:1 })}
+        request={(params) => queryBookList({ keyword:'',pageSize: 5, pageIndex:1 })}
         columns={columns}
         rowSelection={{
           onChange: (_, selectedRows) => {

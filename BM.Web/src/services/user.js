@@ -1,11 +1,11 @@
 import request from '@/utils/request';
-import storageUtil from '@/utils/storageUtil'
+import { getStoredUser } from '@/utils/utils';
 
 export async function query() {
     return request('/api/users');
 }
 export async function queryCurrent() {
-    return storageUtil.getUser();
+    return getStoredUser();
 }
 export async function queryNotices() {
     return request('/api/notices');

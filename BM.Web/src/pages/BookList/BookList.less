@@ -1,0 +1,97 @@
+.booksComponent{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.found{
+    width: 100%;
+    font-size: 25px;
+    font-family: "Gotham Rounded SSm A","Gotham Rounded SSm B";
+    font-weight: 700 !important;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .found{
+        font-size: 15px;
+    }
+}
+
+@media only screen and (width: 320px) {
+    .found{
+        font-size: 12px;
+    }
+}
+
+.booksComponent .book-content{
+    cursor: pointer;
+    margin: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(51,51,51,.1);
+    background-color: #ffffff;
+    min-height: 70px;
+}
+
+.booksComponent .book-top{
+    border-radius: 10px 10px 0 0;
+    height: 125px;
+    background-size: cover;
+    background-position-y: 50%;
+}
+
+.booksComponent .book-name{
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    .booksComponent .book-main{
+        min-height: 210px;
+    }
+    .book{
+        width: 300px;
+    }
+}
+
+.booksComponent .book-main{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.booksComponent .book-main-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.book-status-active{
+    color:rgb(78, 161, 78);
+}
+
+.book-status-inactive{
+    color: red;
+}
+
+.booksComponent .container {
+    height: 100%;
+}
+
+
+.booksComponent .list-view-section-body{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.booksComponent .am-list-body {
+    position: inherit;
+    background-color: transparent;
+    border-top: 0PX solid #ddd;
+    border-bottom: 0PX solid #ddd;
+}

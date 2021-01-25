@@ -25,7 +25,11 @@ export async function updateRule(params) {
 }
 
 export async function queryBookList(params) {
+    console.log(params)
     return request('api/bookInfo/query', {
-        params,
+        method: 'POST',
+        data: {
+            ...params
+        }
     });
 }
