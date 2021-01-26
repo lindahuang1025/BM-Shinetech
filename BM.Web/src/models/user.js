@@ -26,9 +26,9 @@ const UserModel = {
     reducers: {
         saveCurrentUser(state, action) {
 
-            if (action.payload && action.payload.AccessToken) {
-                request.extendOptions({ headers: { 'Authorization': `Bearer ${action.payload.AccessToken}` } });
-            }
+            // if (action.payload && action.payload.AccessToken) {
+            //     request.extendOptions({ headers: { 'Authorization': `Bearer ${action.payload.AccessToken}` } });
+            // }
 
             return {...state, currentUser: action.payload || {} };
         },

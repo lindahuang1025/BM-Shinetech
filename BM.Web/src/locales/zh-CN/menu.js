@@ -49,4 +49,6 @@ export default {
     'menu.editor.flow': '流程编辑器',
     'menu.editor.mind': '脑图编辑器',
     'menu.editor.koni': '拓扑编辑器',
+    'menu.list.book-list': '图书列表',
+    'menu.list.myBorrow': '我的借阅',
 };
