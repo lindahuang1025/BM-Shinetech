@@ -1,7 +1,10 @@
 import React from 'react';
 import './myBorrow.less';
+import { message } from 'antd';
 import { Toast, ListView} from 'antd-mobile';
-import { queryBorrowList} from './service';
+import { queryBorrowList, returnBook} from './service';
+import { getStoredUser } from '@/utils/utils';
+import moment from 'moment'
 
 export default (props) => {
     const [keyword, setKeyword] = React.useState("");
@@ -15,50 +18,67 @@ export default (props) => {
     const [hasMore, setHasMore] = React.useState(true);
     const [isLoading, setIsLoading] = React.useState(true);
     const [dataArr, setDataArr] = React.useState([]);
+    const user = getStoredUser();
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
         getList();
     }, []);
 
+    const onReturnClicked = async(id) => {
+        const hide = message.loading('正在归还');
+        try {
+            await returnBook({ bookId:id, userId: user.UserId });
+            hide();
+            message.success('归还成功');
+            return true;
+          } catch (error) {
+            hide();
+            message.error('归还失败请重试！');
+            return false;
+          }
+    }
+
     const getList= async(ref = false)=>{
-        fetch('/api/borrowList/').then(function (res) {
-            res.json().then(function (result) {
-                const dataList = result;
-                const len = dataList.length;
-                if (len <= 0) { // 判断是否已经没有数据了
-                    setIsLoading(false)
-                    setHasMore(false)
-                    return
-                }
-                // 合并state中已有的数据和新增的数据
-                var newDataArr = dataArr.concat(dataList) //关键代码
-                setPageNo(pageNo)
-                setDataSource(dataSource.cloneWithRows(newDataArr))
+        // fetch('/api/borrowList/').then(function (res) {
+        //     res.json().then(function (result) {
+        //         const dataList = result;
+        //         const len = dataList.length;
+        //         if (len <= 0) { // 判断是否已经没有数据了
+        //             setIsLoading(false)
+        //             setHasMore(false)
+        //             return
+        //         }
+        //         // 合并state中已有的数据和新增的数据
+        //         var newDataArr = dataArr.concat(dataList) //关键代码
+        //         setPageNo(pageNo)
+        //         setDataSource(dataSource.cloneWithRows(newDataArr))
               
-                setIsLoading(false)
-                setDataArr(newDataArr)
-            })
-        })
-        // const response = await queryBorrowList({keyword:keyword, pageIndex:pageNo, pageSize:pageSize})
-        // if (response && response.Status===0) {
-        //        const dataList = [];
-        //        const len = dataList.length;
-        //        if (len <= 0) { // 判断是否已经没有数据了
-        //            setIsLoading(false)
-        //            setHasMore(false)
-        //            return
-        //        }
-        //        // 合并state中已有的数据和新增的数据
-        //        var newDataArr = dataArr.concat(dataList) //关键代码
-        //        setPageNo(pageNo)
-        //        setDataSource(dataSource.cloneWithRows(newDataArr))
+        //         setIsLoading(false)
+        //         setDataArr(newDataArr)
+        //     })
+        // })
+
+        const user = getStoredUser();
+        const response = await queryBorrowList({keyword:keyword, pageIndex:pageNo, pageSize:pageSize, userId:user.UserId})
+        if (response && response.Status===0) {
+               const dataList = response.Datas;
+               const len = dataList.length;
+               if (len <= 0) { // 判断是否已经没有数据了
+                   setIsLoading(false)
+                   setHasMore(false)
+                   return
+               }
+               // 合并state中已有的数据和新增的数据
+               var newDataArr = dataArr.concat(dataList) //关键代码
+               setPageNo(pageNo)
+               setDataSource(dataSource.cloneWithRows(newDataArr))
              
-        //        setIsLoading(false)
-        //        setDataArr(newDataArr)
-        // } else {
-        //     Toast.info("Failed, Please refresh or contact the administrator.", 1);
-        // }
+               setIsLoading(false)
+               setDataArr(newDataArr)
+        } else {
+            Toast.info("Failed, Please refresh or contact the administrator.", 1);
+        }
     }
 
     const onEndReached = (event) => {
@@ -76,14 +96,13 @@ export default (props) => {
                 <div className="book-content">
                     <div className="book-main">
                         <div className="book-main-top">
-                           <div className="book-name">《{rowData.BookName}》</div>
+                           <div className="book-name">《{rowData.Title}》</div>
                         </div>
                         <div className="operation">
                             <div className="global-flex-column">
-                                <div className="date">借日：{rowData.CreateDate}</div>
-                                <div className="date">还日：{rowData.PlanReturnData}</div>
+                                <div className="date">借日：{moment(rowData.BorrowDate).format('YYYY MM-DD')}</div>
                             </div>
-                            <button className="global-btn" type="submit" onClick={()=>{onBorrow(rowData.Id)}}>归还</button>
+                            <button className="global-btn" type="submit" onClick={()=>{onReturnClicked(rowData.Id)}}>归还</button>
                         </div>
                     </div>
                 </div>
@@ -92,7 +111,7 @@ export default (props) => {
 
     return (
         <div>
-            <div className="borrowComponent container">
+            <div className="borrowComponent">
                 <div className="found">
                     {dataArr.length===0?<div>快去借阅书箱，把墨水给喝饱吧!</div>:<div>您一共有<strong className="theme-color"> {dataArr.length} </strong>本书正在借阅中！</div>}
                 </div>
