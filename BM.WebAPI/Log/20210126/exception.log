@@ -1,0 +1,50 @@
+
+Exception Time：2021-01-26 15:45:26,634 [5] 
+Exception Level：ERROR 
+Exception Detail: 
+ 
+ System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'dbo.V_BookInfo'.
+   在 System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__180_0(Task`1 result)
+   在 System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   在 System.Threading.Tasks.Task.Execute()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.<ExecuteStoreCommandsAsync>d__26.MoveNext()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.<ExecuteStoreCommandsAsync>d__26.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.<ExecuteAsync>d__10`1.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Data.Entity.Utilities.TaskExtensions.CultureAwaiter`1.GetResult()
+   在 System.Data.Entity.Core.Objects.ObjectContext.<ExecuteInTransactionAsync>d__156`1.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<ExecuteAsyncImplementation>d__6`1.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Data.Entity.Utilities.TaskExtensions.CultureAwaiter`1.GetResult()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<GetResultsAsync>d__43.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Data.Entity.Utilities.TaskExtensions.CultureAwaiter`1.GetResult()
+   在 System.Data.Entity.Internal.LazyAsyncEnumerator`1.<FirstMoveNextAsync>d__9.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Data.Entity.Infrastructure.IDbAsyncEnumerableExtensions.<ForEachAsync>d__2`1.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 BM.DAL.BookInfoAgent.<Query>d__3.MoveNext() 位置 E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:行号 55
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 BM.BLL.BookInfoBLL.<Query>d__5.MoveNext() 位置 E:\Project\BMSite-AngularJs\BM\BM.BLL\BookInfoBLL.cs:行号 82

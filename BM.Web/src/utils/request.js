@@ -55,8 +55,8 @@ const request = extend({
     errorHandler,
     // 默认错误处理
     credentials: 'omit', // 默认请求是否带上cookie
-    // headers: {
-    //     Authorization: `Bearer ${getToken()}`
-    // }
+    headers: {
+        Authorization: `Bearer ${getToken()}`
+    }
 });
 export default request;

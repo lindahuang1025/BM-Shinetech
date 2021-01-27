@@ -1,5 +1,5 @@
 import React from 'react';
-import './BookList.less';
+import './myBorrow.less';
 import { Toast, ListView} from 'antd-mobile';
 import { queryBookList} from './service';
 
@@ -22,16 +22,9 @@ export default (props) => {
     }, []);
 
     const getBookList= async(ref = false)=>{
-        // const { dispatch } = props;
-        // dispatch({
-        //     type: 'vendorSettings/fetchDiscountList',
-        //     payload: {
-        //         VendorId: currentUser.vendorId
-        //     }
-        // });
         const response = await queryBookList({keyword:keyword, pageIndex:pageNo, pageSize:pageSize})
         if (response && response.Status===0) {
-               const dataList = response.Datas;
+               const dataList = [];
                const len = dataList.length;
                if (len <= 0) { // 判断是否已经没有数据了
                    setIsLoading(false)
@@ -78,7 +71,7 @@ export default (props) => {
         <div>
             <div className="booksComponent container">
                 <div className="found">
-                    <div><strong>{dataArr.length}</strong> Book(s) Found</div>
+                    <div>快去借阅书箱，把墨水给喝饱吧!</div>
                 </div>
                 <div className="container">
                     <ListView
