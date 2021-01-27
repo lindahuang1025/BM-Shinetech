@@ -1,5 +1,6 @@
 import React from 'react';
 import './BookList.less';
+import { Button } from 'antd';
 import { Toast, ListView} from 'antd-mobile';
 import { queryBookList} from './service';
 
@@ -18,10 +19,10 @@ export default (props) => {
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
-        getBookList();
+        getList();
     }, []);
 
-    const getBookList= async(ref = false)=>{
+    const getList= async(ref = false)=>{
         // const { dispatch } = props;
         // dispatch({
         //     type: 'vendorSettings/fetchDiscountList',
@@ -59,16 +60,25 @@ export default (props) => {
             setPageNo(pageNo + 1) 
     }
 
+    const onBorrow = (id) => {
+      
+    }
+
       const row = (rowData, sectionID, rowID) => {
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
             return <div key={rowID} className="book col-12 col-sm-6 col-lg-4">
                 <div className="book-content">
                     <div className="book-main">
+                        <div className="book-main-top-status">
+                            {rowData.isBorrow? <div className="book-status-active">⬤ 可借 </div>:<div className="book-status-inactive">⬤ 已借 </div>}
+                        </div>
                         <div className="book-main-top">
                            <div className="book-name">《{rowData.Title}》</div>
-                            {/* {rowData.isBorrow? <div className="book-status-active">⬤ 可借阅 </div>:<div className="book-status-inactive">⬤ 已出借 </div>} */}
                         </div>
                         <div className="description">{rowData.Description}</div>
+                        <div className="operation">
+                            <button className="global-btn" type="submit" onClick={()=>{onBorrow(rowData.Id)}}>借阅</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -78,7 +88,7 @@ export default (props) => {
         <div>
             <div className="booksComponent container">
                 <div className="found">
-                    <div><strong>{dataArr.length}</strong> Book(s) Found</div>
+                    <div>叮！找到<strong className="theme-color"> {dataArr.length} </strong>本藏书。</div>
                 </div>
                 <div className="container">
                     <ListView

@@ -31,6 +31,7 @@ export const getStoredUser = () => {
 export const delStoredUser = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('antd-pro-authority');
+    localStorage.removeItem('token');
 }
 
 //Bearer Token

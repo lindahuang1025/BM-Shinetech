@@ -1,4 +1,4 @@
-import { queryBookList } from './service';
+import { queryBorrowList } from './service';
 
 const Model = {
     namespace: 'myBorrow',
@@ -7,7 +7,7 @@ const Model = {
     },
     effects: {
         * query({ payload }, { call, put }) {
-            const response = yield call(queryBookList, payload);
+            const response = yield call(queryBorrowList, payload);
             yield put({
                 type: 'setBookList',
                 payload: response,

@@ -3,7 +3,6 @@
     display: flex;
     flex-wrap: wrap;
     height: 100%;
-}
 
 .found{
     width: 100%;
@@ -25,23 +24,23 @@
     }
 }
 
-.booksComponent .book-content{
+.book-content{
     cursor: pointer;
     margin: 15px;
     border-radius: 10px;
     box-shadow: 0 0 20px 0 rgba(51,51,51,.1);
     background-color: #ffffff;
-    min-height: 230px;
+    min-height: 200px;
 }
 
-.booksComponent .book-top{
+.book-top{
     border-radius: 10px 10px 0 0;
     height: 125px;
     background-size: cover;
     background-position-y: 50%;
 }
 
-.booksComponent .book-name{
+.book-name{
     font-weight: 600;
     font-size: 16px;
     margin-bottom: 20px;
@@ -49,28 +48,55 @@
 
 @media only screen and (min-width: 768px) {
     .booksComponent .book-main{
-        min-height: 210px;
+        min-height: 50px;
     }
     .book{
         width: 300px;
     }
 }
 
-.booksComponent .book-main{
+.book-main{
     padding: 15px;
     display: flex;
     flex-direction: column;
     .description{
-        height: 128px;
+        height: 68px;
+        text-overflow: -o-ellipsis-lastline;
         overflow: hidden;
         text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+    .operation{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
     }
 }
 
-.booksComponent .book-main-top{
+.global-btn{ 
+    font-weight: 700 !important;
+    border-radius: 10px;
+    width: 30%;
+    background-color: #1890ff;
+    border: 0;
+    height: 40px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.book-main-top{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+}
+
+.book-main-top-status{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 .book-status-active{
@@ -81,21 +107,23 @@
     color: red;
 }
 
-.booksComponent .container {
+.container {
     height: 100%;
 }
 
 
-.booksComponent .list-view-section-body{
+.list-view-section-body{
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
 }
 
-.booksComponent .am-list-body {
+.am-list-body {
     position: inherit;
     background-color: transparent;
     border-top: 0PX solid #ddd;
     border-bottom: 0PX solid #ddd;
+}
+
 }

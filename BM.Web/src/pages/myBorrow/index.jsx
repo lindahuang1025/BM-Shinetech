@@ -1,7 +1,7 @@
 import React from 'react';
 import './myBorrow.less';
 import { Toast, ListView} from 'antd-mobile';
-import { queryBookList} from './service';
+import { queryBorrowList} from './service';
 
 export default (props) => {
     const [keyword, setKeyword] = React.useState("");
@@ -18,29 +18,47 @@ export default (props) => {
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
-        getBookList();
+        getList();
     }, []);
 
-    const getBookList= async(ref = false)=>{
-        const response = await queryBookList({keyword:keyword, pageIndex:pageNo, pageSize:pageSize})
-        if (response && response.Status===0) {
-               const dataList = [];
-               const len = dataList.length;
-               if (len <= 0) { // 判断是否已经没有数据了
-                   setIsLoading(false)
-                   setHasMore(false)
-                   return
-               }
-               // 合并state中已有的数据和新增的数据
-               var newDataArr = dataArr.concat(dataList) //关键代码
-               setPageNo(pageNo)
-               setDataSource(dataSource.cloneWithRows(newDataArr))
+    const getList= async(ref = false)=>{
+        fetch('/api/borrowList/').then(function (res) {
+            res.json().then(function (result) {
+                const dataList = result;
+                const len = dataList.length;
+                if (len <= 0) { // 判断是否已经没有数据了
+                    setIsLoading(false)
+                    setHasMore(false)
+                    return
+                }
+                // 合并state中已有的数据和新增的数据
+                var newDataArr = dataArr.concat(dataList) //关键代码
+                setPageNo(pageNo)
+                setDataSource(dataSource.cloneWithRows(newDataArr))
+              
+                setIsLoading(false)
+                setDataArr(newDataArr)
+            })
+        })
+        // const response = await queryBorrowList({keyword:keyword, pageIndex:pageNo, pageSize:pageSize})
+        // if (response && response.Status===0) {
+        //        const dataList = [];
+        //        const len = dataList.length;
+        //        if (len <= 0) { // 判断是否已经没有数据了
+        //            setIsLoading(false)
+        //            setHasMore(false)
+        //            return
+        //        }
+        //        // 合并state中已有的数据和新增的数据
+        //        var newDataArr = dataArr.concat(dataList) //关键代码
+        //        setPageNo(pageNo)
+        //        setDataSource(dataSource.cloneWithRows(newDataArr))
              
-               setIsLoading(false)
-               setDataArr(newDataArr)
-        } else {
-            Toast.info("Failed, Please refresh or contact the administrator.", 1);
-        }
+        //        setIsLoading(false)
+        //        setDataArr(newDataArr)
+        // } else {
+        //     Toast.info("Failed, Please refresh or contact the administrator.", 1);
+        // }
     }
 
     const onEndReached = (event) => {
@@ -58,10 +76,15 @@ export default (props) => {
                 <div className="book-content">
                     <div className="book-main">
                         <div className="book-main-top">
-                           <div className="book-name">《{rowData.Title}》</div>
-                            {/* {rowData.isBorrow? <div className="book-status-active">⬤ 可借阅 </div>:<div className="book-status-inactive">⬤ 已出借 </div>} */}
+                           <div className="book-name">《{rowData.BookName}》</div>
                         </div>
-                        <div className="description">{rowData.Description}</div>
+                        <div className="operation">
+                            <div className="global-flex-column">
+                                <div className="date">借日：{rowData.CreateDate}</div>
+                                <div className="date">还日：{rowData.PlanReturnData}</div>
+                            </div>
+                            <button className="global-btn" type="submit" onClick={()=>{onBorrow(rowData.Id)}}>归还</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -69,9 +92,9 @@ export default (props) => {
 
     return (
         <div>
-            <div className="booksComponent container">
+            <div className="borrowComponent container">
                 <div className="found">
-                    <div>快去借阅书箱，把墨水给喝饱吧!</div>
+                    {dataArr.length===0?<div>快去借阅书箱，把墨水给喝饱吧!</div>:<div>您一共有<strong className="theme-color"> {dataArr.length} </strong>本书正在借阅中！</div>}
                 </div>
                 <div className="container">
                     <ListView
@@ -82,7 +105,6 @@ export default (props) => {
                         onEndReached={onEndReached}
                         scrollRenderAheadDistance={1500}
                     />  
-
                 </div>
             </div >
         </div>

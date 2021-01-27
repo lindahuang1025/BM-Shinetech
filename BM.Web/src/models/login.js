@@ -4,7 +4,7 @@ import { AccountLogin } from '@/services/login';
 import { setAuthority } from '@/utils/authority';
 import { getPageQuery } from '@/utils/utils';
 import { message } from 'antd';
-import { setStoredUser, setToken } from '@/utils/utils';
+import { setStoredUser, setToken, delStoredUser } from '@/utils/utils';
 
 const Model = {
     namespace: 'login',
@@ -60,6 +60,7 @@ const Model = {
                     }),
                 });
             }
+            delStoredUser();
         },
     },
     reducers: {
