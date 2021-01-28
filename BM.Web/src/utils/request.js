@@ -4,7 +4,10 @@
  */
 import { extend } from 'umi-request';
 import { notification } from 'antd';
-import { getToken } from '@/utils/utils';
+import { history } from 'umi';
+import { getToken, getStoredUser, delStoredUser } from '@/utils/utils';
+
+const user = getStoredUser() || {};
 
 const codeMessage = {
     200: '服务器成功返回请求的数据。',
@@ -37,6 +40,12 @@ const errorHandler = (error) => {
             message: `请求错误 ${status}: ${url}`,
             description: errorText,
         });
+
+        //如果token时效消失，请求返回401就直接导航到登录
+        if (response.status === 401) {
+            delStoredUser();
+            history.replace('/');
+        }
     } else if (!response) {
         notification.error({
             description: '您的网络发生异常，无法连接服务器',
@@ -56,7 +65,10 @@ const request = extend({
     // 默认错误处理
     credentials: 'omit', // 默认请求是否带上cookie
     headers: {
-        Authorization: `Bearer ${getToken()}`
+        Authorization: `Bearer ${getToken()}`,
+        UserId: user.UserId,
+        UserName: user.UserName,
+        UserRole: user.RoleId
     }
 });
 export default request;
