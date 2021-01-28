@@ -28,7 +28,7 @@
     cursor: pointer;
     margin: 15px;
     border-radius: 10px;
-    box-shadow: 0 0 20px 0 rgba(51,51,51,.1);
+    box-shadow: 0 0 20px 0 rgba(231, 215, 215, 0.1);
     background-color: #ffffff;
 }
 
@@ -45,13 +45,33 @@
     margin-bottom: 20px;
 }
 
+
+
+@media only screen and (min-width: 769px) {
+    .book-main{
+        min-height: 50px;
+    }
+    .book{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .book-main{
+        min-height: 50px;
+    }
+
+    .book{
+        width: 100% !important;
+    }
+}
+
 .book-main{
-    min-width: 325px;
     padding: 15px;
     display: flex;
     flex-direction: column;
     .date{
-        font-size: 18px;
+        font-size: 16px;
         padding-left: 10px;
     }
     .operation{

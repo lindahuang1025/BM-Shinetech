@@ -8,3 +8,12 @@ export async function queryBookList(params) {
         }
     });
 }
+
+export async function borrowBook(params) {
+    return request('/api/bookBorrow/borrowBook', {
+        method: 'POST',
+        data: {
+            ...params
+        }
+    });
+}

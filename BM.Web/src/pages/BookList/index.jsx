@@ -1,8 +1,9 @@
 import React from 'react';
 import './BookList.less';
-import { Button } from 'antd';
+import { message } from 'antd';
 import { Toast, ListView} from 'antd-mobile';
-import { queryBookList} from './service';
+import { queryBookList, borrowBook} from './service';
+import { getStoredUser } from '@/utils/utils';
 
 export default (props) => {
     const [keyword, setKeyword] = React.useState("");
@@ -16,6 +17,7 @@ export default (props) => {
     const [hasMore, setHasMore] = React.useState(true);
     const [isLoading, setIsLoading] = React.useState(true);
     const [dataArr, setDataArr] = React.useState([]);
+    const user = getStoredUser();
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -60,8 +62,18 @@ export default (props) => {
             setPageNo(pageNo + 1) 
     }
 
-    const onBorrow = (id) => {
-      
+    const onBorrow = async(id) => {
+        const hide = message.loading('正在借阅');
+        try {
+            await borrowBook({ bookId:id, userId: user.UserId });
+            hide();
+            message.success('借阅成功');
+            return true;
+          } catch (error) {
+            hide();
+            message.error('借阅失败请重试！');
+            return false;
+          }
     }
 
       const row = (rowData, sectionID, rowID) => {
@@ -70,15 +82,15 @@ export default (props) => {
                 <div className="book-content">
                     <div className="book-main">
                         <div className="book-main-top-status">
-                            {rowData.isBorrow? <div className="book-status-active">⬤ 可借 </div>:<div className="book-status-inactive">⬤ 已借 </div>}
+                            {rowData.Status ===0? <div className="book-status-active">⬤ 可借 </div>:<div className="book-status-inactive">⬤ 已借 </div>}
                         </div>
                         <div className="book-main-top">
                            <div className="book-name">《{rowData.Title}》</div>
                         </div>
                         <div className="description">{rowData.Description}</div>
-                        <div className="operation">
+                        {rowData.Status === 0 && <div className="operation">
                             <button className="global-btn" type="submit" onClick={()=>{onBorrow(rowData.Id)}}>借阅</button>
-                        </div>
+                        </div>}
                     </div>
                 </div>
             </div>
@@ -86,7 +98,7 @@ export default (props) => {
 
     return (
         <div>
-            <div className="booksComponent container">
+            <div className="booksComponent">
                 <div className="found">
                     <div>叮！找到<strong className="theme-color"> {dataArr.length} </strong>本藏书。</div>
                 </div>
