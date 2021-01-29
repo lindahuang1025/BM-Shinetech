@@ -104,6 +104,7 @@ const BasicLayout = (props) => {
   const { formatMessage } = useIntl();
   return (
     <ProLayout
+      openKeys={false} //点击子菜单的时候，其他菜单不自动收起来
       logo={logo}
       formatMessage={formatMessage}
       {...props}
@@ -119,7 +120,7 @@ const BasicLayout = (props) => {
           return defaultDom;
         }
 
-        return <Link to={menuItemProps.path}>{defaultDom}</Link>;
+        return <Link to={menuItemProps.path} onClick={handleMenuCollapse}>{defaultDom}</Link>;
       }}
       breadcrumbRender={(routers = []) => [
         {

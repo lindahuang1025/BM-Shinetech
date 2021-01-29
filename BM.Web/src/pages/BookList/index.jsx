@@ -74,7 +74,7 @@ export default (props) => {
                     hide();
                     const response = await borrowBook({ bookId:id, userId: user.UserId });
                     if (response && response.Status===0) {
-                        message.success('借阅成功');
+                        message.success('借阅成功,可以进入左侧的我的借阅中查看哦！');
                         //当借阅成功后触发更新列表
                         setPageNo(1);
                         if(pageNo === 1) setIsRorrowOrReturnComplete(!isRorrowOrReturnComplete);

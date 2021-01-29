@@ -4,6 +4,7 @@ import React from 'react';
 import { history, connect } from 'umi';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
+import AvatarImg from '@/assets/user.png';
 
 class AvatarDropdown extends React.Component {
   onMenuClick = (event) => {
@@ -27,7 +28,7 @@ class AvatarDropdown extends React.Component {
   render() {
     const {
       currentUser = {
-        avatar: 'assets/user.png',
+        avatar: AvatarImg,
         UserName: '',
       },
       menu,
@@ -57,7 +58,7 @@ class AvatarDropdown extends React.Component {
     return currentUser && currentUser.UserName ? (
       <HeaderDropdown overlay={menuHeaderDropdown}>
         <span className={`${styles.action} ${styles.account}`}>
-          <Avatar size="small" className={styles.avatar} src={currentUser.avatar} alt="avatar" />
+          <Avatar size="small" className={styles.avatar} src={AvatarImg} alt="avatar" />
           <span className={`${styles.name} anticon`}>{currentUser.UserName}</span>
         </span>
       </HeaderDropdown>
