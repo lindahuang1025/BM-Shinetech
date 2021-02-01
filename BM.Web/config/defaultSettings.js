@@ -4,7 +4,7 @@ const proSettings = {
     primaryColor: '#1890ff',
     layout: 'side',
     contentWidth: 'Fluid',
-    fixedHeader: false,
+    fixedHeader: true,
     fixSiderbar: true,
     colorWeak: false,
     title: 'BM',

@@ -56,7 +56,7 @@ class AvatarDropdown extends React.Component {
       </Menu>
     );
     return currentUser && currentUser.UserName ? (
-      <HeaderDropdown overlay={menuHeaderDropdown}>
+      <HeaderDropdown trigger={['click']} overlay={menuHeaderDropdown}>
         <span className={`${styles.action} ${styles.account}`}>
           <Avatar size="small" className={styles.avatar} src={AvatarImg} alt="avatar" />
           <span className={`${styles.name} anticon`}>{currentUser.UserName}</span>

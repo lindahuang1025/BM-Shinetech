@@ -1,7 +1,7 @@
 import React from 'react';
 import './BookList.less';
 import { message } from 'antd';
-import { Toast, ListView, Modal, ActivityIndicator} from 'antd-mobile';
+import { Toast, ListView, Modal, ActivityIndicator, Button } from 'antd-mobile';
 import { queryBookList, borrowBook} from './service';
 import { getStoredUser } from '@/utils/utils';
 
@@ -105,7 +105,7 @@ export default (props) => {
                         </div>
                         <div className="description">{rowData.Description}</div>
                         {rowData.Status === 0 && <div className="operation">
-                            <button className="global-btn" type="submit" onClick={()=>{onBorrow(rowData.Id)}}>借阅</button>
+                            <Button type="primary" onClick={()=>{onBorrow(rowData.Id)}} style={{width:'30%'}}>借阅</Button>
                         </div>}
                     </div>
                 </div>

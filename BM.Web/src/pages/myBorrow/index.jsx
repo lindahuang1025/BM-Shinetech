@@ -1,7 +1,7 @@
 import React from 'react';
 import './myBorrow.less';
 import { message } from 'antd';
-import { Toast, ListView, ActivityIndicator, Modal} from 'antd-mobile';
+import { Toast, ListView, ActivityIndicator, Modal, Button} from 'antd-mobile';
 import { queryBorrowList, returnBook} from './service';
 import { getStoredUser } from '@/utils/utils';
 import moment from 'moment'
@@ -106,7 +106,7 @@ export default (props) => {
                             <div className="global-flex-column">
                                 <div className="date">借日：{moment(rowData.BorrowDate).format('YYYY MM-DD')}</div>
                             </div>
-                            <button className="global-btn" type="submit" onClick={()=>{onReturnClicked(rowData.Id)}}>归还</button>
+                            <Button type="primary" onClick={()=>{onReturnClicked(rowData.Id)}} style={{width:'30%'}}>归还</Button>
                         </div>
                     </div>
                 </div>
