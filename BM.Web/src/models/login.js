@@ -27,7 +27,6 @@ const Model = {
                 //save Bearer token
                 setToken(response.Data.AccessToken);
                 message.success('🎉 🎉 🎉  登录成功！');
-                window.location.href = '/';
                 let { redirect } = params;
 
                 if (redirect) {
