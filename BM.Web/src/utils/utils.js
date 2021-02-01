@@ -1,4 +1,5 @@
 import { parse } from 'querystring';
+import { message } from 'antd';
 /* eslint no-useless-escape:0 import/prefer-default-export:0 */
 
 const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/;
@@ -26,7 +27,15 @@ export const setStoredUser = (user) => {
 }
 export const getStoredUser = () => {
     const storedUser = localStorage.getItem('user');
-    return storedUser ? JSON.parse(storedUser) : null;
+    // if (storedUser) {
+    //     delStoredUser();
+    //     history.replace('/');
+    //     message.error("您的登录已失效，请重新登录！");
+    // } else {
+    //     return JSON.parse(storedUser);
+    // }
+
+    return JSON.parse(storedUser);
 }
 export const delStoredUser = () => {
     localStorage.removeItem('user');
@@ -43,3 +52,7 @@ export const getToken = () => {
     const token = localStorage.getItem('token');
     return token ? JSON.parse(token) : null;
 }
+
+// export const isStoredUserExist = () => {
+
+// }

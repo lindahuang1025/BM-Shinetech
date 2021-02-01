@@ -14,7 +14,6 @@ export default (props) => {
     //listview
     const [dataSource, setDataSource] = React.useState(defaultData);
     const [pageNo, setPageNo] = React.useState(1);
-    const [pageSize, setPageSize] = React.useState(10);
     const [hasMore, setHasMore] = React.useState(true);
     const [isLoading, setIsLoading] = React.useState(true);
     const [dataArr, setDataArr] = React.useState([]);

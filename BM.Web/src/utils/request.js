@@ -3,7 +3,7 @@
  * 更详细的 api 文档: https://github.com/umijs/umi-request
  */
 import { extend } from 'umi-request';
-import { notification } from 'antd';
+import { notification, message } from 'antd';
 import { history } from 'umi';
 import { getToken, getStoredUser, delStoredUser } from '@/utils/utils';
 
@@ -44,7 +44,9 @@ const errorHandler = (error) => {
         //如果token时效消失，请求返回401就直接导航到登录
         if (response.status === 401) {
             delStoredUser();
+            window.location.href = '/';
             history.replace('/');
+            message.error("您的登录已失效，请重新登录！");
         }
     } else if (!response) {
         notification.error({
