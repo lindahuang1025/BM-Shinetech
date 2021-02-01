@@ -44,7 +44,6 @@ const errorHandler = (error) => {
         //如果token时效消失，请求返回401就直接导航到登录
         if (response.status === 401) {
             delStoredUser();
-            window.location.href = '/';
             history.replace('/');
             message.error("您的登录已失效，请重新登录！");
         }
