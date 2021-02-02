@@ -7,7 +7,7 @@ import { notification, message } from 'antd';
 import { history } from 'umi';
 import { getToken, getStoredUser, delStoredUser } from '@/utils/utils';
 
-const user = getStoredUser() || {};
+const user = getStoredUser();
 
 const codeMessage = {
     200: '服务器成功返回请求的数据。',
@@ -36,16 +36,18 @@ const errorHandler = (error) => {
     if (response && response.status) {
         const errorText = codeMessage[response.status] || response.statusText;
         const { status, url } = response;
-        notification.error({
-            message: `请求错误 ${status}: ${url}`,
-            description: errorText,
-        });
-
         //如果token时效消失，请求返回401就直接导航到登录
         if (response.status === 401) {
+            notification.error({
+                message: "您的登录已失效，请重新登录！",
+                description: errorText,
+            });
             delStoredUser();
-            history.replace('/');
-            message.error("您的登录已失效，请重新登录！");
+        } else {
+            notification.error({
+                message: `请求错误 ${status}: ${url}`,
+                description: errorText,
+            });
         }
     } else if (!response) {
         notification.error({
@@ -67,9 +69,9 @@ const request = extend({
     credentials: 'omit', // 默认请求是否带上cookie
     headers: {
         Authorization: `Bearer ${getToken()}`,
-        UserId: user.UserId,
-        UserName: user.UserName,
-        UserRole: user.RoleId
+        UserId: user ? user.UserId : 0,
+        UserName: user ? user.UserName : '',
+        UserRole: user ? user.RoleId : 0
     }
 });
 export default request;

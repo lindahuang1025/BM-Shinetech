@@ -75,7 +75,12 @@ export default (props) => {
                     hide();
                     const response = await returnBook({ bookId:id, userId: user.UserId });
                     if (response && response.Status===0) {
-                        message.success('归还成功');
+                        message.success({
+                            content: '归还成功',
+                            style: {
+                              marginTop: '5vh',
+                            },
+                          });
                         //当借阅成功后触发更新列表
                         setPageNo(1);
                         if(pageNo === 1) setIsRorrowOrReturnComplete(!isRorrowOrReturnComplete);
