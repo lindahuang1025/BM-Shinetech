@@ -29,12 +29,11 @@ const Model = {
                 message.success('🎉 🎉 🎉  登录成功！');
                 let { redirect } = params;
 
+                //if access book borrow but not login, go to login page, after login, directly to original book borrow page
                 if (redirect) {
                     const redirectUrlParams = new URL(redirect);
-
                     if (redirectUrlParams.origin === urlParams.origin) {
                         redirect = redirect.substr(urlParams.origin.length);
-
                         if (redirect.match(/^\/.*#/)) {
                             redirect = redirect.substr(redirect.indexOf('#') + 1);
                         }
@@ -65,7 +64,6 @@ const Model = {
     reducers: {
         changeLoginStatus(state, { payload }) {
             // if(payload.Data.AccessToken){
-
             // }
             // if(payload){
             //   setAuthority(payload.Data.RoleName === 'management' ? 'admin' : 'guest');

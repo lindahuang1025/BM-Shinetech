@@ -20,12 +20,15 @@ export const isAntDesignProOrDev = () => {
     }
     return isAntDesignPro();
 };
+
+//保存上一个页面的地址链接
 export const getPageQuery = () => parse(window.location.href.split('?')[1]);
 
 //user
 export const setStoredUser = (user) => {
     localStorage.setItem('user', JSON.stringify(user));
 }
+
 export const getStoredUser = () => {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
@@ -37,6 +40,7 @@ export const getStoredUser = () => {
 
     return JSON.parse(storedUser);
 }
+
 export const delStoredUser = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('antd-pro-authority');
@@ -52,7 +56,3 @@ export const getToken = () => {
     const token = localStorage.getItem('token');
     return token ? JSON.parse(token) : null;
 }
-
-// export const isStoredUserExist = () => {
-
-// }

@@ -23,39 +23,47 @@ export default (props) => {
 
     React.useEffect(() => {
         window.scrollTo(0, 0);
-        getList();
+        logicByAfterGetData();
     }, []);
 
-    const getList= async(ref = false)=>{
-        //如果加载首页则清空当前列表
-        setIsComplete(true);
-        const response = await queryBookList({keyword:keyword, pageIndex:pageNo, pageSize:pageSize});
-        setIsComplete(false);
-        if (response && response.Status===0) {
-               const dataList = response.Datas;
-               if(pageNo === 1){
-                    setDataArr(dataList)
-                    setDataSource(dataSource.cloneWithRows(dataList))
-                }else{
-                    const len = dataList.length;
-                    if (len <= 0) { // 判断是否已经没有数据了
-                        setIsLoading(false)
-                        setHasMore(false)
-                        return
-                    }
-                    // 合并state中已有的数据和新增的数据
-                    var newDataArr = dataArr.concat(dataList) //关键代码
-                    setPageNo(pageNo)
-                    setDataSource(dataSource.cloneWithRows(newDataArr))
-                  
-                    setIsLoading(false)
-                    setDataArr(newDataArr)
-                }
+    //获取列表
+    const getlistData = async()=>{
+         setIsComplete(true);
+         const response = await queryBookList({keyword:keyword, pageIndex:pageNo, pageSize:pageSize});
+         setIsComplete(false);
+         if (response && response.Status===0) {
+            if(response.Datas){
+                const List = response.Datas;
+                return List;
+            }
         } else {
-            Toast.info("Failed, Please refresh or contact the administrator.", 1);
+            Toast.info("获取列表失败, 请刷新页面！", 1);
         }
     }
 
+     //从请求获取列表后的逻辑
+    const logicByAfterGetData= async()=>{
+        const dataList = await getlistData();
+        if(pageNo === 1){
+             setDataArr(dataList)
+             setDataSource(dataSource.cloneWithRows(dataList))
+         }else{
+             const len = dataList.length;
+             if (len <= 0) { // 判断是否已经没有数据了
+                 setIsLoading(false)
+                 setHasMore(false)
+                 return
+             }
+             // 合并state中已有的数据和新增的数据
+             var newDataArr = dataArr.concat(dataList) //关键代码
+             setPageNo(pageNo)
+             setDataSource(dataSource.cloneWithRows(newDataArr))
+                       setIsLoading(false)
+             setDataArr(newDataArr)
+        }
+    }
+
+    //用户下向滑动动态触发加载列表
     const onEndReached = (event) => {
         // 加载中或没有数据了都不再加载
         if (isLoading || !hasMore) {
@@ -89,12 +97,14 @@ export default (props) => {
         ])
     }
 
+    //用户向下滑动和借阅操作都会触发重新加载列表
     React.useEffect(() => {
-        getList();
+        logicByAfterGetData();
     }, [pageNo]);
 
+    //特殊情况，借阅成功后，是通过页码改变来刷新列表，但是如果当前用户就在第一页，那么就不会触发刷新，所以新加了isRorrowOrReturnComplete字段来监控
     React.useEffect(() => {
-        getList();
+        logicByAfterGetData();
     }, [isRorrowOrReturnComplete]);
 
       const row = (rowData, sectionID, rowID) => {
