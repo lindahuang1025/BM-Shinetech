@@ -1,11 +1,7 @@
-/**
- * request 网络请求工具
- * 更详细的 api 文档: https://github.com/umijs/umi-request
- */
 import { extend } from 'umi-request';
-import { notification, message } from 'antd';
-import { history } from 'umi';
-import { getToken, getStoredUser, delStoredUser } from '@/utils/utils';
+import { notification } from 'antd';
+import { getToken, getStoredUser } from '@/utils/utils';
+import { getDvaApp } from 'umi';
 
 const user = getStoredUser();
 
@@ -36,17 +32,18 @@ const errorHandler = (error) => {
     if (response && response.status) {
         const errorText = codeMessage[response.status] || response.statusText;
         const { status, url } = response;
-        //如果token时效消失，请求返回401就直接导航到登录
+
+        //包含status的所有处理，包括< 0 的状态
+        notification.error({
+            message: `请求错误 ${status}: ${url}`,
+            description: errorText,
+        });
+
+        //如果token时效消失，请求返回401，额外加一个退出登录的操作，从而删除内存中的user
         if (response.status === 401) {
-            notification.error({
-                message: "您的登录已失效，请重新登录！",
-                description: errorText,
-            });
-            delStoredUser();
-        } else {
-            notification.error({
-                message: `请求错误 ${status}: ${url}`,
-                description: errorText,
+            const dvaApp = getDvaApp();
+            dvaApp._store.dispatch({
+                type: 'login/logout',
             });
         }
     } else if (!response) {
@@ -58,20 +55,18 @@ const errorHandler = (error) => {
 
     return response;
 };
-/**
- * 配置request请求时的默认参数
- */
 
+//配置request请求时的默认参数
 const request = extend({
     prefix: apiUrl,
-    errorHandler,
     // 默认错误处理
+    errorHandler,
     credentials: 'omit', // 默认请求是否带上cookie
     headers: {
         Authorization: `Bearer ${getToken()}`,
-        UserId: user ? user.UserId : 0,
-        UserName: user ? user.UserName : '',
-        UserRole: user ? user.RoleId : 0
+        UserId: user.UserId,
+        UserName: user.UserName,
+        UserRole: user.RoleId
     }
 });
 export default request;

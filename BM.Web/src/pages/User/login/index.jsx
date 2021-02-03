@@ -1,16 +1,11 @@
 import {
-  AlipayCircleOutlined,
   LockTwoTone,
-  MailTwoTone,
-  MobileTwoTone,
-  TaobaoCircleOutlined,
   UserOutlined,
-  WeiboCircleOutlined,
 } from '@ant-design/icons';
-import { Alert, Space, message, Tabs } from 'antd';
-import React, { useState } from 'react';
-import ProForm, { ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
-import { useIntl, connect, FormattedMessage } from 'umi';
+import { Alert } from 'antd';
+import React from 'react';
+import ProForm, { ProFormText } from '@ant-design/pro-form';
+import { connect, FormattedMessage, useIntl } from 'umi';
 import styles from './index.less';
 
 const LoginMessage = ({ content }) => (
@@ -26,8 +21,7 @@ const LoginMessage = ({ content }) => (
 
 const Login = (props) => {
   const { userLogin = {}, submitting } = props;
-  const { status, type: loginType } = userLogin;
-  const [type, setType] = useState('account');
+  const { status } = userLogin;
   const intl = useIntl();
 
   const handleSubmit = (values) => {
@@ -41,9 +35,6 @@ const Login = (props) => {
   return (
     <div className={styles.main}>
       <ProForm
-        // initialValues={{
-        //   autoLogin: true,
-        // }}
         submitter={{
           render: (_, dom) => dom.pop(),
           submitButtonProps: {
@@ -59,73 +50,48 @@ const Login = (props) => {
           return Promise.resolve();
         }}
       >
-
-        {status === -1 && !submitting && (
+        {status < 0 && !submitting && (
           <LoginMessage
-            content='账户或密码错误'
+            content={intl.formatMessage({id:"pages.login.accountLogin.tab"})}
           />
         )}
-        {type === 'account' && (
-          <>
-            <ProFormText
-              name="userName"
-              fieldProps={{
-                size: 'large',
-                prefix: <UserOutlined className={styles.prefixIcon} />,
-              }}
-              placeholder='请输入用户名'
-              rules={[
-                {
-                  required: true,
-                  message: (
-                    <FormattedMessage
-                      id="pages.login.username.required"
-                      defaultMessage="请输入用户名!"
-                    />
-                  ),
-                },
-              ]}
-            />
-            <ProFormText.Password
-              name="password"
-              fieldProps={{
-                size: 'large',
-                prefix: <LockTwoTone className={styles.prefixIcon} />,
-              }}
-              placeholder='请输入密码'
-              rules={[
-                {
-                  required: true,
-                  message: (
-                    <FormattedMessage
-                      id="pages.login.password.required"
-                      defaultMessage="请输入密码！"
-                    />
-                  ),
-                },
-              ]}
-            />
-          </>
-        )}
 
-        <div
-          style={{
-            marginBottom: 24,
+        <ProFormText
+          name="userName"
+          fieldProps={{
+            size: 'large',
+            prefix: <UserOutlined className={styles.prefixIcon} />,
           }}
-        >
-          {/* <ProFormCheckbox noStyle name="autoLogin">
-            <FormattedMessage id="pages.login.rememberMe" defaultMessage="自动登录" />
-          </ProFormCheckbox>
-          <a
-            style={{
-              float: 'right',
-            }}
-          >
-            <FormattedMessage id="pages.login.forgotPassword" defaultMessage="忘记密码" />
-          </a> */}
-        </div>
+          placeholder={intl.formatMessage({id:"pages.login.username.required"})}
+          rules={[
+            {
+              required: true,
+              message: (
+                <FormattedMessage
+                  id="pages.login.username.required"
+                />
+              ),
+            },
+          ]}
+        />
+        <ProFormText.Password
+          name="password"
+          fieldProps={{
+            size: 'large',
+            prefix: <LockTwoTone className={styles.prefixIcon} />,
+          }}
+          rules={[
+            {
+              required: true,
+              message: (
+                <FormattedMessage
+                  id="pages.login.password.required"
+                />
+              ),
+            },
+          ]}
+        />
       </ProForm>
- 
     </div>
   );
 };

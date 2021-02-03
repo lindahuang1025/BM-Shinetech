@@ -6,7 +6,7 @@ export default [{
                 component: '../layouts/UserLayout',
                 routes: [{
                     name: 'login',
-                    path: '/user/login',
+                    path: '/User/login',
                     component: './User/login',
                 }, ],
             },

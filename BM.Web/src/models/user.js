@@ -1,5 +1,4 @@
 import { queryCurrent, query as queryUsers } from '@/services/user';
-import request from '@/utils/request';
 
 const UserModel = {
     namespace: 'user',
@@ -25,11 +24,6 @@ const UserModel = {
     },
     reducers: {
         saveCurrentUser(state, action) {
-
-            // if (action.payload && action.payload.AccessToken) {
-            //     request.extendOptions({ headers: { 'Authorization': `Bearer ${action.payload.AccessToken}` } });
-            // }
-
             return {...state, currentUser: action.payload || {} };
         },
 

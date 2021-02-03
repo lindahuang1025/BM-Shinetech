@@ -34,7 +34,7 @@ export default defineConfig({
         'primary-color': defaultSettings.primaryColor,
     },
     define: {
-        // apiUrl: 'http://localhost:2020'
+        // apiUrl: 'http://localhost:2020',
         apiUrl: 'http://59.172.208.174:9313',
         pageSize: 10
     },

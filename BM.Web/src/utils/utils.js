@@ -1,7 +1,7 @@
 import { parse } from 'querystring';
 import { message } from 'antd';
 import { history } from 'umi';
-/* eslint no-useless-escape:0 import/prefer-default-export:0 */
+import { turnJsonStringify, turnJsonParse } from './common'
 
 const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/;
 export const isUrl = (path) => reg.test(path);
@@ -9,7 +9,6 @@ export const isAntDesignPro = () => {
     if (ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION === 'site') {
         return true;
     }
-
     return window.location.hostname === 'preview.pro.ant.design';
 }; // 给官方演示站点用，用于关闭真实开发环境不需要使用的特性
 
@@ -26,19 +25,21 @@ export const getPageQuery = () => parse(window.location.href.split('?')[1]);
 
 //user
 export const setStoredUser = (user) => {
-    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('user', turnJsonStringify(user));
 }
 
 export const getStoredUser = () => {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
-        return JSON.parse(storedUser);
+        return turnJsonParse(storedUser);
     } else {
         delStoredUser();
-        message.error("您的登录已失效，请重新登录！");
+        return {
+            UserId: 0,
+            UserName: '',
+            UserRole: 0
+        };
     }
-
-    return JSON.parse(storedUser);
 }
 
 export const delStoredUser = () => {
@@ -49,10 +50,10 @@ export const delStoredUser = () => {
 
 //Bearer Token
 export const setToken = (token) => {
-    localStorage.setItem('token', JSON.stringify(token));
+    localStorage.setItem('token', turnJsonStringify(token));
 }
 
 export const getToken = () => {
     const token = localStorage.getItem('token');
-    return token ? JSON.parse(token) : null;
+    return token ? turnJsonParse(token) : null;
 }

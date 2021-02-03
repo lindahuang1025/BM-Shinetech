@@ -41,6 +41,7 @@ export default (props) => {
             }
         } else {
             Toast.info("获取列表失败, 请刷新页面！", 1);
+            return [];
         }
     }
 
