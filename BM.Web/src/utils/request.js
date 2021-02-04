@@ -4,7 +4,8 @@ import { getToken, getStoredUser } from '@/utils/utils';
 import { getDvaApp } from 'umi';
 
 const user = getStoredUser();
-
+console.log("111111111111", user)
+    //异常处理程序
 const codeMessage = {
     200: '服务器成功返回请求的数据。',
     201: '新建或修改数据成功。',
@@ -22,9 +23,6 @@ const codeMessage = {
     503: '服务不可用，服务器暂时过载或维护。',
     504: '网关超时。',
 };
-/**
- * 异常处理程序
- */
 
 const errorHandler = (error) => {
     const { response } = error;
@@ -33,7 +31,6 @@ const errorHandler = (error) => {
         const errorText = codeMessage[response.status] || response.statusText;
         const { status, url } = response;
 
-        //包含status的所有处理，包括< 0 的状态
         notification.error({
             message: `请求错误 ${status}: ${url}`,
             description: errorText,

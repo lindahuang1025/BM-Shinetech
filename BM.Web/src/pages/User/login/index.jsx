@@ -5,7 +5,7 @@ import {
 import { Alert } from 'antd';
 import React from 'react';
 import ProForm, { ProFormText } from '@ant-design/pro-form';
-import { connect, FormattedMessage, useIntl } from 'umi';
+import { connect, FormattedMessage, formatMessage } from 'umi';
 import styles from './index.less';
 
 const LoginMessage = ({ content }) => (
@@ -22,7 +22,6 @@ const LoginMessage = ({ content }) => (
 const Login = (props) => {
   const { userLogin = {}, submitting } = props;
   const { status } = userLogin;
-  const intl = useIntl();
 
   const handleSubmit = (values) => {
     const { dispatch } = props;
@@ -52,7 +51,7 @@ const Login = (props) => {
       >
         {status < 0 && !submitting && (
           <LoginMessage
-            content={intl.formatMessage({id:"pages.login.accountLogin.tab"})}
+            content={formatMessage({id:"pages.login.accountLogin.tab"})}
           />
         )}
 
@@ -62,7 +61,7 @@ const Login = (props) => {
             size: 'large',
             prefix: <UserOutlined className={styles.prefixIcon} />,
           }}
-          placeholder={intl.formatMessage({id:"pages.login.username.required"})}
+          placeholder={formatMessage({id:"pages.login.username.required"})}
           rules={[
             {
               required: true,

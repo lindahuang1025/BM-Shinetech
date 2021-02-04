@@ -25,19 +25,19 @@ export const getPageQuery = () => parse(window.location.href.split('?')[1]);
 
 //user
 export const setStoredUser = (user) => {
-    localStorage.setItem('user', turnJsonStringify(user));
+    localStorage.setItem('user', JSON.stringify(user));
 }
 
 export const getStoredUser = () => {
     const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-        return turnJsonParse(storedUser);
+    debugger
+    if (storedUser !== null) {
+        return JSON.parse(storedUser);
     } else {
-        delStoredUser();
         return {
             UserId: 0,
             UserName: '',
-            UserRole: 0
+            RoleId: 0
         };
     }
 }
@@ -50,10 +50,10 @@ export const delStoredUser = () => {
 
 //Bearer Token
 export const setToken = (token) => {
-    localStorage.setItem('token', turnJsonStringify(token));
+    localStorage.setItem('token', token);
 }
 
 export const getToken = () => {
     const token = localStorage.getItem('token');
-    return token ? turnJsonParse(token) : null;
+    return token || '';
 }
