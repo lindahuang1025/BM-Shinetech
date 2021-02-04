@@ -1,8 +1,8 @@
 import React from 'react';
 import { PageLoading } from '@ant-design/pro-layout';
-import { Redirect, connect } from 'umi';
+import { connect, Redirect } from 'umi';
 import { stringify } from 'querystring';
-import { getStoredUser } from '@/utils/utils';
+import { isLoginSuccessed } from '@/utils/utils';
 
 class SecurityLayout extends React.Component {
   state = {
@@ -25,9 +25,7 @@ class SecurityLayout extends React.Component {
   render() {
     const { isReady } = this.state;
     const { children, loading } = this.props;
-
-    const isLogin= getStoredUser();
-    
+    const isLogin= isLoginSuccessed();
     const queryString = stringify({
       redirect: window.location.href,
     });
@@ -36,8 +34,9 @@ class SecurityLayout extends React.Component {
       return <PageLoading />;
     }
 
+    //如果没有登录的情况下，路由不为/user/login，都将跳转
     if (!isLogin) {
-      const returnUrl ='';
+      let returnUrl ='';
       if(window.location.pathname !== '/user/login'){
         returnUrl = `/user/login?${queryString}`;
       }

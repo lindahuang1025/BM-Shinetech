@@ -26,7 +26,8 @@ const Model = {
                 //redirect home page
                 const params = getPageQuery();
                 const { redirect } = params;
-                history.replace(redirect || '/');
+                // history.push(redirect || '/');
+                window.location.href = redirect || '/';
             }
         },
         logout() {

@@ -46,15 +46,10 @@ const UserLayout = (props) => {
               </Link>
             </div>
             <div className={styles.desc}>
-              {/* <FormattedMessage
-                id="pages.layouts.userLayout.title"
-                defaultMessage="Ant Design 是西湖区最具影响力的 Web 设计规范"
-              /> */}
             </div>
           </div>
           {children}
         </div>
-        {/* <DefaultFooter /> */}
       </div>
     </HelmetProvider>
   );

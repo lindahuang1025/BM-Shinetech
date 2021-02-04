@@ -4,8 +4,8 @@ import { getToken, getStoredUser } from '@/utils/utils';
 import { getDvaApp } from 'umi';
 
 const user = getStoredUser();
-console.log("111111111111", user)
-    //异常处理程序
+
+//异常处理程序
 const codeMessage = {
     200: '服务器成功返回请求的数据。',
     201: '新建或修改数据成功。',
@@ -58,7 +58,7 @@ const request = extend({
     prefix: apiUrl,
     // 默认错误处理
     errorHandler,
-    credentials: 'omit', // 默认请求是否带上cookie
+    credentials: 'omit', // 不在请求中包含凭据
     headers: {
         Authorization: `Bearer ${getToken()}`,
         UserId: user.UserId,
@@ -66,4 +66,24 @@ const request = extend({
         UserRole: user.RoleId
     }
 });
+
+//统一处理status不为正常的状态，例如 > 0 的状态
+request.interceptors.response.use(async(response, options) => {
+    console.log()
+    let result;
+    //获取当前请求后端返回的response
+    const data = await response.clone().json();
+    if (data.Status < 0) {
+        // 界面报错处理
+        notification.error({
+            message: `请求错误 ${data.Status}`,
+            description: data.Message,
+        });
+    } else {
+        // 如为正常（例如0），则正常返回response
+        result = response;
+    }
+    return result;
+});
+
 export default request;

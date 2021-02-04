@@ -1,7 +1,5 @@
 import { parse } from 'querystring';
-import { message } from 'antd';
-import { history } from 'umi';
-import { turnJsonStringify, turnJsonParse } from './common'
+import { isJsonFormat } from './common';
 
 const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/;
 export const isUrl = (path) => reg.test(path);
@@ -30,8 +28,8 @@ export const setStoredUser = (user) => {
 
 export const getStoredUser = () => {
     const storedUser = localStorage.getItem('user');
-    debugger
-    if (storedUser !== null) {
+    const flag = isJsonFormat(storedUser);
+    if (storedUser !== null && flag) {
         return JSON.parse(storedUser);
     } else {
         return {
@@ -56,4 +54,13 @@ export const setToken = (token) => {
 export const getToken = () => {
     const token = localStorage.getItem('token');
     return token || '';
+}
+
+export const isLoginSuccessed = () => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser !== null) {
+        return true;
+    } else {
+        return false;
+    }
 }
