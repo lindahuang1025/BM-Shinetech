@@ -21,8 +21,8 @@ const LoginMessage = ({ content }) => (
 
 const Login = (props) => {
   const intl = useIntl();
-  const { userLogin = {}, submitting } = props;
-  const { status } = userLogin;
+  const { loginModel = {}, loginLoading } = props;
+  const { status } = loginModel;
 
   const handleSubmit = (values) => {
     const { dispatch } = props;
@@ -38,7 +38,7 @@ const Login = (props) => {
         submitter={{
           render: (_, dom) => dom.pop(),
           submitButtonProps: {
-            loading: submitting,
+            loading: loginLoading,
             size: 'large',
             style: {
               width: '100%',
@@ -50,7 +50,7 @@ const Login = (props) => {
           return Promise.resolve();
         }}
       >
-        {status < 0 && !submitting && (
+        {status < 0 && !loginLoading && (
           <LoginMessage
             content={intl.formatMessage({id:"pages.login.accountLogin.tab"})}
           />
@@ -96,7 +96,7 @@ const Login = (props) => {
   );
 };
 
-export default connect(({ login, loading }) => ({
-  userLogin: login,
-  submitting: loading.effects['login/login'],
+export default connect(({ loginModel, loading }) => ({
+  loginModel: loginModel,
+  loginLoading: loading.effects['login/login'],
 }))(Login);

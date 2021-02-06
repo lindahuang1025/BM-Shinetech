@@ -26,7 +26,7 @@ const Model = {
                 //redirect home page
                 const params = getPageQuery();
                 const { redirect } = params;
-                // history.push(redirect || '/');
+                //慎用history进行跳转
                 window.location.href = redirect || '/';
             }
         },
@@ -40,8 +40,8 @@ const Model = {
     },
     reducers: {
         loginReducer(state, { payload }) {
-            setAuthority('admin');
-            return {...state, status: payload.Status, message: payload.Message, currentAuthority: 'admin' };
+            setAuthority('user');
+            return {...state, status: payload.Status, message: payload.Message, currentAuthority: 'user' };
         },
     },
 };
