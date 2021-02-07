@@ -1,29 +1,30 @@
 import { queryBookList } from './service';
 
 const Model = {
-    namespace: 'BookList',
+    namespace: 'BookListSpace',
     state: {
-        state: null
+        bookList: [],
+        status: undefined,
+        message: ''
     },
     effects: {
         * query({ payload }, { call, put }) {
             const response = yield call(queryBookList, payload);
             yield put({
-                type: 'setBookList',
+                type: 'setBookListReducer',
                 payload: response,
             });
-
-            console.log(response)
-                // if (response && response.Status === 0) {
-
-            // }
         }
     },
     reducers: {
-        setBookList(state, { payload }) {
-
-            return {...state, status: payload.Status, message: payload.Message };
-        },
-    },
+        setBookListReducer(state, { payload }) {
+            return {
+                ...state,
+                bookList: payload.Datas,
+                status: payload.Status,
+                message: payload.Message
+            };
+        }
+    }
 };
 export default Model;

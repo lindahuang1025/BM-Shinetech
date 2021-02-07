@@ -7,7 +7,9 @@ import { setStoredUser, setToken, delStoredUser } from '@/utils/utils';
 const Model = {
     namespace: 'login',
     state: {
-        status: 0
+        status: undefined,
+        message: '',
+        currentAuthority: "user"
     },
     effects: {
         * login({ payload }, { call, put }) {
@@ -41,7 +43,7 @@ const Model = {
     reducers: {
         loginReducer(state, { payload }) {
             setAuthority('user');
-            return {...state, status: payload.Status, message: payload.Message, currentAuthority: 'user' };
+            return {...state, status: payload.Status, message: payload.Message };
         },
     },
 };
