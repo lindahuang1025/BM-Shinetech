@@ -1,4 +1,4 @@
-import { queryBorrowList } from './service';
+import { queryBorrowList } from '@/services/bookBorrow';
 
 const Model = {
     namespace: 'myBorrow',

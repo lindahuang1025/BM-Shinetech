@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './BookList.less';
 import { message } from 'antd';
 import { ListView, Modal, ActivityIndicator, Button } from 'antd-mobile';
-import { borrowBook } from './service';
+import { borrowBook } from '@/services/bookBorrow';
 import { getStoredUser } from '@/utils/utils';
 import { connect, useIntl } from 'umi';
 

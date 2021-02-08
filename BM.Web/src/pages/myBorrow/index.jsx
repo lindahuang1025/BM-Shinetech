@@ -2,7 +2,8 @@ import React from 'react';
 import './myBorrow.less';
 import { message } from 'antd';
 import { Toast, ListView, ActivityIndicator, Modal, Button} from 'antd-mobile';
-import { queryBorrowList, returnBook} from './service';
+import { queryBorrowList} from '@/services/bookBorrow';
+import { returnBook} from '@/services/bookReturn';
 import { getStoredUser } from '@/utils/utils';
 import moment from 'moment'
 

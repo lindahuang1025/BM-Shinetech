@@ -1,4 +1,4 @@
-import { queryBookList } from './service';
+import { queryBookList } from '@/services/book';
 
 const Model = {
     namespace: 'BookListSpace',

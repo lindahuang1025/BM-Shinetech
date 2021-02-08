@@ -48,7 +48,7 @@ export default [{
                         name: 'list.myBorrow',
                         icon: 'crown',
                         path: '/borrow',
-                        component: './myBorrow',
+                        component: './MyBorrow',
                     },
                     {
                         component: './404',
