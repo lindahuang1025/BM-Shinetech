@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './BookList.less';
+import './index.less';
 import { PageLoading } from '@ant-design/pro-layout';
 import { message } from 'antd';
 import { ListView, Modal, Result, Button } from 'antd-mobile';
@@ -8,7 +8,9 @@ import { getStoredUser } from '@/utils/utils';
 import { connect, useIntl } from 'umi';
 
 const bookList = (props) => {
+    // 本地化语言设置
     const intl = useIntl();
+    const intlString = 'pages.bookList.';
     // 获取用户信息
     const user = getStoredUser();
     // 订阅弹出框
@@ -24,14 +26,12 @@ const bookList = (props) => {
     const [pageNo, setPageNo] = useState(1);
     // 请求当前列表是否还有更多
     const [hasMore, setHasMore] = useState(true);
-    // 是否正在请求当前列表
-    const [isLoading, setIsLoading] = useState(false);
     // 保存当前页数据，作用为 和请求下一页新数据进行合并
     const [currentData, setCurrentData] = useState([]);
     // 借书或者还书的触发
     const [isRorrowOrReturnComplete, setIsRorrowOrReturnComplete] = useState(false);
     // 获取props数据
-    const { bookListModel = {},queryBookListLoading, dispatch } = props;
+    const { bookListModel = {},loading, dispatch } = props;
     const { bookList } = bookListModel;
 
     useEffect(() => {
@@ -56,7 +56,8 @@ const bookList = (props) => {
 
     // 从请求获取列表后的处理逻辑
     const logicByAfterGetData= ()=>{
-        clearListStatus();
+        // 将loading的状态恢复至初始状态，好为下一次判断做准备
+        setHasMore(true);
         // 临时存储列表
         const dataList = bookList;
         // 当页面为1时，进行重置数据操作，否则进行追加数据操作
@@ -66,7 +67,6 @@ const bookList = (props) => {
          }else{
              const len = dataList.length;
              if (len <= 0) { // 判断是否已经没有数据了
-                 setIsLoading(false);
                  setHasMore(false);
                  return;
              }
@@ -75,43 +75,31 @@ const bookList = (props) => {
              setDataSource(dataSource.cloneWithRows(newDataArr));
              // 更新当前数据
              setCurrentData(newDataArr);
-             clearListStatus();
+             // 将loading的状态恢复至初始状态，好为下一次判断做准备
+             setHasMore(true);
         }
     }
 
     // 用户下向滑动动态触发加载列表
     const onEndReached = () => {
         // 加载中或没有数据了都不再加载
-        if (isLoading || !hasMore) {
+        if (loading || !hasMore) {
           return;
         }
-        setIsLoading(true);
         setPageNo(pageNo + 1) ;
-    }
-
-    // 恢复当前列表初始状态
-    const clearListStatus = () => {
-        // 将loading的状态恢复至初始状态，好为下一次判断做准备
-        setIsLoading(false);
-        setHasMore(true);
-    }
-
-    // 本地话语言配置
-    const localSetting = (idString) => {
-        return intl.formatMessage({id:idString});
     }
 
     // 借阅操作
     const onBorrow = (id) => {
-        alert(localSetting("pages.bookList.borrowConfirmPrompt"), '', [
-            { text: localSetting("pages.bookList.borrowConfirmCancel") },
-            { text: localSetting("pages.bookList.borrowConfirm"), onPress: async() => {
-                const hide = message.loading(intl.formatMessage({id:"pages.bookList.borrowing"}));
+        alert(intl.formatMessage({id:`${intlString}borrowConfirmPrompt`}), '', [
+            { text: intl.formatMessage({id:`${intlString}borrowConfirmCancel`}) },
+            { text: intl.formatMessage({id:`${intlString}borrowConfirm`}), onPress: async() => {
+                const hide = message.loading(intl.formatMessage({id:`${intlString}borrowing`}));
                     try {
                         await borrowBook({ bookId:id, userId: user.UserId });
                         hide();
                         message.success({
-                            content: localSetting("pages.bookList.borrowSuccessed"),
+                            content: intl.formatMessage({id:`${intlString}borrowSuccessed`}),
                             style: {
                               marginTop: '5vh',
                             }
@@ -140,10 +128,8 @@ const bookList = (props) => {
 
     // 根据loading状态来调用公共的loading组件
     useEffect(() => {
-        if (queryBookListLoading || isLoading) {
-            return <PageLoading />;
-        }
-    }, [queryBookListLoading,isLoading]);
+        if(loading) return <PageLoading />;
+    }, [loading]);
 
     const row = (rowData, rowID) => {
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
@@ -151,14 +137,14 @@ const bookList = (props) => {
             <div className="book-content">
                 <div className="book-main">
                     <div className="book-main-top-status">
-                        {rowData.Status ===0? <div className="book-status-active">⬤ {localSetting("pages.bookList.bookStatusActive")} </div>:<div className="book-status-inactive">⬤ {localSetting("pages.bookList.bookStatusInactive")} </div>}
+                        {rowData.Status ===0? <div className="book-status-active">⬤ {intl.formatMessage({id:`${intlString}bookStatusActive`})} </div>:<div className="book-status-inactive">⬤ {intl.formatMessage({id:`${intlString}bookStatusInactive`})} </div>}
                     </div>
                     <div className="book-main-top">
                        <div className="book-name">《{rowData.Title}》</div>
                     </div>
                     <div className="description">{rowData.Description}</div>
                     {rowData.Status === 0 && <div className="operation">
-                        <Button type="primary" onClick={()=>{onBorrow(rowData.Id)}} style={{width:'30%'}}>{localSetting("pages.bookList.borrow")}</Button>
+                        <Button type="primary" onClick={()=>{onBorrow(rowData.Id)}} style={{width:'30%'}}>{intl.formatMessage({id:`${intlString}borrow`})}</Button>
                     </div>}
                 </div>
             </div>
@@ -169,7 +155,7 @@ const bookList = (props) => {
         <div>
             <div className="booksComponent">
                 <div className="found">
-                    <div>{localSetting("pages.bookList.foundFrist")}<strong className="theme-color"> {currentData.length} </strong>{localSetting("pages.bookList.foundLast")}</div>
+                    <div>{intl.formatMessage({id:`${intlString}foundFrist`})}<strong className="theme-color"> {currentData.length} </strong>{intl.formatMessage({id:`${intlString}foundLast`})}</div>
                 </div>
                 <div className="container">
                     <ListView
@@ -182,11 +168,16 @@ const bookList = (props) => {
                     />  
                 </div>
             </div>
+            {/* 没有更多加载，显示提示信息 */}
+               {!hasMore && <Result
+                    message={intl.formatMessage({id:`${intlString}noMoreFound`})}
+                    style={{ backgroundColor: 'transparent' }}
+            />}
         </div>
     )
 }
 
 export default connect(({ BookListSpace, loading }) => ({
     bookListModel: BookListSpace,
-    queryBookListLoading: loading.effects['BookListSpace/query'],
+    loading: loading.effects['BookListSpace/query'],
 }))(bookList);

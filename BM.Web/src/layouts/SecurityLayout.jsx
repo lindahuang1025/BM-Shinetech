@@ -29,6 +29,7 @@ class SecurityLayout extends React.Component {
     const queryString = stringify({
       redirect: window.location.href,
     });
+    const commonUrlString = '/user/login';
 
     if ((!isLogin && loading) || !isReady) {
       return <PageLoading />;
@@ -37,11 +38,11 @@ class SecurityLayout extends React.Component {
     //如果没有登录的情况下，路由不为/user/login，都将跳转
     if (!isLogin) {
       let returnUrl ='';
-      if(window.location.pathname !== '/user/login'){
-        returnUrl = `/user/login?${queryString}`;
+      if(window.location.pathname !== `${commonUrlString}`){
+        returnUrl = `${commonUrlString}?${queryString}`;
       }
       if(window.location.pathname == '/'){
-        returnUrl = '/user/login';
+        returnUrl = `${commonUrlString}`;
       }
       return <Redirect to={returnUrl} />;
     }

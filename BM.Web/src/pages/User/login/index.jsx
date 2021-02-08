@@ -21,7 +21,8 @@ const LoginMessage = ({ content }) => (
 
 const Login = (props) => {
   const intl = useIntl();
-  const { loginModel = {}, loginLoading } = props;
+  const intlString = 'pages.login.';
+  const { loginModel = {}, loading } = props;
   const { status } = loginModel;
 
   const handleSubmit = (values) => {
@@ -38,7 +39,7 @@ const Login = (props) => {
         submitter={{
           render: (_, dom) => dom.pop(),
           submitButtonProps: {
-            loading: loginLoading,
+            loading: loading,
             size: 'large',
             style: {
               width: '100%',
@@ -50,9 +51,9 @@ const Login = (props) => {
           return Promise.resolve();
         }}
       >
-        {status < 0 && !loginLoading && (
+        {status < 0 && !loading && (
           <LoginMessage
-            content={intl.formatMessage({id:"pages.login.accountLogin.tab"})}
+            content={intl.formatMessage({id:`${intlString}accountLogin.tab`})}
           />
         )}
 
@@ -62,13 +63,13 @@ const Login = (props) => {
             size: 'large',
             prefix: <UserOutlined className={styles.prefixIcon} />,
           }}
-          placeholder={intl.formatMessage({id:"pages.login.username.required"})}
+          placeholder={intl.formatMessage({id:`${intlString}username.required`})}
           rules={[
             {
               required: true,
               message: (
                 <FormattedMessage
-                  id="pages.login.username.required"
+                  id={`${intlString}username.required`}
                 />
               ),
             },
@@ -85,7 +86,7 @@ const Login = (props) => {
               required: true,
               message: (
                 <FormattedMessage
-                  id="pages.login.password.required"
+                  id={`${intlString}password.required`}
                 />
               ),
             },
@@ -98,5 +99,5 @@ const Login = (props) => {
 
 export default connect(({ loginModel, loading }) => ({
   loginModel: loginModel,
-  loginLoading: loading.effects['login/login'],
+  loading: loading.effects['login/login'],
 }))(Login);

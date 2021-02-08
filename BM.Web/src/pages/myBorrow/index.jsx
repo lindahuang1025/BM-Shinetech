@@ -1,5 +1,5 @@
 import React from 'react';
-import './myBorrow.less';
+import './index.less';
 import { message } from 'antd';
 import { Toast, ListView, ActivityIndicator, Modal, Button} from 'antd-mobile';
 import { queryBorrowList} from '@/services/bookBorrow';

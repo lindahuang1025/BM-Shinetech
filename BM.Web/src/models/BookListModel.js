@@ -11,13 +11,13 @@ const Model = {
         * query({ payload }, { call, put }) {
             const response = yield call(queryBookList, payload);
             yield put({
-                type: 'setBookListReducer',
+                type: 'setBookListState',
                 payload: response,
             });
         }
     },
     reducers: {
-        setBookListReducer(state, { payload }) {
+        setBookListState(state, { payload }) {
             return {
                 ...state,
                 bookList: payload.Datas,

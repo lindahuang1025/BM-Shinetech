@@ -15,7 +15,7 @@ const Model = {
         * login({ payload }, { call, put }) {
             const response = yield call(AccountLogin, payload);
             yield put({
-                type: 'loginReducer',
+                type: 'loginState',
                 payload: response,
             });
             if (response && response.Status > -1) {
@@ -41,7 +41,7 @@ const Model = {
         },
     },
     reducers: {
-        loginReducer(state, { payload }) {
+        loginState(state, { payload }) {
             setAuthority('user');
             return {...state, status: payload.Status, message: payload.Message };
         },
