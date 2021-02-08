@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './BookList.less';
+import { PageLoading } from '@ant-design/pro-layout';
 import { message } from 'antd';
-import { ListView, Modal, ActivityIndicator, Button } from 'antd-mobile';
+import { ListView, Modal, Result, Button } from 'antd-mobile';
 import { borrowBook } from '@/services/bookBorrow';
 import { getStoredUser } from '@/utils/utils';
 import { connect, useIntl } from 'umi';
@@ -24,7 +25,7 @@ const bookList = (props) => {
     // 请求当前列表是否还有更多
     const [hasMore, setHasMore] = useState(true);
     // 是否正在请求当前列表
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     // 保存当前页数据，作用为 和请求下一页新数据进行合并
     const [currentData, setCurrentData] = useState([]);
     // 借书或者还书的触发
@@ -53,8 +54,9 @@ const bookList = (props) => {
         });
     }
 
-     // 从请求获取列表后的处理逻辑
+    // 从请求获取列表后的处理逻辑
     const logicByAfterGetData= ()=>{
+        clearListStatus();
         // 临时存储列表
         const dataList = bookList;
         // 当页面为1时，进行重置数据操作，否则进行追加数据操作
@@ -71,10 +73,9 @@ const bookList = (props) => {
              // 合并state中已有的数据和新增的数据
              var newDataArr = currentData.concat(dataList) //关键代码
              setDataSource(dataSource.cloneWithRows(newDataArr));
-             // 将loading的状态恢复至初始状态，好为下一次判断做准备
-             setIsLoading(false);
              // 更新当前数据
              setCurrentData(newDataArr);
+             clearListStatus();
         }
     }
 
@@ -88,17 +89,29 @@ const bookList = (props) => {
         setPageNo(pageNo + 1) ;
     }
 
+    // 恢复当前列表初始状态
+    const clearListStatus = () => {
+        // 将loading的状态恢复至初始状态，好为下一次判断做准备
+        setIsLoading(false);
+        setHasMore(true);
+    }
+
+    // 本地话语言配置
+    const localSetting = (idString) => {
+        return intl.formatMessage({id:idString});
+    }
+
     // 借阅操作
     const onBorrow = (id) => {
-        alert(intl.formatMessage({id:"pages.bookList.borrowConfirmPrompt"}), '', [
-            { text: intl.formatMessage({id:"pages.bookList.borrowConfirmCancel"}) },
-            { text: intl.formatMessage({id:"pages.bookList.borrowConfirm"}), onPress: async() => {
+        alert(localSetting("pages.bookList.borrowConfirmPrompt"), '', [
+            { text: localSetting("pages.bookList.borrowConfirmCancel") },
+            { text: localSetting("pages.bookList.borrowConfirm"), onPress: async() => {
                 const hide = message.loading(intl.formatMessage({id:"pages.bookList.borrowing"}));
                     try {
                         await borrowBook({ bookId:id, userId: user.UserId });
                         hide();
                         message.success({
-                            content: intl.formatMessage({id:"pages.bookList.borrowSuccessed"}),
+                            content: localSetting("pages.bookList.borrowSuccessed"),
                             style: {
                               marginTop: '5vh',
                             }
@@ -125,31 +138,38 @@ const bookList = (props) => {
         getlistData();
     }, [isRorrowOrReturnComplete]);
 
+    // 根据loading状态来调用公共的loading组件
+    useEffect(() => {
+        if (queryBookListLoading || isLoading) {
+            return <PageLoading />;
+        }
+    }, [queryBookListLoading,isLoading]);
+
     const row = (rowData, rowID) => {
-      // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
-          return <div key={rowID} className="book col-12 col-sm-6 col-lg-4">
-              <div className="book-content">
-                  <div className="book-main">
-                      <div className="book-main-top-status">
-                          {rowData.Status ===0? <div className="book-status-active">⬤ {intl.formatMessage({id:"pages.bookList.bookStatusActive"})} </div>:<div className="book-status-inactive">⬤ {intl.formatMessage({id:"pages.bookList.bookStatusInactive"})} </div>}
-                      </div>
-                      <div className="book-main-top">
-                         <div className="book-name">《{rowData.Title}》</div>
-                      </div>
-                      <div className="description">{rowData.Description}</div>
-                      {rowData.Status === 0 && <div className="operation">
-                          <Button type="primary" onClick={()=>{onBorrow(rowData.Id)}} style={{width:'30%'}}>{intl.formatMessage({id:"pages.bookList.borrow"})}</Button>
-                      </div>}
-                  </div>
-              </div>
-          </div>
+        // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
+        return <div key={rowID} className="book col-12 col-sm-6 col-lg-4">
+            <div className="book-content">
+                <div className="book-main">
+                    <div className="book-main-top-status">
+                        {rowData.Status ===0? <div className="book-status-active">⬤ {localSetting("pages.bookList.bookStatusActive")} </div>:<div className="book-status-inactive">⬤ {localSetting("pages.bookList.bookStatusInactive")} </div>}
+                    </div>
+                    <div className="book-main-top">
+                       <div className="book-name">《{rowData.Title}》</div>
+                    </div>
+                    <div className="description">{rowData.Description}</div>
+                    {rowData.Status === 0 && <div className="operation">
+                        <Button type="primary" onClick={()=>{onBorrow(rowData.Id)}} style={{width:'30%'}}>{localSetting("pages.bookList.borrow")}</Button>
+                    </div>}
+                </div>
+            </div>
+        </div>
     }
 
     return (
         <div>
             <div className="booksComponent">
                 <div className="found">
-                    <div>{intl.formatMessage({id:"pages.bookList.foundFrist"})}<strong className="theme-color"> {currentData.length} </strong>{intl.formatMessage({id:"pages.bookList.foundLast"})}</div>
+                    <div>{localSetting("pages.bookList.foundFrist")}<strong className="theme-color"> {currentData.length} </strong>{localSetting("pages.bookList.foundLast")}</div>
                 </div>
                 <div className="container">
                     <ListView
@@ -161,14 +181,6 @@ const bookList = (props) => {
                         scrollRenderAheadDistance={1500}
                     />  
                 </div>
-            </div>
-            {/* 加载列表时的loading */}
-            <div>
-                <ActivityIndicator
-                    toast
-                    text="Loading..."
-                    animating={queryBookListLoading}
-                />
             </div>
         </div>
     )

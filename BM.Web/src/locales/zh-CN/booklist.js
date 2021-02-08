@@ -9,5 +9,5 @@ export default {
     'pages.bookList.borrow': '借阅',
     'pages.bookList.foundFrist': '叮！找到',
     'pages.bookList.foundLast': '本藏书。',
-
+    'pages.bookList.noMoreFound': '没有更多藏书啦~',
 };
