@@ -20,7 +20,7 @@ const Model = {
         setBookListState(state, { payload }) {
             return {
                 ...state,
-                bookList: payload.Datas,
+                bookList: payload.Datas || [],
                 status: payload.Status,
                 message: payload.Message
             };

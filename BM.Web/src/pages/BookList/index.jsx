@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './index.less';
-import { PageLoading } from '@ant-design/pro-layout';
+import PageLoading from '@/components/PageLoading/index';
 import { message } from 'antd';
 import { ListView, Modal, Result, Button } from 'antd-mobile';
 import { borrowBook } from '@/services/bookBorrow';
@@ -31,7 +31,7 @@ const bookList = (props) => {
     // 借书或者还书的触发
     const [isRorrowOrReturnComplete, setIsRorrowOrReturnComplete] = useState(false);
     // 获取props数据
-    const { bookListModel = {},loading, dispatch } = props;
+    const { bookListModel = {}, loading, dispatch } = props;
     const { bookList } = bookListModel;
 
     useEffect(() => {
@@ -90,10 +90,10 @@ const bookList = (props) => {
     }
 
     // 借阅操作
-    const onBorrow = (id) => {
+    const onBorrowClicked  = (id) => {
         alert(intl.formatMessage({id:`${intlString}borrowConfirmPrompt`}), '', [
-            { text: intl.formatMessage({id:`${intlString}borrowConfirmCancel`}) },
-            { text: intl.formatMessage({id:`${intlString}borrowConfirm`}), onPress: async() => {
+            { text: intl.formatMessage({id:`${intlString}ConfirmCancel`}) },
+            { text: intl.formatMessage({id:`${intlString}Confirm`}), onPress: async() => {
                 const hide = message.loading(intl.formatMessage({id:`${intlString}borrowing`}));
                     try {
                         await borrowBook({ bookId:id, userId: user.UserId });
@@ -126,11 +126,6 @@ const bookList = (props) => {
         getlistData();
     }, [isRorrowOrReturnComplete]);
 
-    // 根据loading状态来调用公共的loading组件
-    useEffect(() => {
-        if(loading) return <PageLoading />;
-    }, [loading]);
-
     const row = (rowData, rowID) => {
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
         return <div key={rowID} className="book col-12 col-sm-6 col-lg-4">
@@ -144,7 +139,7 @@ const bookList = (props) => {
                     </div>
                     <div className="description">{rowData.Description}</div>
                     {rowData.Status === 0 && <div className="operation">
-                        <Button type="primary" onClick={()=>{onBorrow(rowData.Id)}} style={{width:'30%'}}>{intl.formatMessage({id:`${intlString}borrow`})}</Button>
+                        <Button type="primary" onClick={()=>{onBorrowClicked (rowData.Id)}} style={{width:'30%'}}>{intl.formatMessage({id:`${intlString}borrow`})}</Button>
                     </div>}
                 </div>
             </div>
@@ -155,7 +150,7 @@ const bookList = (props) => {
         <div>
             <div className="booksComponent">
                 <div className="found">
-                    <div>{intl.formatMessage({id:`${intlString}foundFrist`})}<strong className="theme-color"> {currentData.length} </strong>{intl.formatMessage({id:`${intlString}foundLast`})}</div>
+                    <div>{intl.formatMessage({id:`${intlString}borrowFoundFrist`})}<strong className="theme-color"> {currentData.length} </strong>{intl.formatMessage({id:`${intlString}borrowFoundLast`})}</div>
                 </div>
                 <div className="container">
                     <ListView
@@ -168,6 +163,7 @@ const bookList = (props) => {
                     />  
                 </div>
             </div>
+            {loading && <PageLoading />}
             {/* 没有更多加载，显示提示信息 */}
                {!hasMore && <Result
                     message={intl.formatMessage({id:`${intlString}noMoreFound`})}

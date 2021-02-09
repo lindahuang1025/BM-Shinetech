@@ -1,28 +1,33 @@
 import { queryBorrowList } from '@/services/bookBorrow';
 
 const Model = {
-    namespace: 'myBorrow',
+    namespace: 'MyBorrowSpace',
     state: {
-        state: null
+        borrowList: [],
+        status: undefined,
+        message: ''
     },
     effects: {
         * query({ payload }, { call, put }) {
             const response = yield call(queryBorrowList, payload);
             yield put({
-                type: 'setBookList',
+                type: 'setBorrowListState',
                 payload: response,
             });
-
-            console.log(response)
-                // if (response && response.Status === 0) {
-
-            // }
         }
     },
     reducers: {
-        setBookList(state, { payload }) {
-
-            return {...state, status: payload.Status, message: payload.Message };
+        setBorrowListState(state, { payload }) {
+            let list = [];
+            if (payload.Datas) {
+                list = payload.Datas.filter((item) => item.Status === 1);
+            }
+            return {
+                ...state,
+                borrowList: list,
+                status: payload.Status,
+                message: payload.Message
+            };
         },
     },
 };
