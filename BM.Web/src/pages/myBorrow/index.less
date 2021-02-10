@@ -4,123 +4,122 @@
     flex-wrap: wrap;
     height: 100%;
 
-.found{
-    width: 100%;
-    font-size: 25px;
-    font-family: "Gotham Rounded SSm A","Gotham Rounded SSm B";
-    font-weight: 700 !important;
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
-
-@media only screen and (max-width: 768px) {
     .found{
-        font-size: 15px;
-    }
-}
-
-@media only screen and (width: 320px) {
-    .found{
-        font-size: 12px;
-    }
-}
-
-.book-content{
-    cursor: pointer;
-    margin: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px 0 rgba(231, 215, 215, 0.1);
-    background-color: #ffffff;
-}
-
-.book-top{
-    border-radius: 10px 10px 0 0;
-    height: 125px;
-    background-size: cover;
-    background-position-y: 50%;
-}
-
-.book-name{
-    font-weight: 600;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-
-
-@media only screen and (min-width: 769px) {
-    .book-main{
-        min-height: 50px;
-    }
-    .book{
-        width: 300px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .book-main{
-        min-height: 50px;
+        width: 100%;
+        font-size: 25px;
+        font-family: "Gotham Rounded SSm A","Gotham Rounded SSm B";
+        font-weight: 700 !important;
+        margin-left: -10px;
     }
 
-    .book{
-        width: 100% !important;
+    @media only screen and (max-width: 768px) {
+        .found{
+            font-size: 15px;
+        }
     }
-}
 
-.book-main{
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    .date{
+    @media only screen and (width: 320px) {
+        .found{
+            font-size: 12px;
+        }
+    }
+
+    .book-content{
+        cursor: pointer;
+        margin: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 0 rgba(231, 215, 215, 0.1);
+        background-color: #ffffff;
+    }
+
+    .book-top{
+        border-radius: 10px 10px 0 0;
+        height: 125px;
+        background-size: cover;
+        background-position-y: 50%;
+    }
+
+    .book-name{
+        font-weight: 600;
         font-size: 16px;
-        padding-left: 10px;
+        margin-bottom: 20px;
     }
-    .operation{
-        margin-top: 10px;
+
+
+
+    @media only screen and (min-width: 769px) {
+        .book-main{
+            min-height: 50px;
+        }
+        .book{
+            width: 300px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .book-main{
+            min-height: 50px;
+        }
+
+        .book{
+            width: 100% !important;
+        }
+    }
+
+    .book-main{
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        .date{
+            font-size: 16px;
+            padding-left: 10px;
+        }
+        .operation{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content:space-between;
+        }
+    }
+
+    .book-main-top{
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content:space-between;
+        justify-content: flex-start;
     }
-}
 
-.book-main-top{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
+    .book-main-top-status{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
 
-.book-main-top-status{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
+    .book-status-active{
+        color:rgb(78, 161, 78);
+    }
 
-.book-status-active{
-    color:rgb(78, 161, 78);
-}
+    .book-status-inactive{
+        color: red;
+    }
 
-.book-status-inactive{
-    color: red;
-}
-
-.container {
-    height: 100%;
-}
+    .container {
+        height: 100%;
+    }
 
 
-.list-view-section-body{
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
+    .list-view-section-body{
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
 
-.am-list-body {
-    position: inherit;
-    background-color: transparent;
-    border-top: 0PX solid #ddd;
-    border-bottom: 0PX solid #ddd;
-}
+    .am-list-body {
+        position: inherit;
+        background-color: transparent;
+        border-top: 0PX solid #ddd;
+        border-bottom: 0PX solid #ddd;
+    }
 
 }

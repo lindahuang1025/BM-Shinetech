@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './index.less';
 import PageLoading from '@/components/PageLoading/index';
 import { message } from 'antd';
-import { ListView, Modal, Result, Button } from 'antd-mobile';
+import { ListView, PullToRefresh, Modal, Result, Button } from 'antd-mobile';
+import { CaretUpOutlined } from '@ant-design/icons';
+import { BackTop } from 'antd';
 import { returnBook } from '@/services/bookReturn';
 import { getStoredUser } from '@/utils/utils';
 import { connect, useIntl } from 'umi';
@@ -34,6 +36,8 @@ const borrowList = (props) => {
     // 获取props数据
     const { borrowListModel = {}, loading, dispatch } = props;
     const { borrowList } = borrowListModel;
+    //下拉刷新
+    const [refreshing, setRefreshing] = useState(false);
 
     useEffect(() => {
         getlistData();
@@ -118,6 +122,16 @@ const borrowList = (props) => {
         ])
     }
 
+    //下拉重新加载
+    const onRefresh = () => {
+        setRefreshing(true);
+        // simulate initial Ajax
+        setTimeout(() => {
+            getlistData();
+            setRefreshing(false);
+        }, 600);
+    };
+
     // 用户向下滑动和归还操作都会触发重新加载列表
     useEffect(() => {
         getlistData();
@@ -150,20 +164,29 @@ const borrowList = (props) => {
     return (
         <div>
             <div className="borrowComponent">
-                <div className="found">
-                    {currentData.length===0?<div>{intl.formatMessage({id:`${intlString}returnNotFound`})}</div>:<div>{intl.formatMessage({id:`${intlString}returnFoundFrist`})}<strong className="theme-color"> {currentData.length} </strong>{intl.formatMessage({id:`${intlString}returnFoundLast`})}</div>}
-                </div>
                 <div className="container">
                     <ListView
+                        renderHeader={() => <div className="found">
+                            {currentData.length===0?<div>{intl.formatMessage({id:`${intlString}returnNotFound`})}</div>:<div>{intl.formatMessage({id:`${intlString}returnFoundFrist`})}<strong className="theme-color"> {currentData.length} </strong>{intl.formatMessage({id:`${intlString}returnFoundLast`})}</div>}
+                        </div>}
                         dataSource={dataSource}
                         renderRow={row}
                         useBodyScroll={true}
                         onEndReachedThreshold={5}
                         onEndReached={onEndReached}
                         scrollRenderAheadDistance={1500}
+                        pullToRefresh={<PullToRefresh
+                            refreshing={refreshing}
+                            onRefresh={onRefresh}
+                        />}
                     />  
                 </div>
             </div>
+             {/* 回到顶部 */}
+             <BackTop>
+                <div className="global_backTop"><CaretUpOutlined className="global_backTop_icon"/></div>
+            </BackTop>
+            {/* 出现加载图标 */}
             {loading && <PageLoading />}
             {/* 没有更多加载，显示提示信息 */}
                {!hasMore && <Result

@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './index.less';
 import PageLoading from '@/components/PageLoading/index';
 import { message } from 'antd';
-import { ListView, Modal, Result, Button } from 'antd-mobile';
+import { ListView, PullToRefresh, Modal, Result, Button } from 'antd-mobile';
+import { CaretUpOutlined } from '@ant-design/icons';
+import { BackTop } from 'antd';
 import { borrowBook } from '@/services/bookBorrow';
 import { getStoredUser } from '@/utils/utils';
 import { connect, useIntl } from 'umi';
@@ -33,6 +35,8 @@ const bookList = (props) => {
     // 获取props数据
     const { bookListModel = {}, loading, dispatch } = props;
     const { bookList } = bookListModel;
+    //下拉刷新
+    const [refreshing, setRefreshing] = useState(false);
 
     useEffect(() => {
         getlistData();
@@ -116,6 +120,16 @@ const bookList = (props) => {
         ])
     }
 
+    //下拉重新加载
+    const onRefresh = () => {
+        setRefreshing(true);
+        // simulate initial Ajax
+        setTimeout(() => {
+            getlistData();
+            setRefreshing(false);
+        }, 600);
+    };
+
     // 用户向下滑动和借阅操作都会触发重新加载列表
     useEffect(() => {
         getlistData();
@@ -149,20 +163,29 @@ const bookList = (props) => {
     return (
         <div>
             <div className="booksComponent">
-                <div className="found">
-                    <div>{intl.formatMessage({id:`${intlString}borrowFoundFrist`})}<strong className="theme-color"> {currentData.length} </strong>{intl.formatMessage({id:`${intlString}borrowFoundLast`})}</div>
-                </div>
                 <div className="container">
                     <ListView
+                        renderHeader={() => <div className="found">
+                            <div>{intl.formatMessage({id:`${intlString}borrowFoundFrist`})}<strong className="theme-color"> {currentData.length} </strong>{intl.formatMessage({id:`${intlString}borrowFoundLast`})}</div>
+                        </div>}
                         dataSource={dataSource}
                         renderRow={row}
                         useBodyScroll={true}
                         onEndReachedThreshold={5}
                         onEndReached={onEndReached}
                         scrollRenderAheadDistance={1500}
+                        pullToRefresh={<PullToRefresh
+                            refreshing={refreshing}
+                            onRefresh={onRefresh}
+                        />}
                     />  
                 </div>
             </div>
+            {/* 回到顶部 */}
+            <BackTop>
+                <div className="global_backTop"><CaretUpOutlined className="global_backTop_icon"/></div>
+            </BackTop>
+            {/* 出现加载图标 */}
             {loading && <PageLoading />}
             {/* 没有更多加载，显示提示信息 */}
                {!hasMore && <Result
