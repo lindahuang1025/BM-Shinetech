@@ -40,6 +40,9 @@ const menuDataRender = (menuList) =>
 const defaultFooterDom = (
   <DefaultFooter
     copyright={`2020 Shinetech Software`}
+    links={
+      [{}]
+    }
   />
 );
 

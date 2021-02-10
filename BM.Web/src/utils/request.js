@@ -2,6 +2,7 @@ import { extend } from 'umi-request';
 import { notification } from 'antd';
 import { getToken, getStoredUser } from '@/utils/utils';
 import { getDvaApp } from 'umi';
+import { Toast } from 'antd-mobile';
 
 const user = getStoredUser();
 
@@ -25,6 +26,7 @@ const codeMessage = {
 };
 
 const errorHandler = (error) => {
+    Toast.hide();
     const { response } = error;
 
     if (response && response.status) {
@@ -67,9 +69,13 @@ const request = extend({
     }
 });
 
+request.interceptors.request.use(() => {
+    Toast.loading('看官稍安勿躁', 60);
+});
+
 //统一处理status不为正常的状态，例如 > 0 的状态
 request.interceptors.response.use(async(response, options) => {
-    console.log()
+    Toast.hide();
     let result;
     //获取当前请求后端返回的response
     const data = await response.clone().json();

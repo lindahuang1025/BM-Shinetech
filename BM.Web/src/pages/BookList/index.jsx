@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './index.less';
-import PageLoading from '@/components/PageLoading/index';
 import { message } from 'antd';
 import { ListView, PullToRefresh, Modal, Result, Button } from 'antd-mobile';
-import { CaretUpOutlined } from '@ant-design/icons';
+import { ArrowUpOutlined } from '@ant-design/icons';
 import { BackTop } from 'antd';
 import { borrowBook } from '@/services/bookBorrow';
 import { getStoredUser } from '@/utils/utils';
@@ -183,10 +182,8 @@ const bookList = (props) => {
             </div>
             {/* 回到顶部 */}
             <BackTop>
-                <div className="global_backTop"><CaretUpOutlined className="global_backTop_icon"/></div>
+                <div className="global_backTop"><ArrowUpOutlined className="global_backTop_icon"/></div>
             </BackTop>
-            {/* 出现加载图标 */}
-            {loading && <PageLoading />}
             {/* 没有更多加载，显示提示信息 */}
                {!hasMore && <Result
                     message={intl.formatMessage({id:`${intlString}noMoreFound`})}
