@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './index.less';
 import { message } from 'antd';
-import { ListView, PullToRefresh, Modal, Result, Button } from 'antd-mobile';
+import { ListView, PullToRefresh, Modal, Result, Button, SearchBar } from 'antd-mobile';
 import { ArrowUpOutlined } from '@ant-design/icons';
 import { BackTop } from 'antd';
 import { borrowBook } from '@/services/bookBorrow';
 import { getStoredUser } from '@/utils/utils';
-import { connect, useIntl } from 'umi';
+import { connect, useIntl, history } from 'umi';
 
 const bookList = (props) => {
     // 本地化语言设置
@@ -17,7 +17,7 @@ const bookList = (props) => {
     // 订阅弹出框
     const {alert} = Modal;
     // 搜索关键字
-    const [keyword] = useState("");
+    const [keyword, setKeyword] = useState("");
     // listview data
     let defaultDataSource = new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2 // rowHasChanged(prevRowData, nextRowData); 用其进行数据变更的比较
@@ -38,7 +38,12 @@ const bookList = (props) => {
     const [refreshing, setRefreshing] = useState(false);
 
     useEffect(() => {
-        getlistData();
+        const word = props.history.location.state?.keyword || '';
+        if(word) {
+            setKeyword(word);
+        }else{
+            getlistData();
+        }
     }, []);
 
     useEffect(() => {
@@ -129,10 +134,22 @@ const bookList = (props) => {
         }, 600);
     };
 
+    // 触发搜索页面
+    const onSearchFocused = () => {
+        history.push({
+            pathname: '/search'
+        })
+    }
+
+    // 取消搜索
+    const onSearchCancel= () => {
+        setKeyword('')
+    }
+
     // 用户向下滑动和借阅操作都会触发重新加载列表
     useEffect(() => {
         getlistData();
-    }, [pageNo]);
+    }, [pageNo,keyword]);
 
     // 特殊情况，借阅成功后，是通过页码改变来刷新列表，但是如果当前用户就在第一页，那么就不会触发刷新，所以新加了isRorrowOrReturnComplete字段来监控
     useEffect(() => {
@@ -163,10 +180,13 @@ const bookList = (props) => {
         <div>
             <div className="booksComponent">
                 <div className="container">
+                    <SearchBar 
+                        placeholder={intl.formatMessage({id:'pages.list.searchPlaceholoder'})}
+                        onFocus={() => onSearchFocused()}
+                        onCancel={() => onSearchCancel()}
+                        value={keyword}
+                    />
                     <ListView
-                        renderHeader={() => <div className="found">
-                            <div>{intl.formatMessage({id:`${intlString}borrowFoundFrist`})}<strong className="theme-color"> {currentData.length} </strong>{intl.formatMessage({id:`${intlString}borrowFoundLast`})}</div>
-                        </div>}
                         dataSource={dataSource}
                         renderRow={row}
                         useBodyScroll={true}

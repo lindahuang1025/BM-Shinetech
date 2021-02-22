@@ -51,6 +51,10 @@ export default [{
                         component: './MyBorrow',
                     },
                     {
+                        path: '/search',
+                        component: './SeachPage',
+                    },
+                    {
                         component: './404',
                     },
                 ],
