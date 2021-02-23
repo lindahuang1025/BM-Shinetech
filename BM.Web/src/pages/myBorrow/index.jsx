@@ -30,8 +30,6 @@ const borrowList = (props) => {
     const [hasMore, setHasMore] = useState(true);
     // 保存当前页数据，作用为 和请求下一页新数据进行合并
     const [currentData, setCurrentData] = useState([]);
-    // 借书或者还书的触发
-    const [isRorrowOrReturnComplete, setIsRorrowOrReturnComplete] = useState(false);
     // 获取props数据
     const { borrowListModel = {}, loading, dispatch } = props;
     const { borrowList } = borrowListModel;
@@ -110,10 +108,8 @@ const borrowList = (props) => {
                             }
                         });
                         // 当归还成功后触发更新列表
-                        // 会设置页码为1触发更新
                         setPageNo(1);
-                        // 如果恰好正在首页，则启用备用字段进行触发更新
-                        if(pageNo === 1) setIsRorrowOrReturnComplete(!isRorrowOrReturnComplete);
+                        getlistData();
                     } catch (error) {
                         message.error(error.Message);
                     }
@@ -135,11 +131,6 @@ const borrowList = (props) => {
     useEffect(() => {
         getlistData();
     }, [pageNo]);
-
-    // 特殊情况，归还成功后，是通过页码改变来刷新列表，但是如果当前用户就在第一页，那么就不会触发刷新，所以新加了isRorrowOrReturnComplete字段来监控
-    useEffect(() => {
-        getlistData();
-    }, [isRorrowOrReturnComplete]);
 
     const row = (rowData, rowID) => {
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
@@ -166,7 +157,7 @@ const borrowList = (props) => {
                 <div className="container">
                     <ListView
                         renderHeader={() => <div className="found">
-                            {currentData.length===0?<div>{intl.formatMessage({id:`${intlString}returnNotFound`})}</div>:<div>{intl.formatMessage({id:`${intlString}returnFoundFrist`})}<strong className="theme-color"> {currentData.length} </strong>{intl.formatMessage({id:`${intlString}returnFoundLast`})}</div>}
+                            {currentData.length===0 && <div>{intl.formatMessage({id:`${intlString}returnNotFound`})}</div>}
                         </div>}
                         dataSource={dataSource}
                         renderRow={row}

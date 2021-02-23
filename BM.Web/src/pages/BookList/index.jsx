@@ -17,7 +17,7 @@ const bookList = (props) => {
     // 订阅弹出框
     const {alert} = Modal;
     // 搜索关键字
-    const [keyword, setKeyword] = useState("");
+    const [keyword, setKeyword] = useState('');
     // listview data
     let defaultDataSource = new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2 // rowHasChanged(prevRowData, nextRowData); 用其进行数据变更的比较
@@ -29,8 +29,6 @@ const bookList = (props) => {
     const [hasMore, setHasMore] = useState(true);
     // 保存当前页数据，作用为 和请求下一页新数据进行合并
     const [currentData, setCurrentData] = useState([]);
-    // 借书或者还书的触发
-    const [isRorrowOrReturnComplete, setIsRorrowOrReturnComplete] = useState(false);
     // 获取props数据
     const { bookListModel = {}, loading, dispatch } = props;
     const { bookList } = bookListModel;
@@ -38,11 +36,11 @@ const bookList = (props) => {
     const [refreshing, setRefreshing] = useState(false);
 
     useEffect(() => {
+        setKeyword('');
+        console.log(props.history.location.state?.keyword)
         const word = props.history.location.state?.keyword || '';
         if(word) {
             setKeyword(word);
-        }else{
-            getlistData();
         }
     }, []);
 
@@ -113,10 +111,8 @@ const bookList = (props) => {
                             }
                         });
                         // 当借阅成功后触发更新列表
-                        // 会设置页码为1触发更新
                         setPageNo(1);
-                        // 如果恰好正在首页，则启用备用字段进行触发更新
-                        if(pageNo === 1) setIsRorrowOrReturnComplete(!isRorrowOrReturnComplete);
+                        getlistData();
                     } catch (error) {
                         message.error(error.Message);
                     }
@@ -150,11 +146,6 @@ const bookList = (props) => {
     useEffect(() => {
         getlistData();
     }, [pageNo,keyword]);
-
-    // 特殊情况，借阅成功后，是通过页码改变来刷新列表，但是如果当前用户就在第一页，那么就不会触发刷新，所以新加了isRorrowOrReturnComplete字段来监控
-    useEffect(() => {
-        getlistData();
-    }, [isRorrowOrReturnComplete]);
 
     const row = (rowData, rowID) => {
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
