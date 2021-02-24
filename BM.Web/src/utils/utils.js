@@ -35,7 +35,8 @@ export const getStoredUser = () => {
         return {
             UserId: 0,
             UserName: '',
-            RoleId: 0
+            UserRole: 0,
+            RoleName: ''
         };
     }
 }
