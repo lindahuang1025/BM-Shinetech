@@ -152,14 +152,19 @@ const bookList = (props) => {
         return <div key={rowID} className="book col-12 col-sm-6 col-lg-4">
             <div className="book-content">
                 <div className="book-main">
-                    <div className="book-main-top-status">
-                        {rowData.Status ===0? <div className="book-status-active">⬤ {intl.formatMessage({id:`${intlString}bookStatusActive`})} </div>:<div className="book-status-inactive">⬤ {intl.formatMessage({id:`${intlString}bookStatusInactive`})} </div>}
-                    </div>
                     <div className="book-main-top">
                         <div className="book-default-bg" style={rowData.ImageUrl ? { backgroundImage: "url('" + rowData.ImageUrl + "')" } : { backgroundImage: "url(" + require('../assets/defaultBg.jpg') + ")" }}>
                             <div className="deliveryFee">{(rowData.deliveryFee === 0 || rowData.deliveryFee === null) && "Free delivery"}</div>
                         </div>
-                       <div className="book-name">《{rowData.Title}》</div>
+                        <div className="book-main-top-right global-flex-column">
+                            <div className="global-flex-row global-flex-row-between">
+                                <div className="book-name">《{rowData.Title}》</div>
+                                <div className="book-main-top-status">
+                                    {rowData.Status ===0? <div className="book-status-active">⬤</div>:<div className="book-status-inactive">⬤</div>}
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
                     </div>
                     {/* <div className="description">{rowData.Description}</div>
                     {rowData.Status === 0 && <div className="operation">
