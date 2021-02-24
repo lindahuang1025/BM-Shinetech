@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './index.less';
+import './BookList.less';
 import { message } from 'antd';
 import { ListView, PullToRefresh, Modal, Result, Button, SearchBar } from 'antd-mobile';
 import { ArrowUpOutlined } from '@ant-design/icons';
@@ -156,7 +156,7 @@ const bookList = (props) => {
                         {rowData.Status ===0? <div className="book-status-active">⬤ {intl.formatMessage({id:`${intlString}bookStatusActive`})} </div>:<div className="book-status-inactive">⬤ {intl.formatMessage({id:`${intlString}bookStatusInactive`})} </div>}
                     </div>
                     <div className="book-main-top">
-                        <div className="book-default-bg" style={rowData.ImageUrl ? { backgroundImage: "url('" + rowData.ImageUrl + "')" } : { backgroundImage: "url(" + require('../../assets/defaultBg.jpg') + ")" }}>
+                        <div className="book-default-bg" style={rowData.ImageUrl ? { backgroundImage: "url('" + rowData.ImageUrl + "')" } : { backgroundImage: "url(" + require('../assets/defaultBg.jpg') + ")" }}>
                             <div className="deliveryFee">{(rowData.deliveryFee === 0 || rowData.deliveryFee === null) && "Free delivery"}</div>
                         </div>
                        <div className="book-name">《{rowData.Title}》</div>

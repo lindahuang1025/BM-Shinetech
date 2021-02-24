@@ -6,7 +6,7 @@ import { Alert } from 'antd';
 import React from 'react';
 import ProForm, { ProFormText } from '@ant-design/pro-form';
 import { connect, FormattedMessage, useIntl } from 'umi';
-import styles from './index.less';
+import styles from './Login.less';
 
 const LoginMessage = ({ content }) => (
   <Alert

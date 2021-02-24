@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './index.less';
+import './MyBorrow.less';
 import { message } from 'antd';
 import { ListView, PullToRefresh, Modal, Result, Button } from 'antd-mobile';
 import { ArrowUpOutlined } from '@ant-design/icons';

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './index.less';
+import './SeachPage.less';
 import { SearchBar } from 'antd-mobile';
 import { useIntl, history } from 'umi';
 

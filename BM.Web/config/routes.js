@@ -4,7 +4,7 @@ export default [{
         routes: [{
             name: 'login',
             path: '/User/login',
-            component: './User/login',
+            component: './User/login/Login',
         }, ],
     },
     {
@@ -42,17 +42,17 @@ export default [{
                         name: 'list.book-list',
                         icon: 'table',
                         path: '/list',
-                        component: './BookList',
+                        component: './BookList.jsx',
                     },
                     {
                         name: 'list.myBorrow',
                         icon: 'crown',
                         path: '/borrow',
-                        component: './MyBorrow',
+                        component: './MyBorrow.jsx',
                     },
                     {
                         path: '/search',
-                        component: './SeachPage',
+                        component: './SearchPage.jsx',
                     },
                     {
                         component: './404',
