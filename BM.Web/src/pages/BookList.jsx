@@ -142,6 +142,16 @@ const bookList = (props) => {
         setKeyword('')
     }
 
+    // 跳转详情页面
+    const goBookDetail = (item) => {
+        history.push({
+            pathname: '/bookDetail',
+            state:{
+                bookInfo:item
+            }
+        })
+    }
+
     // 用户向下滑动和借阅操作都会触发重新加载列表
     useEffect(() => {
         getlistData();
@@ -149,12 +159,11 @@ const bookList = (props) => {
 
     const row = (rowData, rowID) => {
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
-        return <div key={rowID} className="book col-12 col-sm-6 col-lg-4">
+        return <div key={rowID} className="book col-12 col-sm-6 col-lg-4" onClick={()=>{goBookDetail(rowData)}}>
             <div className="book-content">
                 <div className="book-main">
                     <div className="book-main-top">
                         <div className="book-default-bg" style={rowData.ImageUrl ? { backgroundImage: "url('" + rowData.ImageUrl + "')" } : { backgroundImage: "url(" + require('../assets/defaultBg.jpg') + ")" }}>
-                            <div className="deliveryFee">{(rowData.deliveryFee === 0 || rowData.deliveryFee === null) && "Free delivery"}</div>
                         </div>
                         <div className="book-main-top-right global-flex-column">
                             <div className="global-flex-row global-flex-row-between">

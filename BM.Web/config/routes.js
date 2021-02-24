@@ -55,6 +55,10 @@ export default [{
                         component: './SearchPage.jsx',
                     },
                     {
+                        path: '/bookDetail',
+                        component: './BookDetail.jsx',
+                    },
+                    {
                         component: './404',
                     },
                 ],
