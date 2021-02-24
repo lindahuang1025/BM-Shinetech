@@ -156,12 +156,15 @@ const bookList = (props) => {
                         {rowData.Status ===0? <div className="book-status-active">⬤ {intl.formatMessage({id:`${intlString}bookStatusActive`})} </div>:<div className="book-status-inactive">⬤ {intl.formatMessage({id:`${intlString}bookStatusInactive`})} </div>}
                     </div>
                     <div className="book-main-top">
+                        <div className="book-default-bg" style={rowData.ImageUrl ? { backgroundImage: "url('" + rowData.ImageUrl + "')" } : { backgroundImage: "url(" + require('../../assets/defaultBg.jpg') + ")" }}>
+                            <div className="deliveryFee">{(rowData.deliveryFee === 0 || rowData.deliveryFee === null) && "Free delivery"}</div>
+                        </div>
                        <div className="book-name">《{rowData.Title}》</div>
                     </div>
-                    <div className="description">{rowData.Description}</div>
+                    {/* <div className="description">{rowData.Description}</div>
                     {rowData.Status === 0 && <div className="operation">
                         <Button type="primary" onClick={()=>{onBorrowClicked (rowData.Id)}} style={{width:'30%'}}>{intl.formatMessage({id:`${intlString}borrow`})}</Button>
-                    </div>}
+                    </div>} */}
                 </div>
             </div>
         </div>
