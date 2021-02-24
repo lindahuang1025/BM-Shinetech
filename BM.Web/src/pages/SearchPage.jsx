@@ -43,13 +43,13 @@ const searchPageList = (props) => {
     return (
         <div>
             <div className="searchPageComponent">
-                <SearchBar 
+                <SearchBar
                     placeholder={intl.formatMessage({id:'pages.list.searchPlaceholoder'})}
                     value={keyword}
                     onCancel={() => onSearchCancel()}
                     onSubmit={value => onSearchSubmit(value)}
                     onChange={value => onSearchChanged(value)}
-                    maxLength={20} 
+                    maxLength={20}
                     ref={inputRef}
                 />
             </div>

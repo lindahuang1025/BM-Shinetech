@@ -65,7 +65,7 @@ const request = extend({
         Authorization: `Bearer ${getToken()}`,
         UserId: user.UserId,
         UserName: user.UserName,
-        UserRole: user.RoleId
+        UserRole: user.UserRole
     }
 });
 

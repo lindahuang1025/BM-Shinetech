@@ -7,7 +7,7 @@ const proSettings = {
     fixedHeader: true,
     fixSiderbar: true,
     colorWeak: false,
-    title: 'BM',
+    title: 'IBS',
     pwa: false,
     iconfontUrl: '',
 };
