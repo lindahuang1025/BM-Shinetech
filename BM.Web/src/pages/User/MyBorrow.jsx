@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './BookList.less';
+import './MyBorrow.less';
 import { message } from 'antd';
-import { ListView, PullToRefresh, Modal, Result, Button, SearchBar } from 'antd-mobile';
+import { ListView, PullToRefresh, Modal, Result, Button } from 'antd-mobile';
 import { ArrowUpOutlined } from '@ant-design/icons';
 import { BackTop } from 'antd';
-import { borrowBook } from '@/services/bookBorrow';
+import { returnBook } from '@/services/bookReturn';
 import { getStoredUser } from '@/utils/utils';
-import { connect, useIntl, history } from 'umi';
+import { connect, useIntl } from 'umi';
+import moment from 'moment'
 
-const bookList = (props) => {
+const borrowList = (props) => {
     // 本地化语言设置
     const intl = useIntl();
     const intlString = 'pages.bookList.';
@@ -17,7 +18,7 @@ const bookList = (props) => {
     // 订阅弹出框
     const {alert} = Modal;
     // 搜索关键字
-    const [keyword, setKeyword] = useState('');
+    const [keyword] = useState("");
     // listview data
     let defaultDataSource = new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2 // rowHasChanged(prevRowData, nextRowData); 用其进行数据变更的比较
@@ -30,32 +31,28 @@ const bookList = (props) => {
     // 保存当前页数据，作用为 和请求下一页新数据进行合并
     const [currentData, setCurrentData] = useState([]);
     // 获取props数据
-    const { bookListModel = {}, loading, dispatch } = props;
-    const { bookList } = bookListModel;
+    const { borrowListModel = {}, loading, dispatch } = props;
+    const { borrowList } = borrowListModel;
     //下拉刷新
     const [refreshing, setRefreshing] = useState(false);
 
     useEffect(() => {
-        setKeyword('');
-        console.log(props.history.location.state?.keyword)
-        const word = props.history.location.state?.keyword || '';
-        if(word) {
-            setKeyword(word);
-        }
+        getlistData();
     }, []);
 
     useEffect(() => {
         logicByAfterGetData();
-    }, [bookList]);
+    }, [borrowList]);
 
     // 获取列表
     const getlistData = ()=>{
         dispatch({
-            type: 'BookListSpace/query',
+            type: 'MyBorrowSpace/query',
             payload: {
-                keyword:keyword,
-                pageIndex:pageNo,
-                pageSize:pageSize
+                keyword:keyword, 
+                pageIndex:pageNo, 
+                pageSize:pageSize, 
+                userId:user.UserId
               }
         });
     }
@@ -65,7 +62,7 @@ const bookList = (props) => {
         // 将loading的状态恢复至初始状态，好为下一次判断做准备
         setHasMore(true);
         // 临时存储列表
-        const dataList = bookList;
+        const dataList = borrowList;
         // 当页面为1时，进行重置数据操作，否则进行追加数据操作
         if(pageNo === 1){
              setCurrentData(dataList);
@@ -95,22 +92,22 @@ const bookList = (props) => {
         setPageNo(pageNo + 1) ;
     }
 
-    // 借阅操作
-    const onBorrowClicked  = (id) => {
-        alert(intl.formatMessage({id:`${intlString}borrowConfirmPrompt`}), '', [
+    // 归还操作
+    const onReturnClicked = (id) => {
+        alert(intl.formatMessage({id:`${intlString}returnConfirmPrompt`}), '', [
             { text: intl.formatMessage({id:`${intlString}ConfirmCancel`}) },
             { text: intl.formatMessage({id:`${intlString}Confirm`}), onPress: async() => {
-                const hide = message.loading(intl.formatMessage({id:`${intlString}borrowing`}));
+                const hide = message.loading(intl.formatMessage({id:`${intlString}returning`}));
                     try {
-                        await borrowBook({ bookId:id, userId: user.UserId });
+                        await returnBook({ bookId:id, userId: user.UserId });
                         hide();
                         message.success({
-                            content: intl.formatMessage({id:`${intlString}borrowSuccessed`}),
+                            content: intl.formatMessage({id:`${intlString}returnSuccessed`}),
                             style: {
                               marginTop: '5vh',
                             }
                         });
-                        // 当借阅成功后触发更新列表
+                        // 当归还成功后触发更新列表
                         setPageNo(1);
                         getlistData();
                     } catch (error) {
@@ -130,56 +127,25 @@ const bookList = (props) => {
         }, 600);
     };
 
-    // 触发搜索页面
-    const onSearchFocused = () => {
-        history.push({
-            pathname: '/search'
-        })
-    }
-
-    // 取消搜索
-    const onSearchCancel= () => {
-        setKeyword('')
-    }
-
-    // 跳转详情页面
-    const goBookDetail = (item) => {
-        history.push({
-            pathname: '/bookDetail',
-            state:{
-                bookInfo:item
-            }
-        })
-    }
-
-    // 用户向下滑动和借阅操作都会触发重新加载列表
+    // 用户向下滑动和归还操作都会触发重新加载列表
     useEffect(() => {
         getlistData();
-    }, [pageNo,keyword]);
+    }, [pageNo]);
 
-    const row = (rowData, rowID) => {
-      console.log("rowId: ", rowID);
+    const row = (rowData, sectionID , rowID) => {
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
-        return <div key={rowID} className="book col-12 col-sm-6 col-lg-4" onClick={()=>{goBookDetail(rowData)}}>
+        return <div key={rowID} className="book col-12 col-sm-6 col-lg-4">
             <div className="book-content">
                 <div className="book-main">
                     <div className="book-main-top">
-                        <div className="book-default-bg" style={rowData.ImageUrl ? { backgroundImage: "url('" + rowData.ImageUrl + "')" } : { backgroundImage: "url(" + require('../assets/defaultBg.jpg') + ")" }}>
-                        </div>
-                        <div className="book-main-top-right global-flex-column">
-                            <div className="global-flex-row global-flex-row-between">
-                                <div className="book-name">《{rowData.Title}》</div>
-                                <div className="book-main-top-status">
-                                    {rowData.Status ===0? <div className="book-status-active">⬤</div>:<div className="book-status-inactive">⬤</div>}
-                                </div>
-                            </div>
-                            <div></div>
-                        </div>
+                    <div className="book-name">《{rowData.Title}》</div>
                     </div>
-                    {/* <div className="description">{rowData.Description}</div>
-                    {rowData.Status === 0 && <div className="operation">
-                        <Button type="primary" onClick={()=>{onBorrowClicked (rowData.Id)}} style={{width:'30%'}}>{intl.formatMessage({id:`${intlString}borrow`})}</Button>
-                    </div>} */}
+                    <div className="operation">
+                        <div className="global-flex-column">
+                            <div className="date">{intl.formatMessage({id:`${intlString}borrowDate`})}{moment(rowData.BorrowDate).format('YYYY MM-DD')}</div>
+                        </div>
+                        <Button type="primary" onClick={()=>{onReturnClicked(rowData.Id)}} style={{width:'30%'}}>{intl.formatMessage({id:`${intlString}return`})}</Button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -187,15 +153,12 @@ const bookList = (props) => {
 
     return (
         <div>
-            <div className="booksComponent">
+            <div className="borrowComponent">
                 <div className="container">
-                    <SearchBar
-                        placeholder={intl.formatMessage({id:'pages.list.searchPlaceholoder'})}
-                        onFocus={() => onSearchFocused()}
-                        onCancel={() => onSearchCancel()}
-                        value={keyword}
-                    />
                     <ListView
+                        renderHeader={() => <div className="found">
+                            {currentData.length===0 && <div>{intl.formatMessage({id:`${intlString}returnNotFound`})}</div>}
+                        </div>}
                         dataSource={dataSource}
                         renderRow={row}
                         useBodyScroll={true}
@@ -206,11 +169,11 @@ const bookList = (props) => {
                             refreshing={refreshing}
                             onRefresh={onRefresh}
                         />}
-                    />
+                    />  
                 </div>
             </div>
-            {/* 回到顶部 */}
-            <BackTop>
+             {/* 回到顶部 */}
+             <BackTop>
                 <div className="global_backTop"><ArrowUpOutlined className="global_backTop_icon"/></div>
             </BackTop>
             {/* 没有更多加载，显示提示信息 */}
@@ -222,7 +185,7 @@ const bookList = (props) => {
     )
 }
 
-export default connect(({ BookListSpace, loading }) => ({
-    bookListModel: BookListSpace,
-    loading: loading.effects['BookListSpace/query'],
-}))(bookList);
+export default connect(({ MyBorrowSpace, loading }) => ({
+    borrowListModel: MyBorrowSpace,
+    loading: loading.effects['MyBorrowSpace/query'],
+}))(borrowList);

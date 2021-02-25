@@ -19,12 +19,6 @@ export default [{
                         redirect: '/list',
                     },
                     // {
-                    //     path: '/welcome',
-                    //     name: 'welcome',
-                    //     icon: 'smile',
-                    //     component: './Welcome',
-                    // },
-                    // {
                     //     path: '/admin',
                     //     name: 'admin',
                     //     icon: 'crown',
@@ -42,21 +36,21 @@ export default [{
                         name: 'list.book-list',
                         icon: 'table',
                         path: '/list',
-                        component: './BookList.jsx',
+                        component: './User/BookList.jsx',
                     },
                     {
                         name: 'list.myBorrow',
                         icon: 'crown',
                         path: '/borrow',
-                        component: './MyBorrow.jsx',
+                        component: './User/MyBorrow.jsx',
                     },
                     {
                         path: '/search',
-                        component: './SearchPage.jsx',
+                        component: './User/SearchPage.jsx',
                     },
                     {
                         path: '/bookDetail',
-                        component: './BookDetail.jsx',
+                        component: './User/BookDetail.jsx',
                     },
                     {
                         component: './404',
