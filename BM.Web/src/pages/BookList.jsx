@@ -53,8 +53,8 @@ const bookList = (props) => {
         dispatch({
             type: 'BookListSpace/query',
             payload: {
-                keyword:keyword, 
-                pageIndex:pageNo, 
+                keyword:keyword,
+                pageIndex:pageNo,
                 pageSize:pageSize
               }
         });
@@ -158,6 +158,7 @@ const bookList = (props) => {
     }, [pageNo,keyword]);
 
     const row = (rowData, rowID) => {
+      console.log("rowId: ", rowID);
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
         return <div key={rowID} className="book col-12 col-sm-6 col-lg-4" onClick={()=>{goBookDetail(rowData)}}>
             <div className="book-content">
@@ -188,7 +189,7 @@ const bookList = (props) => {
         <div>
             <div className="booksComponent">
                 <div className="container">
-                    <SearchBar 
+                    <SearchBar
                         placeholder={intl.formatMessage({id:'pages.list.searchPlaceholoder'})}
                         onFocus={() => onSearchFocused()}
                         onCancel={() => onSearchCancel()}
@@ -205,7 +206,7 @@ const bookList = (props) => {
                             refreshing={refreshing}
                             onRefresh={onRefresh}
                         />}
-                    />  
+                    />
                 </div>
             </div>
             {/* 回到顶部 */}
