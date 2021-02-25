@@ -1,92 +1,27 @@
 .booksComponent{
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    height: 100%;
-
-    .book-content{
-        cursor: pointer;
-        margin: 3px 15px;
-        border-radius: 10px;
-        box-shadow: 0 0 20px 0 rgba(51,51,51,.1);
-        background-color: #ffffff;
-    }
-
-    .book-top{
-        border-radius: 10px 10px 0 0;
-        height: 125px;
-        background-size: cover;
-        background-position-y: 50%;
+    .bookDefaultImg{
+        border-radius: 5px;
+        width: 50px;
+        height: 50px;
     }
 
     .book-name{
         font-weight: 600;
         font-size: 14px;
-        margin-bottom: 20px;
     }
 
-    @media only screen and (min-width: 769px) {
-        .book-main{
-            min-height: 50px;
-        }
-        .book{
-            width: 300px;
-        }
+    .book-author{
+        margin-left: 7px;
+        font-size: 12px;
     }
 
-    @media only screen and (max-width: 768px) {
-        .book-main{
-            min-height: 50px;
-        }
-        .book{
-            width: 100%;
-        }
+    //根据业务样式，更新 card 和 list-view
+    .am-card {
+        width: 100%;
     }
 
-    .book-main{
-        padding: 8px;
-        display: flex;
-        flex-direction: column;
-        .description{
-            height: 68px;
-            text-overflow: -o-ellipsis-lastline;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-        }
-        .operation{
-            margin-top: 10px;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-        }
-    }
-
-    .book-main-top{
-        display: flex;
-        flex-direction: row;
-        .book-default-img{
-            border-radius: 5px;
-            width: 50px;
-            height: 50px;
-        }
-        .book-main-top-right{
-            width: 80%;
-        }
-    }
-
-    .book-status-active{
-        color:rgb(78, 161, 78);
-    }
-
-    .book-status-inactive{
-        color: red;
-    }
-
-    .container {
-        height: 100%;
+    .am-card-header-content {
+        flex: auto;
     }
 
     .list-view-section-body{
