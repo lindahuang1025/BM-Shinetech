@@ -132,7 +132,7 @@ const borrowList = (props) => {
         getlistData();
     }, [pageNo]);
 
-    const row = (rowData, rowID) => {
+    const row = (rowData, sectionID , rowID) => {
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
         return <div key={rowID} className="book col-12 col-sm-6 col-lg-4">
             <div className="book-content">

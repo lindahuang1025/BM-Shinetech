@@ -7,6 +7,8 @@ import { BackTop } from 'antd';
 import { borrowBook } from '@/services/bookBorrow';
 import { getStoredUser } from '@/utils/utils';
 import { connect, useIntl, history } from 'umi';
+import bookStatus from '@/enums/bookStatusEnum';
+import bookDefaultImg from '@/assets/defaultBg.jpg'
 
 const bookList = (props) => {
     // 本地化语言设置
@@ -157,22 +159,21 @@ const bookList = (props) => {
         getlistData();
     }, [pageNo,keyword]);
 
-    const row = (rowData, rowID) => {
+    const row = (rowData, sectionID, rowID) => {
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
         return <div key={rowID} className="book col-12 col-sm-6 col-lg-4" onClick={()=>{goBookDetail(rowData)}}>
             <div className="book-content">
                 <div className="book-main">
                     <div className="book-main-top">
-                        <div className="book-default-bg" style={rowData.ImageUrl ? { backgroundImage: "url('" + rowData.ImageUrl + "')" } : { backgroundImage: "url(" + require('../assets/defaultBg.jpg') + ")" }}>
-                        </div>
+                        <img src={bookDefaultImg} className="book-default-img"/> 
                         <div className="book-main-top-right global-flex-column">
                             <div className="global-flex-row global-flex-row-between">
                                 <div className="book-name">《{rowData.Title}》</div>
                                 <div className="book-main-top-status">
-                                    {rowData.Status ===0? <div className="book-status-active">⬤</div>:<div className="book-status-inactive">⬤</div>}
+                                    {rowData.Status || 0 === bookStatus.Normal? <div className="book-status-active">⬤</div>:<div className="book-status-inactive">⬤</div>}
                                 </div>
                             </div>
-                            <div></div>
+                   
                         </div>
                     </div>
                     {/* <div className="description">{rowData.Description}</div>
