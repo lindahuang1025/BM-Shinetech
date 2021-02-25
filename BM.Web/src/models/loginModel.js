@@ -34,8 +34,8 @@ const Model = {
         },
         logout() {
             const { redirect } = getPageQuery();
-            if (!redirect && window.location.pathname !== '/user/login') {
-                history.replace({ pathname: '/user/login' });
+            if (!redirect && window.location.pathname !== '/account/login') {
+                history.replace({ pathname: '/account/login' });
             }
             delStoredUser();
         },

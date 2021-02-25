@@ -55,8 +55,8 @@ const bookList = (props) => {
         dispatch({
             type: 'BookListSpace/query',
             payload: {
-                keyword:keyword, 
-                pageIndex:pageNo, 
+                keyword:keyword,
+                pageIndex:pageNo,
                 pageSize:pageSize
               }
         });
@@ -189,7 +189,7 @@ const bookList = (props) => {
         <div>
             <div className="booksComponent">
                 <div className="container">
-                    <SearchBar 
+                    <SearchBar
                         placeholder={intl.formatMessage({id:'pages.list.searchPlaceholoder'})}
                         onFocus={() => onSearchFocused()}
                         onCancel={() => onSearchCancel()}
@@ -206,7 +206,7 @@ const bookList = (props) => {
                             refreshing={refreshing}
                             onRefresh={onRefresh}
                         />}
-                    />  
+                    />
                 </div>
             </div>
             {/* 回到顶部 */}
