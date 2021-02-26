@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './MyBorrow.less';
 import { message } from 'antd';
-import { ListView, PullToRefresh, Modal, Result, Button } from 'antd-mobile';
-import { ArrowUpOutlined } from '@ant-design/icons';
+import { ListView, PullToRefresh, Modal, Result, Button, Card } from 'antd-mobile';
+import { ArrowUpOutlined, BellTwoTone } from '@ant-design/icons';
 import { BackTop } from 'antd';
 import { returnBook } from '@/services/bookReturn';
 import { getStoredUser } from '@/utils/utils';
 import { connect, useIntl } from 'umi';
 import moment from 'moment'
+import bookDefaultImg from '@/assets/defaultBg.jpg'
 
 const borrowList = (props) => {
     // 本地化语言设置
@@ -35,10 +36,6 @@ const borrowList = (props) => {
     const { borrowList } = borrowListModel;
     //下拉刷新
     const [refreshing, setRefreshing] = useState(false);
-
-    useEffect(() => {
-        getlistData();
-    }, []);
 
     useEffect(() => {
         logicByAfterGetData();
@@ -134,21 +131,19 @@ const borrowList = (props) => {
 
     const row = (rowData, sectionID , rowID) => {
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
-        return <div key={rowID} className="book col-12 col-sm-6 col-lg-4">
-            <div className="book-content">
-                <div className="book-main">
-                    <div className="book-main-top">
-                    <div className="book-name">《{rowData.Title}》</div>
-                    </div>
-                    <div className="operation">
-                        <div className="global-flex-column">
-                            <div className="date">{intl.formatMessage({id:`${intlString}borrowDate`})}{moment(rowData.BorrowDate).format('YYYY MM-DD')}</div>
-                        </div>
-                        <Button type="primary" onClick={()=>{onReturnClicked(rowData.Id)}} style={{width:'30%'}}>{intl.formatMessage({id:`${intlString}return`})}</Button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        return <Card key={rowID}>
+                    <Card.Body>
+                        <Card.Header
+                                title={<div className="global-flex-column">
+                                    <div className="book-name">《{rowData.BookInfo.Title}》</div>
+                                    <div className="deadline"><BellTwoTone twoToneColor="orangered"/> {intl.formatMessage({id:`${intlString}borrowDate`})}<span className="deadline-number">30 </span>{intl.formatMessage({id:`${intlString}borrowDateLast`})}</div>
+                                </div>}
+                                thumb={rowData.BookInfo.ImageUrl || bookDefaultImg}
+                                thumbStyle={{borderRadius: '5px',width: '50px',height: '80px'}}
+                                extra={<Button type="primary" onClick={()=>{onReturnClicked(rowData.BookId)}}>{intl.formatMessage({id:`${intlString}return`})}</Button>}
+                            />
+                    </Card.Body>
+                </Card>
     }
 
     return (
@@ -174,7 +169,7 @@ const borrowList = (props) => {
             </div>
              {/* 回到顶部 */}
              <BackTop>
-                <div className="global_backTop"><ArrowUpOutlined className="global_backTop_icon"/></div>
+                <div className="global-backTop"><ArrowUpOutlined className="global-backTop-icon"/></div>
             </BackTop>
             {/* 没有更多加载，显示提示信息 */}
                {!hasMore && <Result

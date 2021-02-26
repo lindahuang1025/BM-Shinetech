@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './BookList.less';
 import { ListView, PullToRefresh, Result, SearchBar, Card } from 'antd-mobile';
-import { ArrowUpOutlined, BellTwoTone } from '@ant-design/icons';
+import { ArrowUpOutlined, AlertTwoTone  } from '@ant-design/icons';
 import { BackTop } from 'antd';
 import { connect, useIntl, history } from 'umi';
 import bookStatusEnum from '@/enums/bookStatusEnum';
@@ -138,7 +138,7 @@ const bookList = (props) => {
                         </div>}
                         thumb={rowData.ImageUrl || bookDefaultImg}
                         thumbStyle={{borderRadius: '5px',width: '50px',height: '50px'}}
-                        extra={<span>{(rowData.Status || 0) === bookStatusEnum.Normal? <BellTwoTone twoToneColor="rgb(16, 212, 16)"/>:<BellTwoTone twoToneColor="red"/>}</span>}
+                        extra={<span>{(rowData.Status || 0) === bookStatusEnum.Normal? <AlertTwoTone  twoToneColor="rgb(16, 212, 16)"/>:<AlertTwoTone  twoToneColor="red"/>}</span>}
                     />
             </Card.Body>
         </Card>
@@ -170,7 +170,7 @@ const bookList = (props) => {
             </div>
             {/* 回到顶部 */}
             <BackTop visibilityHeight={50}>
-                <div className="global_backTop"><ArrowUpOutlined className="global_backTop_icon"/></div>
+                <div className="global-backTop"><ArrowUpOutlined className="global-backTop-icon"/></div>
             </BackTop>
             {/* 没有更多加载，显示提示信息 */}
                {!hasMore && <Result

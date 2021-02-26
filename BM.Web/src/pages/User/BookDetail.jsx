@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './BookDetail.less';
 import { borrowBook } from '@/services/bookBorrow';
-import { Button, Card, Modal } from 'antd-mobile';
-import { message, Affix } from 'antd';
+import { Button, Card, Modal, DatePicker, List } from 'antd-mobile';
+import { message } from 'antd';
 import { useIntl } from 'umi';
 import bookStatusEnum from '@/enums/bookStatusEnum';
 import { getStoredUser } from '@/utils/utils';
@@ -18,20 +18,35 @@ const bookDetail = (props) => {
     // 订阅弹出框
     const {alert} = Modal;
     const [bookInfo, setBookInfo] = useState({});
-
-    const [top, setTop] = useState(50);
+    //借书日期
+    const [borrowDate, setBorrowDate] = useState(new Date());
+    const nowTimeStamp = Date.now();
+    const now = new Date(nowTimeStamp);
 
     useEffect(() => {
         const bookInfo = props.history.location.state?.bookInfo || {};
         if(bookInfo) {
             setBookInfo(bookInfo);
         }
+        setBorrowDate(now)
     }, []);
 
     // 借阅操作
     const onBorrowClicked  = (id) => {
-        setTop(top + 10);
-        alert(intl.formatMessage({id:`${intlString}borrowConfirmPrompt`}), '', [
+        alert(intl.formatMessage({id:`${intlString}borrowConfirmPrompt`}),  
+        <div>
+            <DatePicker
+                mode="date"
+                title="Select Date"
+                extra="Optional"
+                value={borrowDate}
+                onChange={date => setBorrowDate(date)}
+            >
+                <List.Item arrow="horizontal">选个吉日还：</List.Item>
+            </DatePicker>
+            <List.Item>预计借书时长 ： 30 天</List.Item>
+        </div>
+      , [
             { text: intl.formatMessage({id:`${intlString}ConfirmCancel`}) },
             { text: intl.formatMessage({id:`${intlString}Confirm`}), onPress: async() => {
                 const hide = message.loading(intl.formatMessage({id:`${intlString}borrowing`}));
@@ -53,11 +68,7 @@ const bookDetail = (props) => {
 
     return (
         <div className="bookDetailComponent">
-                {(bookInfo.Status || 0 )=== bookStatusEnum.Normal && 
-      
-                    <Button type="primary" onClick={()=>{onBorrowClicked (bookInfo.Id)}} className="borrow-button">{intl.formatMessage({id:`${intlString}borrow`})}</Button>
-
-                }
+                {(bookInfo.Status || 0 )=== bookStatusEnum.Normal && <Button type="primary" onClick={()=>{onBorrowClicked (bookInfo.Id)}} className="borrow-button">{intl.formatMessage({id:`${intlString}borrow`})}</Button>}
                 <Card className="book-info">
                     <Card.Body className="global-flex-column-center">
                         <img src={bookInfo.ImageUrl || bookDefaultImg} className="book-img"/>
@@ -72,7 +83,7 @@ const bookDetail = (props) => {
                 </Card>
                 {/* 浮动借阅 */}
                  <BackTop visibilityHeight={50} onClick={()=>{onBorrowClicked (bookInfo.Id)}}>
-                    <div className={(bookInfo.Status || 0 )=== bookStatusEnum.Normal ? "global_backTop" : "global_backTop global_borrow_fixed_btn_disable"}><div className={(bookInfo.Status || 0 )=== bookStatusEnum.Normal ? "global_borrow_fixed_btn_text":"global_borrow_fixed_btn_text global_borrow_fixed_btn_text_disable"}>借</div></div>
+                    <div className={(bookInfo.Status || 0 )=== bookStatusEnum.Normal ? "global-backTop" : "global-backTop global-borrow-fixed-btn-disable"}><div className={(bookInfo.Status || 0 )=== bookStatusEnum.Normal ? "global-borrow-fixed-btn-text":"global-borrow-fixed-btn-text global-borrow-fixed-btn-text-disable"}>借</div></div>
                 </BackTop>
         </div>
     )
