@@ -50,5 +50,6 @@ export default {
     'menu.editor.mind': '脑图编辑器',
     'menu.editor.koni': '拓扑编辑器',
     'menu.list.book-list': '图书列表',
-    'menu.list.myBorrow': '我的借阅',
+    'menu.list.borrow-list': '借阅列表',
+    'menu.list.book-manage': '图书管理'
 };
