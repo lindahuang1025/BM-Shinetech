@@ -16,10 +16,10 @@ export default [
               component: '../layouts/BasicLayout',
               authority: ['Admin', 'User'],
               routes: [
-                  // {
-                  //     path: '/',
-                  //     redirect: '/bookManage'
-                  // },
+                  {
+                      path: '/',
+                      redirect: '/bookList'
+                  },
                   /* user config start */
                   {
                       name: 'list.book-list',
