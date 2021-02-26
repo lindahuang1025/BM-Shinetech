@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './BookList.less';
-import { message } from 'antd';
-import { ListView, PullToRefresh, Modal, Result, Button, SearchBar } from 'antd-mobile';
-import { ArrowUpOutlined } from '@ant-design/icons';
+import { ListView, PullToRefresh, Result, SearchBar, Card } from 'antd-mobile';
+import { ArrowUpOutlined, BellTwoTone } from '@ant-design/icons';
 import { BackTop } from 'antd';
-import { borrowBook } from '@/services/bookBorrow';
-import { getStoredUser } from '@/utils/utils';
 import { connect, useIntl, history } from 'umi';
 import bookStatus from '@/enums/bookStatusEnum';
 import bookDefaultImg from '@/assets/defaultBg.jpg'
@@ -14,10 +11,6 @@ const bookList = (props) => {
     // 本地化语言设置
     const intl = useIntl();
     const intlString = 'pages.bookList.';
-    // 获取用户信息
-    const user = getStoredUser();
-    // 订阅弹出框
-    const {alert} = Modal;
     // 搜索关键字
     const [keyword, setKeyword] = useState('');
     // listview data
@@ -97,31 +90,6 @@ const bookList = (props) => {
         setPageNo(pageNo + 1) ;
     }
 
-    // 借阅操作
-    const onBorrowClicked  = (id) => {
-        alert(intl.formatMessage({id:`${intlString}borrowConfirmPrompt`}), '', [
-            { text: intl.formatMessage({id:`${intlString}ConfirmCancel`}) },
-            { text: intl.formatMessage({id:`${intlString}Confirm`}), onPress: async() => {
-                const hide = message.loading(intl.formatMessage({id:`${intlString}borrowing`}));
-                    try {
-                        await borrowBook({ bookId:id, userId: user.UserId });
-                        hide();
-                        message.success({
-                            content: intl.formatMessage({id:`${intlString}borrowSuccessed`}),
-                            style: {
-                              marginTop: '5vh',
-                            }
-                        });
-                        // 当借阅成功后触发更新列表
-                        setPageNo(1);
-                        getlistData();
-                    } catch (error) {
-                        message.error(error.Message);
-                    }
-            } },
-        ])
-    }
-
     //下拉重新加载
     const onRefresh = () => {
         setRefreshing(true);
@@ -161,28 +129,19 @@ const bookList = (props) => {
 
     const row = (rowData, sectionID, rowID) => {
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
-        return <div key={rowID} className="book col-12 col-sm-6 col-lg-4" onClick={()=>{goBookDetail(rowData)}}>
-            <div className="book-content">
-                <div className="book-main">
-                    <div className="book-main-top">
-                        <img src={bookDefaultImg} className="book-default-img"/> 
-                        <div className="book-main-top-right global-flex-column">
-                            <div className="global-flex-row global-flex-row-between">
-                                <div className="book-name">《{rowData.Title}》</div>
-                                <div className="book-main-top-status">
-                                    {rowData.Status || 0 === bookStatus.Normal? <div className="book-status-active">⬤</div>:<div className="book-status-inactive">⬤</div>}
-                                </div>
-                            </div>
-                   
-                        </div>
-                    </div>
-                    {/* <div className="description">{rowData.Description}</div>
-                    {rowData.Status === 0 && <div className="operation">
-                        <Button type="primary" onClick={()=>{onBorrowClicked (rowData.Id)}} style={{width:'30%'}}>{intl.formatMessage({id:`${intlString}borrow`})}</Button>
-                    </div>} */}
-                </div>
-            </div>
-        </div>
+        return <Card key={rowID} onClick={()=>{goBookDetail(rowData)}}>
+            <Card.Body>
+                <Card.Header
+                        title={<div className="global-flex-column">
+                            <div className="book-name">《{rowData.Title}》</div>
+                            <div className="book-author">{rowData.Author}</div>
+                        </div>}
+                        thumb={rowData.ImageUrl || bookDefaultImg}
+                        thumbStyle={{borderRadius: '5px',width: '50px',height: '50px'}}
+                        extra={<span>{(rowData.Status || 0) === bookStatus.Normal? <BellTwoTone twoToneColor="rgb(16, 212, 16)"/>:<BellTwoTone twoToneColor="red"/>}</span>}
+                    />
+            </Card.Body>
+        </Card>
     }
 
     return (
