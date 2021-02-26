@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './BookDetail.less';
 import { borrowBook } from '@/services/bookBorrow';
-import { Button, Card, Modal, WingBlank, WhiteSpace  } from 'antd-mobile';
-import { message } from 'antd';
-import { useIntl, history } from 'umi';
-import bookStatus from '@/enums/bookStatusEnum';
+import { Button, Card, Modal } from 'antd-mobile';
+import { message, Affix } from 'antd';
+import { useIntl } from 'umi';
+import bookStatusEnum from '@/enums/bookStatusEnum';
 import { getStoredUser } from '@/utils/utils';
 import bookDefaultImg from '@/assets/defaultBg.jpg'
-import { BellTwoTone } from '@ant-design/icons';
+import { BackTop } from 'antd';
 
 const bookDetail = (props) => {
     // 本地化语言设置
@@ -17,7 +17,9 @@ const bookDetail = (props) => {
     const user = getStoredUser();
     // 订阅弹出框
     const {alert} = Modal;
-    const [bookInfo, setBookInfo] = useState({})
+    const [bookInfo, setBookInfo] = useState({});
+
+    const [top, setTop] = useState(50);
 
     useEffect(() => {
         const bookInfo = props.history.location.state?.bookInfo || {};
@@ -28,6 +30,7 @@ const bookDetail = (props) => {
 
     // 借阅操作
     const onBorrowClicked  = (id) => {
+        setTop(top + 10);
         alert(intl.formatMessage({id:`${intlString}borrowConfirmPrompt`}), '', [
             { text: intl.formatMessage({id:`${intlString}ConfirmCancel`}) },
             { text: intl.formatMessage({id:`${intlString}Confirm`}), onPress: async() => {
@@ -50,24 +53,27 @@ const bookDetail = (props) => {
 
     return (
         <div className="bookDetailComponent">
-            <WingBlank size="md">   
-                {(bookInfo.Status || 0 )=== bookStatus.Normal && <div className="borrow-button">
-                <Button type="primary" onClick={()=>{onBorrowClicked (bookInfo.Id)}}>{intl.formatMessage({id:`${intlString}borrow`})}</Button>
-                </div>}
+                {(bookInfo.Status || 0 )=== bookStatusEnum.Normal && 
+      
+                    <Button type="primary" onClick={()=>{onBorrowClicked (bookInfo.Id)}} className="borrow-button">{intl.formatMessage({id:`${intlString}borrow`})}</Button>
+
+                }
                 <Card className="book-info">
-                    <Card.Body>
+                    <Card.Body className="global-flex-column-center">
                         <img src={bookInfo.ImageUrl || bookDefaultImg} className="book-img"/>
                         <Card.Header
                             title={<div className="global-flex-column">
                                 <div className="book-name">《{bookInfo.Title}》</div>
                                 <div className="book-author">{bookInfo.Author}</div>
                             </div>}
-                            extra={<span>{(bookInfo.Status || 0) === bookStatus.Normal? <BellTwoTone twoToneColor="rgb(16, 212, 16)"/>:<BellTwoTone twoToneColor="red"/>}</span>}
                     />
                     </Card.Body>
-                
+                    <Card.Footer content={<div className="book-description">{bookInfo.Description}</div>} />
                 </Card>
-            </WingBlank>
+                {/* 浮动借阅 */}
+                 <BackTop visibilityHeight={50} onClick={()=>{onBorrowClicked (bookInfo.Id)}}>
+                    <div className={(bookInfo.Status || 0 )=== bookStatusEnum.Normal ? "global_backTop" : "global_backTop global_borrow_fixed_btn_disable"}><div className={(bookInfo.Status || 0 )=== bookStatusEnum.Normal ? "global_borrow_fixed_btn_text":"global_borrow_fixed_btn_text global_borrow_fixed_btn_text_disable"}>借</div></div>
+                </BackTop>
         </div>
     )
 }
