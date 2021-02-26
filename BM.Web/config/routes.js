@@ -13,35 +13,35 @@ export default [{
         routes: [{
                 path: '/',
                 component: '../layouts/BasicLayout',
-                authority: ['admin', 'user'],
+                authority: ['Admin', 'User'],
                 routes: [{
                         path: '/',
-                        redirect: '/bookManage'
+                        redirect: '/bookList'
                     },
                     /* user config start */
                     {
                         name: 'list.book-list',
                         icon: 'table',
                         path: '/bookList',
-                        component: './user/BookList.jsx',
-                        authority: ['user']
+                        component: './User/BookList.jsx',
+                        authority: ['User']
                     },
                     {
                         name: 'list.borrow-list',
                         icon: 'crown',
                         path: '/borrowList',
-                        component: './user/MyBorrow.jsx',
-                        authority: ['user']
+                        component: './User/MyBorrow.jsx',
+                        authority: ['User']
                     },
                     {
                         path: '/search',
-                        component: './user/SearchPage.jsx',
-                        authority: ['user']
+                        component: './User/SearchPage.jsx',
+                        authority: ['User']
                     },
                     {
                         path: '/bookDetail',
-                        component: './user/BookDetail.jsx',
-                        authority: ['user']
+                        component: './User/BookDetail.jsx',
+                        authority: ['User']
                     },
                     /* user config end */
 
