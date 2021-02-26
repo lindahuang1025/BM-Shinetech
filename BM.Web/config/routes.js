@@ -14,35 +14,36 @@ export default [
       routes: [{
               path: '/',
               component: '../layouts/BasicLayout',
-              authority: ['admin', 'user'],
-              routes: [{
-                      path: '/',
-                      redirect: '/bookList'
-                  },
+              authority: ['Admin', 'User'],
+              routes: [
+                  // {
+                  //     path: '/',
+                  //     redirect: '/bookManage'
+                  // },
                   /* user config start */
                   {
                       name: 'list.book-list',
                       icon: 'table',
                       path: '/bookList',
                       component: './User/BookList.jsx',
-                      authority: ['user']
+                      authority: ['User']
                   },
                   {
                       name: 'list.borrow-list',
                       icon: 'crown',
                       path: '/borrowList',
                       component: './User/MyBorrow.jsx',
-                      authority: ['user']
+                      authority: ['User']
                   },
                   {
                       path: '/search',
                       component: './User/SearchPage.jsx',
-                      authority: ['user']
+                      authority: ['User']
                   },
                   {
                       path: '/bookDetail',
                       component: './User/BookDetail.jsx',
-                      authority: ['user']
+                      authority: ['User']
                   },
                   /* user config end */
 
@@ -50,10 +51,10 @@ export default [
                   {
                     name: 'list.book-manage',
                     icon: 'table',
-                    path: '/book',
-                    component: './Admin/Book.jsx',
-                    authority: ['user']
-                },
+                    path: '/bookManage',
+                    component: './Admin/BookManage.jsx',
+                    authority: ['Admin']
+                  },
                   /* admin config end */
                   {
                       component: './404',

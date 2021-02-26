@@ -31,7 +31,7 @@ export default defineConfig({
         'primary-color': defaultSettings.primaryColor,
     },
     define: {
-        // apiUrl: 'http://localhost:2020',
+        // apiUrl: 'http://localhost:2021/server',
         apiUrl: 'https://shinetechbm.cn.utools.club/server',
         pageSize: 20
     },

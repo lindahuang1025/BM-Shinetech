@@ -42,8 +42,9 @@ const Model = {
     },
     reducers: {
         loginState(state, { payload }) {
-            setAuthority('user');
-            return {...state, status: payload.Status, message: payload.Message };
+          let userInfo = payload.Data;
+          setAuthority(userInfo.RoleName);
+          return {...state, status: payload.Status, message: payload.Message };
         },
     },
 };
