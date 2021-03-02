@@ -22,7 +22,7 @@ const searchPageList = (props) => {
     // 取消搜索
     const onSearchCancel= () => {
         history.push({
-            pathname: '/list',
+            pathname: '/bookList',
             state:{
                 keyword:null
             }
@@ -33,7 +33,7 @@ const searchPageList = (props) => {
     const onSearchSubmit= (value) => {
         setKeyword(value);
         history.push({
-            pathname: '/list',
+            pathname: '/bookList',
             state:{
                 keyword:value
             }

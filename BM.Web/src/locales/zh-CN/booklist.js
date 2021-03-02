@@ -1,6 +1,6 @@
 export default {
     'pages.bookList.borrowConfirmPrompt': '有借有还，再借不难',
-    'pages.bookList.returnConfirmPrompt': '确定归还书箱了吗？',
+    'pages.bookList.returnConfirmPrompt': '确定归还书籍了吗？',
     'pages.bookList.ConfirmCancel': '我再逛逛',
     'pages.bookList.Confirm': '确定',
     'pages.bookList.borrowing': '正在借阅',
