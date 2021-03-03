@@ -8,3 +8,9 @@ export async function queryBookList(params) {
         }
     });
 }
+
+export async function getBookInfoById(id) {
+    return request(`/api/bookInfo/getById/${id}`, {
+        method: 'GET'
+    });
+}

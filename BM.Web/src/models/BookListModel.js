@@ -1,9 +1,10 @@
-import { queryBookList } from '@/services/book';
+import { queryBookList, getBookInfoById } from '@/services/book';
 
 const Model = {
     namespace: 'BookListSpace',
     state: {
         bookList: [],
+        bookInfo: {},
         status: undefined,
         message: ''
     },
@@ -14,6 +15,15 @@ const Model = {
                 type: 'setBookListState',
                 payload: response,
             });
+        },
+        * getBookInfo({ payload }, { call, put }) {
+            console.log(payload)
+            const response = yield call(getBookInfoById, payload);
+            console.log(response)
+            yield put({
+                type: 'setBookInfoState',
+                payload: response,
+            });
         }
     },
     reducers: {
@@ -21,6 +31,14 @@ const Model = {
             return {
                 ...state,
                 bookList: payload.Datas || [],
+                status: payload.Status,
+                message: payload.Message
+            };
+        },
+        setBookInfoState(state, { payload }) {
+            return {
+                ...state,
+                bookInfo: payload.Data || {},
                 status: payload.Status,
                 message: payload.Message
             };

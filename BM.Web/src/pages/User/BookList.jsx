@@ -113,11 +113,11 @@ const bookList = (props) => {
     }
 
     // 跳转详情页面
-    const goBookDetail = (item) => {
+    const goBookDetail = (id) => {
         history.push({
             pathname: '/bookDetail',
             state:{
-                bookInfo:item
+                bookId:id
             }
         })
     }
@@ -129,7 +129,7 @@ const bookList = (props) => {
 
     const row = (rowData, sectionID, rowID) => {
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行
-        return <Card key={rowID} onClick={()=>{goBookDetail(rowData)}}>
+        return <Card key={rowID} onClick={()=>{goBookDetail(rowData.Id)}}>
             <Card.Body>
                 <Card.Header
                         title={<div className="global-flex-column">

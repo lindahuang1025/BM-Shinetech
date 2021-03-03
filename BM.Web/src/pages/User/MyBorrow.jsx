@@ -7,8 +7,8 @@ import { BackTop } from 'antd';
 import { returnBook } from '@/services/bookReturn';
 import { getStoredUser } from '@/utils/utils';
 import { connect, useIntl } from 'umi';
-import moment from 'moment'
 import bookDefaultImg from '@/assets/defaultBg.jpg'
+import moment from 'moment'
 
 const borrowList = (props) => {
     // 本地化语言设置
@@ -136,7 +136,7 @@ const borrowList = (props) => {
                         <Card.Header
                                 title={<div className="global-flex-column">
                                     <div className="book-name">《{rowData.BookInfo.Title}》</div>
-                                    <div className="deadline"><BellTwoTone twoToneColor="orangered"/> {intl.formatMessage({id:`${intlString}borrowDate`})}<span className="deadline-number">30 </span>{intl.formatMessage({id:`${intlString}borrowDateLast`})}</div>
+                                    <div className="deadline"><BellTwoTone twoToneColor={(moment(rowData.PlanReturnDate).diff(moment(), 'days')<= 3)? "orangered":"rgb(16, 212, 16)"}/> {intl.formatMessage({id:`${intlString}borrowDate`})}<span className={(moment(rowData.PlanReturnDate).diff(moment(), 'days')<= 3)? "deadline-number-orange":"deadline-number-green"}>{moment(rowData.PlanReturnDate).diff(moment(), 'days') } </span>{intl.formatMessage({id:`${intlString}borrowDateLast`})}</div>
                                 </div>}
                                 thumb={rowData.BookInfo.ImageUrl || bookDefaultImg}
                                 thumbStyle={{borderRadius: '5px',width: '50px',height: '80px'}}

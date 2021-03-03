@@ -5,7 +5,7 @@ export default {
     'pages.bookList.Confirm': '确定',
     'pages.bookList.borrowing': '正在借阅',
     'pages.bookList.returning': '正在归还',
-    'pages.bookList.borrowSuccessed': '借阅成功,可以进入左侧菜单-我的借阅中查看哦！',
+    'pages.bookList.borrowSuccessed': '借阅成功,可以进入左侧菜单-借阅列表中查看哦！',
     'pages.bookList.returnSuccessed': '归还成功！',
     'pages.bookList.bookStatusActive': '可借',
     'pages.bookList.bookStatusInactive': '已借',
