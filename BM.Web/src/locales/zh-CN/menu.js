@@ -51,5 +51,6 @@ export default {
     'menu.editor.koni': '拓扑编辑器',
     'menu.list.book-list': '图书列表',
     'menu.list.borrow-list': '借阅列表',
-    'menu.list.book-manage': '图书管理'
+    'menu.list.book-manage': '图书管理',
+    'menu.list.user-info': '用户信息'
 };

@@ -43,6 +43,13 @@ export default [{
                         component: './User/BookDetail.jsx',
                         authority: ['User']
                     },
+                    {
+                      name: 'list.user-info',
+                      icon: 'user',
+                      path: '/userInfo',
+                      component: './User/User.jsx',
+                      authority: ['User']
+                  },
                     /* user config end */
 
                     /* admin config start */

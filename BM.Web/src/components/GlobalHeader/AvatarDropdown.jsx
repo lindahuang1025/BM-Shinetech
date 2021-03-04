@@ -33,7 +33,8 @@ class AvatarDropdown extends React.Component {
       },
       menu,
     } = this.props;
-    const menuHeaderDropdown = (
+    let isMobile = window.screen.width < 1000;
+    const menuHeaderDropdown = !isMobile ? (
       <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
         {menu && (
           <Menu.Item key="center">
@@ -54,7 +55,7 @@ class AvatarDropdown extends React.Component {
           退出登录
         </Menu.Item>
       </Menu>
-    );
+    ): <div></div>;
     return currentUser && currentUser.UserName ? (
       <HeaderDropdown trigger={['click']} overlay={menuHeaderDropdown}>
         <span className={`${styles.action} ${styles.account}`}>
