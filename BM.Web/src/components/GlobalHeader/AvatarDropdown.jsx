@@ -1,5 +1,5 @@
-import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
-import { Avatar, Menu, Spin } from 'antd';
+import { LogoutOutlined, SmileTwoTone } from '@ant-design/icons';
+import { Menu, Spin } from 'antd';
 import React from 'react';
 import { history, connect } from 'umi';
 import HeaderDropdown from '../HeaderDropdown';
@@ -22,7 +22,10 @@ class AvatarDropdown extends React.Component {
       return;
     }
 
-    history.push(`/account/${key}`);
+  };
+
+  onUserClick = () => {
+    history.push('/userInfo/');
   };
 
   render() {
@@ -34,22 +37,9 @@ class AvatarDropdown extends React.Component {
       menu,
     } = this.props;
     let isMobile = window.screen.width < 1000;
+    console.log(isMobile)
     const menuHeaderDropdown = !isMobile ? (
       <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
-        {menu && (
-          <Menu.Item key="center">
-            <UserOutlined />
-            个人中心
-          </Menu.Item>
-        )}
-        {menu && (
-          <Menu.Item key="settings">
-            <SettingOutlined />
-            个人设置
-          </Menu.Item>
-        )}
-        {menu && <Menu.Divider />}
-
         <Menu.Item key="logout">
           <LogoutOutlined />
           退出登录
@@ -57,12 +47,14 @@ class AvatarDropdown extends React.Component {
       </Menu>
     ): <div></div>;
     return currentUser && currentUser.UserName ? (
-      <HeaderDropdown trigger={['click']} overlay={menuHeaderDropdown}>
         <span className={`${styles.action} ${styles.account}`}>
-          <Avatar size="small" className={styles.avatar} src={AvatarImg} alt="avatar" />
-          <span className={`${styles.name} anticon`}>{currentUser.UserName}</span>
+          {isMobile ? <SmileTwoTone style={{fontSize:'24px'}} onClick={this.onUserClick}/> :  <HeaderDropdown overlay={menuHeaderDropdown}>
+            <span className={`${styles.action} ${styles.account}`}>
+              <SmileTwoTone style={{fontSize:'24px',marginRight:'5px'}}/>
+              <span className={`${styles.name} anticon`}>{currentUser.UserName}</span>
+            </span>
+          </HeaderDropdown>}
         </span>
-      </HeaderDropdown>
     ) : (
       <span className={`${styles.action} ${styles.account}`}>
         <Spin

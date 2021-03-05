@@ -1,3 +1,5 @@
+@import "../../mediaVariable.less";
+
 .bookDetailComponent{
     .borrow-button{
         margin-bottom: 10px;
@@ -20,5 +22,12 @@
         border-radius: 10px;
         box-shadow: 0 10px 20px 10px #d6d6d6;
     }
+
+    @media @desktop {
+      .book-img{
+        width: 20%;
+        height: 20%;
+      }
+  }
 }
 
