@@ -8,9 +8,9 @@ const User = (props) => {
   const { currentUser, dispatch} = props;
 
   const newFuturePrompt =()=>{
-    message.info("喔嚯，这个功能还在上线中哦！");
+    message.info("喔嚯，这个功能还在上线中哦！",1);
   }
-  
+
   const logOut = ()=>{
     if (dispatch) {
       dispatch({
@@ -22,8 +22,8 @@ const User = (props) => {
   return <div className="userContainer">
       <Button className="user-info-button" onClick={()=>{newFuturePrompt()}}>
           <div className="global-flex-row user-info-button-content">
+            <div>用户名</div>
             <div>{currentUser.UserName}</div>
-            <div>欢迎您</div>
           </div>
         </Button>
         <WhiteSpace size="md"/>

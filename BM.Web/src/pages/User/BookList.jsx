@@ -155,6 +155,7 @@ const bookList = (props) => {
                         value={keyword}
                     />
                     <ListView
+                        useBodyScroll={true}
                         dataSource={dataSource}
                         renderRow={row}
                         useBodyScroll={true}

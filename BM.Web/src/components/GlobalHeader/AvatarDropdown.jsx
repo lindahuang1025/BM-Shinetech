@@ -1,4 +1,4 @@
-import { LogoutOutlined, SmileTwoTone } from '@ant-design/icons';
+import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
 import { Menu, Spin } from 'antd';
 import React from 'react';
 import { history, connect } from 'umi';
@@ -18,10 +18,8 @@ class AvatarDropdown extends React.Component {
           type: 'login/logout',
         });
       }
-
       return;
     }
-
   };
 
   onUserClick = () => {
@@ -37,7 +35,6 @@ class AvatarDropdown extends React.Component {
       menu,
     } = this.props;
     let isMobile = window.screen.width < 1000;
-    console.log(isMobile)
     const menuHeaderDropdown = !isMobile ? (
       <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
         <Menu.Item key="logout">
@@ -48,9 +45,9 @@ class AvatarDropdown extends React.Component {
     ): <div></div>;
     return currentUser && currentUser.UserName ? (
         <span className={`${styles.action} ${styles.account}`}>
-          {isMobile ? <SmileTwoTone style={{fontSize:'24px'}} onClick={this.onUserClick}/> :  <HeaderDropdown overlay={menuHeaderDropdown}>
+          {isMobile ? <UserOutlined className={styles.userIcon} onClick={this.onUserClick}/> :  <HeaderDropdown overlay={menuHeaderDropdown}>
             <span className={`${styles.action} ${styles.account}`}>
-              <SmileTwoTone style={{fontSize:'24px',marginRight:'5px'}}/>
+              <UserOutlined className={styles.userIcon} style={{marginRight:'5px'}}/>
               <span className={`${styles.name} anticon`}>{currentUser.UserName}</span>
             </span>
           </HeaderDropdown>}

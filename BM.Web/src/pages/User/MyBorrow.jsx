@@ -136,7 +136,11 @@ const borrowList = (props) => {
                         <Card.Header
                                 title={<div className="global-flex-column">
                                     <div className="book-name">《{rowData.BookInfo.Title}》</div>
-                                    <div className="deadline"><BellTwoTone twoToneColor={(moment(rowData.PlanReturnDate).diff(moment(), 'days')<= 3)? "orangered":"rgb(16, 212, 16)"}/> {intl.formatMessage({id:`${intlString}borrowDate`})}<span className={(moment(rowData.PlanReturnDate).diff(moment(), 'days')<= 3)? "deadline-number-orange":"deadline-number-green"}>{moment(rowData.PlanReturnDate).diff(moment(), 'days') } </span>{intl.formatMessage({id:`${intlString}borrowDateLast`})}</div>
+                                    <div className="deadline">
+
+
+                                        <BellTwoTone twoToneColor={(moment(rowData.PlanReturnDate).diff(moment(), 'days')<= 3)? "orangered":"rgb(16, 212, 16)"}/>{(moment(rowData.PlanReturnDate).diff(moment(), 'days') >= 0)? <span> {intl.formatMessage({id:`${intlString}borrowDate`})}</span>:<span> {intl.formatMessage({id:`${intlString}borrowDateOverdue`})}</span>}<span className={(moment(rowData.PlanReturnDate).diff(moment(), 'days')<= 3)? "deadline-number-orange":"deadline-number-green"}>{Math.abs(moment(rowData.PlanReturnDate).diff(moment(), 'days')) } </span>{intl.formatMessage({id:`${intlString}borrowDateLast`})}
+                                    </div>
                                 </div>}
                                 thumb={rowData.BookInfo.ImageUrl || bookDefaultImg}
                                 thumbStyle={{borderRadius: '5px',width: '50px',height: '80px'}}
@@ -147,28 +151,25 @@ const borrowList = (props) => {
     }
 
     return (
-        <div>
-            <div className="borrowComponent">
-                <div className="container">
-                    <ListView
-                        renderHeader={() => <div className="found">
-                            {currentData.length===0 && <div>{intl.formatMessage({id:`${intlString}returnNotFound`})}</div>}
-                        </div>}
-                        dataSource={dataSource}
-                        renderRow={row}
-                        useBodyScroll={true}
-                        onEndReachedThreshold={5}
-                        onEndReached={onEndReached}
-                        scrollRenderAheadDistance={1500}
-                        pullToRefresh={<PullToRefresh
-                            refreshing={refreshing}
-                            onRefresh={onRefresh}
-                        />}
-                    />  
-                </div>
-            </div>
-             {/* 回到顶部 */}
-             <BackTop>
+        <div className="borrowComponent">
+            <ListView
+                useBodyScroll={true}
+                renderHeader={() => <div className="found">
+                    {currentData.length===0 && <div>{intl.formatMessage({id:`${intlString}returnNotFound`})}</div>}
+                </div>}
+                dataSource={dataSource}
+                renderRow={row}
+                useBodyScroll={true}
+                onEndReachedThreshold={5}
+                onEndReached={onEndReached}
+                scrollRenderAheadDistance={1500}
+                pullToRefresh={<PullToRefresh
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                />}
+            />  
+            {/* 回到顶部 */}
+            <BackTop>
                 <div className="global-backTop"><ArrowUpOutlined className="global-backTop-icon"/></div>
             </BackTop>
             {/* 没有更多加载，显示提示信息 */}

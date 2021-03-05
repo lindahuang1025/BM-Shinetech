@@ -114,7 +114,7 @@ const bookDetail = (props) => {
                             >
                                 <List.Item arrow="horizontal">选个吉日还：</List.Item>
                             </DatePicker>
-                            <List.Item>预计借书时长 ： {moment(borrowDate).diff(moment(), 'days') } 天</List.Item>
+                            <List.Item><div className="global-flex-row global-flex-row-between"><span>预计借书时长 ：</span> <span></span>{moment(borrowDate).diff(moment(), 'days') } 天</div></List.Item>
                         </div>
                 </Modal>
             </div>
