@@ -57,7 +57,7 @@ export default [{
                         name: 'list.book-manage',
                         icon: 'table',
                         path: '/bookManage',
-                        component: './admin/BookManage.jsx',
+                        component: './Admin/BookManage.jsx',
                         authority: ['Admin']
                     },
                     /* admin config end */
