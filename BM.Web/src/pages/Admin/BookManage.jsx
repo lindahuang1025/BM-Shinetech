@@ -90,26 +90,6 @@ const TableList = () => {
       },
     },
     {
-      title: '借阅人',
-      dataIndex: 'BorrowedBy',
-      hideInForm: true,
-      valueType: 'text',
-    },
-    {
-      title: '借阅时间',
-      dataIndex: 'BorrowDate',
-      sorter: true,
-      valueType: 'dateTime',
-      hideInForm: true,
-      renderFormItem: (item, { defaultRender, ...rest }, form) => {
-        const status = form.getFieldValue('Status');
-        if (`${status}` === '0') {
-          return false;
-        }
-        return defaultRender(item);
-      },
-    },
-    {
       title: '操作',
       dataIndex: 'option',
       valueType: 'option',
