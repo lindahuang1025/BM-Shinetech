@@ -1,13 +1,15 @@
 import { PlusOutlined } from '@ant-design/icons';
 import { Button, Divider, message, Input, Drawer,Popconfirm  } from 'antd';
 import React, { useState, useRef } from 'react';
-import { FooterToolbar } from '@ant-design/pro-layout';
 import ProTable from '@ant-design/pro-table';
 import ProDescriptions from '@ant-design/pro-descriptions';
 import CreateForm from './components/CreateForm';
 import UpdateForm from './components/UpdateForm';
-import { queryRule, updateRule, addRule, removeRule } from './service';
+import { updateRule, addRule } from './service';
 import { queryBookListByAdmin } from '@/services/book';
+import { bookDeleted } from '@/services/bookManage';
+
+const { Search } = Input;
 
 const handleAdd = async (fields) => {
   const hide = message.loading('正在添加');
@@ -32,29 +34,11 @@ const handleUpdate = async (fields) => {
       key: fields.key,
     });
     hide();
-
     message.success('配置成功');
     return true;
   } catch (error) {
     hide();
     message.error('配置失败请重试！');
-    return false;
-  }
-};
-
-const handleRemove = async (selectedRows) => {
-  const hide = message.loading('正在删除');
-  if (!selectedRows) return true;
-  try {
-    await removeRule({
-      key: selectedRows.map((row) => row.key),
-    });
-    hide();
-    message.success('删除成功，即将刷新');
-    return true;
-  } catch (error) {
-    hide();
-    message.error('删除失败，请重试');
     return false;
   }
 };
@@ -65,7 +49,7 @@ const TableList = () => {
   const [stepFormValues, setStepFormValues] = useState({});
   const actionRef = useRef();
   const [row, setRow] = useState();
-  const [selectedRowsState, setSelectedRows] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   const columns = [
     {
@@ -79,22 +63,21 @@ const TableList = () => {
             message: '图书名称为必填项',
           },
         ],
-      },
-      // render: (dom, entity) => {
-      //   return <a onClick={() => setRow(entity)}>{dom}</a>;
-      // },
+      }
     },
     {
       title: '作者',
       dataIndex: 'Author',
       valueType: 'text',
-      width:200
+      width:200,
     },
     {
       title: '图书详情',
       dataIndex: 'Description',
       valueType: 'textarea',
-      width:500
+      width:500,
+      hideInTable:true,
+      hideInForm: true,
     },
     {
       title: '状态',
@@ -142,7 +125,7 @@ const TableList = () => {
           </a> */}
           <Divider type="vertical" />
           <a href="">
-            <Popconfirm title="确认删除?" onConfirm={() => onDelete(record.id)}>
+            <Popconfirm title="确认删除?" onConfirm={() => handleRemove(record)}>
               <Button>删除</Button>
             </Popconfirm>
           </a>
@@ -151,45 +134,53 @@ const TableList = () => {
     },
   ];
 
+  const handleNameFilter =(value)=>{
+    setSearchValue(value)
+  }
+
+  const handleRemove = async (book) => {
+    const hide = message.loading('正在删除');
+    try {
+      await bookDeleted(book.Id);
+      hide();
+      message.success('删除成功!');
+      // 重新加载列表
+      actionRef.current.reload();
+      return true;
+    } catch (error) {
+      hide();
+      message.error('删除失败，请重试');
+      return false;
+    }
+  };
+
   return (
     <div>
       <ProTable
         headerTitle="查询表格"
         actionRef={actionRef}
         rowKey="key"
-        search={{
-          labelWidth: 120,
-        }}
+        search={false}
         toolBarRender={() => [
-          <Button key="1" type="primary" onClick={() => handleModalVisible(true)}>
-            <PlusOutlined /> 新建
-          </Button>,
+          <>
+            <Search
+              placeholder="输入查询信息"
+              onSearch={value => handleNameFilter(value)}
+              style={{ width: 200, fontSize: 10,marginRight:15 }}
+            />
+            <Button key="1" type="primary" onClick={() => handleModalVisible(true)}>
+              <PlusOutlined /> 新建
+            </Button>
+          </>,
         ]}
         request={(params, sorter, filter) => queryBookListByAdmin({...params, sorter, filter})}
-        columns={columns}
-        rowSelection={{
-          onChange: (_, selectedRows) => setSelectedRows(selectedRows),
-        }}
-      />
-      {selectedRowsState?.length > 0 && (
-        <FooterToolbar
-          extra={
-            <div>
-              已选择 <a style={{ fontWeight: 600 }}>{selectedRowsState.length}</a> 项&nbsp;&nbsp;
-            </div>
+        params={
+          {
+            keyword: searchValue
           }
-        >
-          <Button
-            onClick={async () => {
-              await handleRemove(selectedRowsState);
-              setSelectedRows([]);
-              actionRef.current?.reloadAndRest?.();
-            }}
-          >
-            批量删除
-          </Button>
-        </FooterToolbar>
-      )}
+        }
+        columns={columns}
+      />
       <CreateForm onCancel={() => handleModalVisible(false)} modalVisible={createModalVisible}>
         <ProTable
           onSubmit={async (value) => {
@@ -201,7 +192,7 @@ const TableList = () => {
               }
             }
           }}
-          rowKey="key"
+          rowKey="id"
           type="form"
           columns={columns}
         />

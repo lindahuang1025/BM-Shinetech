@@ -11,7 +11,6 @@ const Model = {
     },
     effects: {
         * queryListByAdmin({ payload }, { call, put }) {
-            console.log("2222222222222")
             const response = yield call(queryBookList, payload);
             const bookListByProTable = {
                 data: response.Datas,

@@ -102,7 +102,7 @@ const BasicLayout = (props) => {
           return defaultDom;
         }
 
-        return <Link to={menuItemProps.path} onClick={window.screen.width < 1000 && handleMenuCollapse}>{defaultDom}</Link>;
+        return <Link to={menuItemProps.path} onClick={()=>{window.screen.width < 1000 && handleMenuCollapse}}>{defaultDom}</Link>;
       }}
       breadcrumbRender={(routers = []) => [
         {
