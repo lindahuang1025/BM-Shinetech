@@ -8,6 +8,7 @@ import UpdateForm from './components/UpdateForm';
 import { updateRule, addRule } from './service';
 import { queryBookListByAdmin } from '@/services/book';
 import { bookDeleted } from '@/services/bookManage';
+import { history } from 'umi';
 
 const { Search } = Input;
 
@@ -134,6 +135,16 @@ const TableList = () => {
     }
   };
 
+    // 跳转详情页面
+  const goEditPage = (flag) => {
+    history.push({
+      pathname: '/bookManage/edit',
+      state:{
+        isAddOrUpdate:flag
+      }
+    })
+  }
+
   return (
     <div>
       <ProTable
@@ -148,7 +159,7 @@ const TableList = () => {
               onSearch={value => handleNameFilter(value)}
               style={{ width: 200, fontSize: 10,marginRight:15 }}
             />
-            <Button key="1" type="primary" onClick={() => handleModalVisible(true)}>
+            <Button key="1" type="primary" onClick={() => goEditPage("add")}>
               <PlusOutlined /> 新建
             </Button>
           </>,

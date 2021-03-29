@@ -49,7 +49,7 @@ export default [{
                       path: '/userInfo',
                       component: './User/User.jsx',
                       authority: ['User']
-                  },
+                    },
                     /* user config end */
 
                     /* admin config start */
@@ -58,6 +58,11 @@ export default [{
                         icon: 'table',
                         path: '/bookManage',
                         component: './Admin/BookManage.jsx',
+                        authority: ['Admin']
+                    },
+                    {
+                        path: '/bookManage/edit',
+                        component: './Admin/BookEdit.jsx',
                         authority: ['Admin']
                     },
                     /* admin config end */
