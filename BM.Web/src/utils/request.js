@@ -33,16 +33,19 @@ const errorHandler = (error) => {
         const errorText = codeMessage[response.status] || response.statusText;
         const { status, url } = response;
 
-        notification.error({
-            message: `请求错误 ${status}: ${url}`,
-            description: errorText,
-        });
-
         //如果token时效消失，请求返回401，额外加一个退出登录的操作，从而删除内存中的user
         if (response.status === 401) {
+            notification.error({
+                message: '页面停留时间过长，令牌已失效，请重新登录！'
+            });
             const dvaApp = getDvaApp();
             dvaApp._store.dispatch({
                 type: 'login/logout',
+            });
+        }else{
+            notification.error({
+                message: `请求错误 ${status}: ${url}`,
+                description: errorText,
             });
         }
     } else if (!response) {

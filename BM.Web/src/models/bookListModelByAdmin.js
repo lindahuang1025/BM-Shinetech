@@ -1,41 +1,35 @@
-import { queryBookList } from '@/services/book';
+import { getBookCategoryList } from '@/services/bookManage';
 
 const Model = {
     namespace: 'BookListByAdminSpace',
     state: {
-        data: [],
-        current: 1,
-        pageSize: 20,
-        success: undefined,
-        message: ''
+        bookCategoryList:[]
     },
     effects: {
-        * queryListByAdmin({ payload }, { call, put }) {
-            const response = yield call(queryBookList, payload);
-            const bookListByProTable = {
-                data: response.Datas,
-                current: payload.pageIndex,
-                pageSize: payload.pageSize,
-                success: response.Status,
-                total: response.Total,
-                message: response.Message
+        * queryBookCategoryList({ payload }, { call, put }) {
+            const response = yield call(getBookCategoryList, payload);
+            let newOptionData = [];
+            // 替换为Select 组件需要的结构
+            if(response && response.Datas){
+                newOptionData = response.Datas.map(function(item) {
+                    return {
+                        label: item.CategoryName,
+                        value: item.Id
+                    }
+                })
             }
             yield put({
-                type: 'setBookListState',
-                payload: bookListByProTable,
+                type: 'setBookCategoryListState',
+                payload: newOptionData,
             });
         }
     },
     reducers: {
-        setBookListState(state, { payload }) {
+        setBookCategoryListState(state, { payload }) {
             console.log(payload)
             return {
                 ...state,
-                data: payload.data || [],
-                current: payload.current,
-                pageSize: payload.pageSize,
-                success: true,
-                message: payload.message
+                bookCategoryList: payload,
             };
         }
     }

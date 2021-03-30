@@ -96,14 +96,13 @@ const TableList = () => {
       valueType: 'option',
       render: (_, record) => (
         <>
-          {/* <a
+          <a
             onClick={() => {
-              handleUpdateModalVisible(true);
-              setStepFormValues(record);
+              goEditPage(record)
             }}
           >
             修改
-          </a> */}
+          </a>
           <Divider type="vertical" />
           <a href="">
             <Popconfirm title="确认删除?" onConfirm={() => handleRemove(record)}>
@@ -136,11 +135,11 @@ const TableList = () => {
   };
 
     // 跳转详情页面
-  const goEditPage = (flag) => {
+  const goEditPage = (book) => {
     history.push({
       pathname: '/bookManage/edit',
       state:{
-        isAddOrUpdate:flag
+        bookItem:book
       }
     })
   }
@@ -148,7 +147,7 @@ const TableList = () => {
   return (
     <div>
       <ProTable
-        headerTitle="查询表格"
+        headerTitle={<h3><strong>图书列表</strong></h3>}
         actionRef={actionRef}
         rowKey="key"
         search={false}
@@ -159,7 +158,7 @@ const TableList = () => {
               onSearch={value => handleNameFilter(value)}
               style={{ width: 200, fontSize: 10,marginRight:15 }}
             />
-            <Button key="1" type="primary" onClick={() => goEditPage("add")}>
+            <Button key="1" type="primary" onClick={() => goEditPage()}>
               <PlusOutlined /> 新建
             </Button>
           </>,

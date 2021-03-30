@@ -5,3 +5,9 @@ export async function bookDeleted(id) {
         method: 'POST'
     });
 }
+
+export async function getBookCategoryList() {
+    return request('/api/bookCategory/getAll', {
+        method: 'GET'
+    });
+}
