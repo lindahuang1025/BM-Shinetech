@@ -11,3 +11,12 @@ export async function getBookCategoryList() {
         method: 'GET'
     });
 }
+
+export async function bookAddOrUpdate(params) {
+    return request('/api/bookInfo/addOrUpdate', {
+        method: 'POST',
+        data: {
+            ...params
+        }
+    });
+}

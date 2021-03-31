@@ -2,6 +2,7 @@ import { Button, Card, Input, Form, Upload, message, Modal, Typography, PageHead
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 import { connect, history } from 'umi';
 import React, { useState, useEffect} from 'react';
+import { bookAddOrUpdate } from '@/services/bookManage';
 import './BookEdit.less';
 
 const FormItem = Form.Item;
@@ -65,21 +66,28 @@ const BookEditPage = (props) => {
     },
   };
 
-  const onFinish = (values) => {
-    const { dispatch } = props;
-    dispatch({
-      type: 'adminAndBookEdit1/submitRegularForm',
-      payload: values,
-    });
+  // 提交表单
+  const onFinish = async(values) => {
+    values.ImageUrl = "";
+    console.log(values)
+    try {
+      await bookAddOrUpdate({ ...values });
+      if(hasBook?.Id) {message.success('修改成功')} else {message.success('添加成功')};
+      goBack();
+      return true;
+    } catch (error) {
+      message.error('出错了，再试一下看看或者刷新看看~');
+      return false;
+    }
   };
 
-   // 图片上传按钮
-   const uploadButton = (
-       <div>
-         {loading ? <LoadingOutlined /> : <PlusOutlined />}
-         <div style={{ marginTop: 8 }}>Upload</div>
-       </div>
-    );
+  // 图片上传按钮渲染
+  const uploadButton = (
+    <div>
+      {loading ? <LoadingOutlined /> : <PlusOutlined />}
+      <div style={{ marginTop: 8 }}>Upload</div>
+    </div>
+  );
 
   // 上传图片前的校验
   const beforeImgUpload = (file) => {
@@ -135,17 +143,9 @@ const BookEditPage = (props) => {
           onBack={() => goBack()}
           title={ hasBook !=null ? "编辑图书" : "新增图书"}
           extra={
-           <>
-            { hasBook !=null && <Card style={{ width: 300, marginTop: 16, backgroundColor: "#fde6c3" }} loading={loading}>
-                    <Meta
-                        avatar={
-                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                        }
-                        title="借阅中"
-                        description={<div className="global-flex-center"><div>借阅人: {hasBook.BorrowedBy}</div><div>借阅日期: {hasBook.BorrowDate}</div></div>}
-                    />
-            </Card>}
-          </>
+            <Button type="primary" onClick={()=>goBack()} style={{width:'100px'}}>
+              返回
+            </Button>
           }
       />
     <Card bordered={true}>
@@ -157,52 +157,81 @@ const BookEditPage = (props) => {
             form={form}
             name="basic"
             initialValues={{
-                public: '1',
+              Id: hasBook?.Id || null,
+              Status: hasBook?.Status || null,
+              Title: hasBook?.Title || '',
+              Author: hasBook?.Author || '',
+              CategoryId : hasBook?.CategoryId || 1 ,
+              Description: hasBook?.Description || '',
             }}
             onFinish={onFinish}
             >
             <FormItem
+                name="Status"
+                hidden = {true}
+            >
+            </FormItem>
+            <FormItem
+                name="Id"
+                hidden = {true}
+            >
+            </FormItem>
+            <FormItem
                 {...formItemLayout}
                 label="图书封面"
-                name="title"
             >
-                <Upload
-                    listType="picture-card"
-                    className="avatar-uploader"
-                    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                    fileList={fileList}
-                    beforeUpload={beforeImgUpload}
-                    onPreview={handlePreview}
-                    onChange={handleImgChange}
-                >
-                    {fileList.length >= 1 ? null : uploadButton}
-                </Upload>
-                <Paragraph>支持 JPG/PNG 图片格式文件</Paragraph>
-                <Modal
-                    visible={previewVisible}
-                    footer={null}
-                    onCancel={handlePreviewCancel}
-                    >
-                    <img alt="example" style={{ width: '100%' }} src={previewImage} />
-                </Modal>
+               <div className="global-flex-row global-flex-row-between">
+                 <div>
+                  <Upload
+                      listType="picture-card"
+                      className="avatar-uploader"
+                      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                      fileList={fileList}
+                      beforeUpload={beforeImgUpload}
+                      onPreview={handlePreview}
+                      onChange={handleImgChange}
+                  >
+                      {fileList.length >= 1 ? null : uploadButton}
+                  </Upload>
+                  <Paragraph>支持 JPG/PNG 图片格式文件</Paragraph>
+                  <Modal
+                      visible={previewVisible}
+                      footer={null}
+                      onCancel={handlePreviewCancel}
+                      >
+                      <img alt="example" style={{ width: '100%' }} src={previewImage} />
+                  </Modal>
+                 </div>
+                 <div>
+                  { hasBook?.Status === 1 && <Card style={{ width: 300, marginTop: 16, backgroundColor: "#fde6c3" }} loading={loading}>
+                    <Meta
+                        avatar={
+                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                        }
+                        title="借阅中"
+                        description={<div className="global-flex-center"><div>借阅人: {hasBook?.BorrowedBy}</div><div>借阅日期: {hasBook?.BorrowDate}</div></div>}
+                    />
+                  </Card>}
+                 </div>
+               </div>
+               
             </FormItem>
             <FormItem
                 {...formItemLayout}
                 label="图书名称"
                 name="Title"
                 rules={[
-                {
-                    required: true,
-                    message: "一定得填一个哦",
-                },
+                  {
+                      required: true,
+                      message: "一定得填一个哦",
+                  },
                 ]}
             >
-                <Input
-                placeholder="请输入图书名称吧"
-                />
+                <Input placeholder="请输入图书名称吧" />
             </FormItem>
             <Form.Item
                 {...formItemLayout}
+                  name = 'CategoryId'
                   label="图书类别"
                   rules={[
                     {
@@ -212,17 +241,17 @@ const BookEditPage = (props) => {
                   ]}
                 >
    
-                <Select options={bookCategoryList} defaultValue={hasBook?.BookCategory.Id || 1}/>
+                <Select options={bookCategoryList}/>
             </Form.Item>
             <FormItem
                 {...formItemLayout}
                 label="作者"
                 name="Author"
                 rules={[
-                {
-                    required: true,
-                    message: "一定得填一个哦",
-                },
+                  {
+                      required: true,
+                      message: "一定得填一个哦",
+                  },
                 ]}
             >
                 <Input
@@ -239,7 +268,7 @@ const BookEditPage = (props) => {
                     minHeight: 32,
                 }}
                 placeholder="请输入图书详情"
-                rows={8}
+                rows={10}
                 />
             </FormItem>
             {hasBook ==="update" &&<FormItem
@@ -262,13 +291,14 @@ const BookEditPage = (props) => {
                 marginTop: 32,
                 }}
             >
+              <div className="global-flex-row global-flex-row-between">
                 <Button type="primary" htmlType="submit" loading={submitting}>
                 提交
                 </Button>
+              </div>
             </FormItem>
             </Form>
         </Card>
-     
     </div>
   );
 };

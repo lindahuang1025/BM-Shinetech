@@ -1,5 +1,5 @@
 import { PlusOutlined } from '@ant-design/icons';
-import { Button, Divider, message, Input, Drawer,Popconfirm  } from 'antd';
+import { Button, Divider, message, Input, Drawer, Popconfirm, Tag  } from 'antd';
 import React, { useState, useRef } from 'react';
 import ProTable from '@ant-design/pro-table';
 import ProDescriptions from '@ant-design/pro-descriptions';
@@ -64,19 +64,19 @@ const TableList = () => {
             message: '图书名称为必填项',
           },
         ],
-      }
+      },
+      width:500,
     },
     {
       title: '作者',
       dataIndex: 'Author',
       valueType: 'text',
-      width:200,
+      width:300,
     },
     {
       title: '图书详情',
       dataIndex: 'Description',
       valueType: 'textarea',
-      width:500,
       hideInTable:true,
       hideInForm: true,
     },
@@ -89,6 +89,15 @@ const TableList = () => {
         1: { text: '已借阅', status: 'Borrowed' },
         2: { text: '已归还', status: 'Returned' }
       },
+      render: (_, record) => {
+        let color = record.Status === 1 ?  'red' : 'green';
+        return (
+            <Tag color={color}>
+              {record.Status === 1 ?  '已借阅' : '可借阅'}
+            </Tag>
+        );
+  
+      },
     },
     {
       title: '操作',
@@ -96,12 +105,11 @@ const TableList = () => {
       valueType: 'option',
       render: (_, record) => (
         <>
-          <a
+          <a 
             onClick={() => {
               goEditPage(record)
-            }}
-          >
-            修改
+            }}>
+              <Button>修改</Button>
           </a>
           <Divider type="vertical" />
           <a href="">
@@ -134,7 +142,7 @@ const TableList = () => {
     }
   };
 
-    // 跳转详情页面
+  // 跳转详情页面
   const goEditPage = (book) => {
     history.push({
       pathname: '/bookManage/edit',
@@ -147,6 +155,7 @@ const TableList = () => {
   return (
     <div>
       <ProTable
+        size='small'
         headerTitle={<h3><strong>图书列表</strong></h3>}
         actionRef={actionRef}
         rowKey="key"

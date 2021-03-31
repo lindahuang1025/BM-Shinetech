@@ -26,7 +26,6 @@ const Model = {
     },
     reducers: {
         setBookCategoryListState(state, { payload }) {
-            console.log(payload)
             return {
                 ...state,
                 bookCategoryList: payload,
