@@ -12,38 +12,6 @@ import { history } from 'umi';
 
 const { Search } = Input;
 
-const handleAdd = async (fields) => {
-  const hide = message.loading('正在添加');
-  try {
-    await addRule({ ...fields });
-    hide();
-    message.success('添加成功');
-    return true;
-  } catch (error) {
-    hide();
-    message.error('添加失败请重试！');
-    return false;
-  }
-};
-
-const handleUpdate = async (fields) => {
-  const hide = message.loading('正在配置');
-  try {
-    await updateRule({
-      name: fields.name,
-      desc: fields.desc,
-      key: fields.key,
-    });
-    hide();
-    message.success('配置成功');
-    return true;
-  } catch (error) {
-    hide();
-    message.error('配置失败请重试！');
-    return false;
-  }
-};
-
 const TableList = () => {
   const [createModalVisible, handleModalVisible] = useState(false);
   const [updateModalVisible, handleUpdateModalVisible] = useState(false);
@@ -56,7 +24,6 @@ const TableList = () => {
     {
       title: '图书名称',
       dataIndex: 'Title',
-      tip: '图书名称',
       formItemProps: {
         rules: [
           {
@@ -66,6 +33,25 @@ const TableList = () => {
         ],
       },
       width:500,
+      sorter: (a, b) => a.Title.length - b.Title.length,
+      sortDirections: ['descend', 'ascend'],
+    },
+    {
+      title: '图书类别',
+      dataIndex: 'CategoryId',
+      hideInForm: true,
+      valueEnum: {
+        1: { text: '企业/项目/时间管理类', status: 1 },
+        2: { text: '计算机/软件/网络工程开发类', status: 2 },
+        3: { text: '系统实践/设计类', status: 3 },
+        4: { text: '文学/生活类', status: 4 }
+      },
+      filters:[
+        { text: '企业/项目/时间管理类', value: 1 },
+        { text: '计算机/软件/网络工程开发类', value: 2 },
+        { text: '系统实践/设计类', value: 3 },
+        { text: '文学/生活类', value: 4 }
+      ],
     },
     {
       title: '作者',
@@ -180,65 +166,6 @@ const TableList = () => {
         }
         columns={columns}
       />
-      <CreateForm onCancel={() => handleModalVisible(false)} modalVisible={createModalVisible}>
-        <ProTable
-          onSubmit={async (value) => {
-            const success = await handleAdd(value);
-            if (success) {
-              handleModalVisible(false);
-              if (actionRef.current) {
-                actionRef.current.reload();
-              }
-            }
-          }}
-          rowKey="id"
-          type="form"
-          columns={columns}
-        />
-      </CreateForm>
-      {stepFormValues && Object.keys(stepFormValues).length ? (
-        <UpdateForm
-          onSubmit={async (value) => {
-            const success = await handleUpdate(value);
-            if (success) {
-              handleUpdateModalVisible(false);
-              setStepFormValues({});
-              if (actionRef.current) {
-                actionRef.current.reload();
-              }
-            }
-          }}
-          onCancel={() => {
-            handleUpdateModalVisible(false);
-            setStepFormValues({});
-          }}
-          updateModalVisible={updateModalVisible}
-          values={stepFormValues}
-        />
-      ) : null}
-
-      <Drawer
-        width={600}
-        visible={!!row}
-        onClose={() => {
-          setRow(undefined);
-        }}
-        closable={false}
-      >
-        {row?.name && (
-          <ProDescriptions
-            column={2}
-            title={row?.name}
-            request={async () => ({
-              data: row || {},
-            })}
-            params={{
-              id: row?.name,
-            }}
-            columns={columns}
-          />
-        )}
-      </Drawer>
     </div>
   );
 };
