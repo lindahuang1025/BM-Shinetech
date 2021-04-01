@@ -20,3 +20,12 @@ export async function bookAddOrUpdate(params) {
         }
     });
 }
+
+export async function uploadBookBgImg(file) {
+    const formData = new FormData();
+    formData.append('file', file);
+    return request('/api/bookInfo/uploadFile', {
+        method: 'POST',
+        data: formData
+    });
+}

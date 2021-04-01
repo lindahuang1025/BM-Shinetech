@@ -1,11 +1,7 @@
 import { PlusOutlined } from '@ant-design/icons';
-import { Button, Divider, message, Input, Drawer, Popconfirm, Tag  } from 'antd';
+import { Button, Divider, message, Input, Popconfirm, Tag  } from 'antd';
 import React, { useState, useRef } from 'react';
 import ProTable from '@ant-design/pro-table';
-import ProDescriptions from '@ant-design/pro-descriptions';
-import CreateForm from './components/CreateForm';
-import UpdateForm from './components/UpdateForm';
-import { updateRule, addRule } from './service';
 import { queryBookListByAdmin } from '@/services/book';
 import { bookDeleted } from '@/services/bookManage';
 import { history } from 'umi';
@@ -13,11 +9,7 @@ import { history } from 'umi';
 const { Search } = Input;
 
 const TableList = () => {
-  const [createModalVisible, handleModalVisible] = useState(false);
-  const [updateModalVisible, handleUpdateModalVisible] = useState(false);
-  const [stepFormValues, setStepFormValues] = useState({});
   const actionRef = useRef();
-  const [row, setRow] = useState();
   const [searchValue, setSearchValue] = useState("");
 
   const columns = [
@@ -32,7 +24,7 @@ const TableList = () => {
           },
         ],
       },
-      width:500,
+      width:400,
       sorter: (a, b) => a.Title.length - b.Title.length,
       sortDirections: ['descend', 'ascend'],
     },

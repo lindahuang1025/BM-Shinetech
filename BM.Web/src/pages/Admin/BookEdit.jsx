@@ -2,7 +2,7 @@ import { Button, Card, Input, Form, Upload, message, Modal, Typography, PageHead
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 import { connect, history } from 'umi';
 import React, { useState, useEffect} from 'react';
-import { bookAddOrUpdate } from '@/services/bookManage';
+import { bookAddOrUpdate, uploadBookBgImg } from '@/services/bookManage';
 import './BookEdit.less';
 
 const FormItem = Form.Item;
@@ -16,6 +16,7 @@ const BookEditPage = (props) => {
   const [loading, setLoading] = useState(false);
   const [previewVisible, setPreviewVisible] = useState(false);
   const [previewImage, setPreviewImage] = useState();
+  const [imgUrl, setImgUrl] = useState('');
   const [fileList, setFileList] = useState([]);
   const hasBook = props.history.location.state?.bookItem || null;
   const { bookModel = {},dispatch } = props;
@@ -102,10 +103,10 @@ const BookEditPage = (props) => {
     return isJpgOrPng && isLt2M;
   };
 
-  // 上传图片
-  const handleImgChange = (file) => {
-      console.log(file)
-    setFileList(file.fileList)
+  // 图书更新
+  const handleImgChange = (info) => {
+    console.log(info)
+    setFileList(info.fileList)
   };
 
   // 关闭预览窗口
@@ -123,13 +124,26 @@ const BookEditPage = (props) => {
       });
   }
 
-  // 选择图片后预览
+  // 点击图片预览按钮触发
   const handlePreview = async(file) => {
     if (!file.url && !file.preview) {
         file.preview = await getBase64(file.originFileObj);
       }
       setPreviewImage(file.url || file.preview)
       setPreviewVisible(true)
+  };
+
+  // 图片上传逻辑
+  const handleImgUpload = async(info) => {
+    let fileListTemp= [];
+    fileListTemp.push(info.file)
+    console.log(fileListTemp)
+    // try {
+    //   const res = await uploadBookBgImg(info.file);
+    //   if(res.Status === 0 && res.Data) {setImgUrl(res.Data); setFileList(fileListTemp)} else {message.error('糟糕，出错啦，吃个枣糕，刷新一下再上传试试吧~');};
+    // } catch (error) {
+    //   message.error('糟糕，出错啦，吃个枣糕，刷新一下再上传试试吧~');
+    // }
   };
 
   const goBack = () => {
@@ -185,7 +199,8 @@ const BookEditPage = (props) => {
                   <Upload
                       listType="picture-card"
                       className="avatar-uploader"
-                      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                      action={uploadBookBgImg}
+                      // customRequest={handleImgUpload}
                       fileList={fileList}
                       beforeUpload={beforeImgUpload}
                       onPreview={handlePreview}
