@@ -23,7 +23,15 @@ const BookEditPage = (props) => {
   const { bookCategoryList } = bookModel;
 
   useEffect(() => {
-    onBookCategoryListLoad()
+    onBookCategoryListLoad();
+    if(hasBook){
+      setFileList([{
+        uid:'-1',
+        name:hasBook.ImageUrl,
+        status:'done',
+        url:`${uploadImgUrl}${hasBook.ImageUrl}`
+      }])
+    }
   }, []);
 
   const onBookCategoryListLoad= () => {
@@ -69,7 +77,9 @@ const BookEditPage = (props) => {
 
   // 提交表单
   const onFinish = async(values) => {
-    values.ImageUrl = "";
+    if(imgUrl !==''){
+      values.ImageUrl = imgUrl;
+    }
     console.log(values)
     try {
       await bookAddOrUpdate({ ...values });
@@ -105,8 +115,15 @@ const BookEditPage = (props) => {
 
   // 图书更新
   const handleImgChange = (info) => {
-    console.log(info)
+    // 设置上传完图片，图片的暂时显示
     setFileList(info.fileList)
+    // 获取后台返回的data信息
+    if(info && info.file && info.file.originFileObj){
+      if(info.file.originFileObj.response?.Status === 0){
+        setImgUrl(info.file.originFileObj.response.Data || '');
+      }
+    }
+
   };
 
   // 关闭预览窗口
@@ -131,19 +148,6 @@ const BookEditPage = (props) => {
       }
       setPreviewImage(file.url || file.preview)
       setPreviewVisible(true)
-  };
-
-  // 图片上传逻辑
-  const handleImgUpload = async(info) => {
-    let fileListTemp= [];
-    fileListTemp.push(info.file)
-    console.log(fileListTemp)
-    // try {
-    //   const res = await uploadBookBgImg(info.file);
-    //   if(res.Status === 0 && res.Data) {setImgUrl(res.Data); setFileList(fileListTemp)} else {message.error('糟糕，出错啦，吃个枣糕，刷新一下再上传试试吧~');};
-    // } catch (error) {
-    //   message.error('糟糕，出错啦，吃个枣糕，刷新一下再上传试试吧~');
-    // }
   };
 
   const goBack = () => {
@@ -177,6 +181,7 @@ const BookEditPage = (props) => {
               Author: hasBook?.Author || '',
               CategoryId : hasBook?.CategoryId || 1 ,
               Description: hasBook?.Description || '',
+              ImageUrl:hasBook?.ImageUrl || ''
             }}
             onFinish={onFinish}
             >
@@ -200,7 +205,6 @@ const BookEditPage = (props) => {
                       listType="picture-card"
                       className="avatar-uploader"
                       action={uploadBookBgImg}
-                      // customRequest={handleImgUpload}
                       fileList={fileList}
                       beforeUpload={beforeImgUpload}
                       onPreview={handlePreview}

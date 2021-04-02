@@ -136,7 +136,7 @@ const bookList = (props) => {
                             <div className="book-name">《{rowData.Title}》</div>
                             <div className="book-author">{rowData.Author}</div>
                         </div>}
-                        thumb={rowData.ImageUrl || bookDefaultImg}
+                        thumb={ rowData.ImageUrl? `${uploadImgUrl}${rowData.ImageUrl}`: bookDefaultImg}
                         thumbStyle={{borderRadius: '5px',width: '50px',height: '50px'}}
                         extra={<span>{(rowData.Status || 0) === bookStatusEnum.Normal? <AlertTwoTone  twoToneColor="rgb(16, 212, 16)"/>:<AlertTwoTone  twoToneColor="red"/>}</span>}
                     />

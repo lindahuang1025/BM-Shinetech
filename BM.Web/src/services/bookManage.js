@@ -22,10 +22,17 @@ export async function bookAddOrUpdate(params) {
 }
 
 export async function uploadBookBgImg(file) {
+    // 将file转为formData类型
     const formData = new FormData();
     formData.append('file', file);
-    return request('/api/bookInfo/uploadFile', {
+    const res = await request('/api/bookInfo/uploadFile', {
         method: 'POST',
         data: formData
     });
+
+    // 返回一个upload组件需要的结构，onChange会根据status触发获取response
+    const fileData = {...file};
+    file.response = res;
+
+    return fileData;
 }

@@ -3,11 +3,11 @@ import './BookDetail.less';
 import { borrowBook } from '@/services/bookBorrow';
 import { Button, Card, Modal, DatePicker, List } from 'antd-mobile';
 import { message } from 'antd';
-import { connect, useIntl } from 'umi';
+import { connect, useIntl, history } from 'umi';
 import bookStatusEnum from '@/enums/bookStatusEnum';
 import { getStoredUser } from '@/utils/utils';
 import bookDefaultImg from '@/assets/defaultBg.jpg'
-import { BackTop } from 'antd';
+import { BackTop, PageHeader } from 'antd';
 import moment from 'moment'
 
 const bookDetail = (props) => {
@@ -53,13 +53,23 @@ const bookDetail = (props) => {
     const onBorrowDateChange = (value) => {
         setBorrowDate(value)
     }
+  
+    const goBack = () => {
+        history.goBack();
+    };
 
     return (
         <div className="bookDetailComponent">
-                {(bookInfo.Status || 0 )=== bookStatusEnum.Normal ? <Button type="primary" onClick={()=>{setBorrowModalVisable(true)}} className="borrow-button">{intl.formatMessage({id:`${intlString}borrow`})}</Button>: <div><div className="borrowDisablePrompt">本书在 {bookInfo.BorrowedBy} 处大约还有 <span className="global-borrow-fixed-btn-text-disable">{moment(bookInfo.PlanReturnDate).diff(moment(), 'days')}</span> 天释放</div><div className="borrowDisablePrompt">借阅日期：{moment(bookInfo.BorrowDate).format("YYYY-MM-DD")}</div></div> }
+                <PageHeader
+                    style={{padding:'5px'}}
+                    className="site-page-header"
+                    onBack={() => goBack()}
+                    title= "图书详情"
+                />
+                {(bookInfo.Status || 0 )=== bookStatusEnum.Normal ? <></>: <div><div className="borrowDisablePrompt">本书在 {bookInfo.BorrowedBy} 处大约还有 <span className="global-borrow-fixed-btn-text-disable">{moment(bookInfo.PlanReturnDate).diff(moment(), 'days')}</span> 天释放</div><div className="borrowDisablePrompt">借阅日期：{moment(bookInfo.BorrowDate).format("YYYY-MM-DD")}</div></div> }
                 <Card className="book-info">
                     <Card.Body className="global-flex-column-center">
-                        <img src={bookInfo.ImageUrl || bookDefaultImg} className="book-img"/>
+                        <img src={`${uploadImgUrl}${bookInfo.ImageUrl}`|| bookDefaultImg} className="book-img"/>
                         <Card.Header
                             title={<div className="global-flex-column-center">
                                 <div className="book-name">《{bookInfo.Title}》</div>
@@ -70,7 +80,7 @@ const bookDetail = (props) => {
                     <Card.Footer content={<div className="book-description">{bookInfo.Description}</div>} />
                 </Card>
                 {/* 浮动借阅 */}
-                {(bookInfo.Status || 0 ) === bookStatusEnum.Normal && <BackTop visibilityHeight={50} onClick={()=>{setBorrowModalVisable(true)}}>
+                {(bookInfo.Status || 0 ) === bookStatusEnum.Normal && <BackTop visibilityHeight={0} onClick={()=>{setBorrowModalVisable(true)}}>
                     <div className="global-backTop"><div className="global-borrow-fixed-btn-text">借</div></div>
                 </BackTop>}
                 {/* 借阅弹框 */}

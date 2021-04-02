@@ -1,5 +1,5 @@
-import { PlusOutlined } from '@ant-design/icons';
-import { Button, Divider, message, Input, Popconfirm, Tag  } from 'antd';
+import { PlusOutlined, EllipsisOutlined } from '@ant-design/icons';
+import { Button, Divider, message, Input, Popconfirm,Tag, Popover, Avatar } from 'antd';
 import React, { useState, useRef } from 'react';
 import ProTable from '@ant-design/pro-table';
 import { queryBookListByAdmin } from '@/services/book';
@@ -13,6 +13,15 @@ const TableList = () => {
   const [searchValue, setSearchValue] = useState("");
 
   const columns = [
+    {
+      title: '封面',
+      dataIndex: 'ImageUrl',
+      width: 80,
+      render: (_, record) => {
+        console.log(record)
+        return record.ImageUrl ? <Popover placement="topLeft" content={<img alt={record.name} src={`${uploadImgUrl}${record.ImageUrl}`} style={{ maxWidth: '480px' }} />}><Avatar size={24} src={`${uploadImgUrl}${record.ImageUrl}`} /></Popover> : <Avatar size={24} icon={<EllipsisOutlined />} />
+      }
+    },
     {
       title: '图书名称',
       dataIndex: 'Title',
