@@ -30,6 +30,9 @@ export default [
             path: '/bookList',
             component: './User/BookList.jsx',
             authority: ['User'],
+            wrappers: [
+              '@/wrappers/authByUser.jsx',
+            ],
           },
           {
             name: 'list.borrow-list',
@@ -64,6 +67,9 @@ export default [
             path: '/bookManage',
             component: './Admin/BookManage.jsx',
             authority: ['Admin'],
+            wrappers: [
+              '@/wrappers/authByAdmin.jsx',
+            ],
           },
           {
             path: '/bookManage/edit',

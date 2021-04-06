@@ -24,7 +24,8 @@ const BookEditPage = (props) => {
 
   useEffect(() => {
     onBookCategoryListLoad();
-    if(hasBook){
+    // 编辑功能下，如果ImageUrl不为空，则显示相应保存的图片
+    if(hasBook && hasBook.ImageUrl){
       setFileList([{
         uid:'-1',
         name:hasBook.ImageUrl,
@@ -102,19 +103,25 @@ const BookEditPage = (props) => {
 
   // 上传图片前的校验
   const beforeImgUpload = (file) => {
-    const isJpgOrPng =  file.type === 'image/jpg' || file.type === 'image/jpeg' || file.type === 'image/png';
-    if (!isJpgOrPng) {
-      message.error('请上传 JPG/PNG 类型的图片!');
-    }
-    const isLt2M = file.size / 1024 / 1024 < 2;
-    if (!isLt2M) {
-      message.error('图片太大啦，缩小一下体积吧，超过2MB了!');
-    }
-    return isJpgOrPng && isLt2M;
+    return new Promise((resolve, reject) => {
+      // 利用resolve和reject来控制返回，从而控制失败不显示缩略图
+      const isJpgOrPng =  file.type === 'image/jpg' || file.type === 'image/jpeg' || file.type === 'image/png';
+      if (!isJpgOrPng) {
+        message.error('请上传 JPG/PNG 类型的图片!');
+        return reject(false)
+      }
+      const isLt3M = file.size / 1024 / 1024 < 3;
+      if (!isLt3M) {
+        message.error('图片太大啦，缩小一下体积吧，超过3MB了!');
+        return reject(false)
+      }
+      return resolve(true);
+    });
   };
 
-  // 图书更新
+  // 图片更新
   const handleImgChange = (info) => {
+
     // 设置上传完图片，图片的暂时显示
     setFileList(info.fileList)
     // 获取后台返回的data信息
@@ -123,7 +130,6 @@ const BookEditPage = (props) => {
         setImgUrl(info.file.originFileObj.response.Data || '');
       }
     }
-
   };
 
   // 关闭预览窗口

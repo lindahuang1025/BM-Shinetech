@@ -18,7 +18,6 @@ const TableList = () => {
       dataIndex: 'ImageUrl',
       width: 80,
       render: (_, record) => {
-        console.log(record)
         return record.ImageUrl ? <Popover placement="topLeft" content={<img alt={record.name} src={`${uploadImgUrl}${record.ImageUrl}`} style={{ maxWidth: '480px' }} />}><Avatar size={24} src={`${uploadImgUrl}${record.ImageUrl}`} /></Popover> : <Avatar size={24} icon={<EllipsisOutlined />} />
       }
     },
@@ -36,6 +35,7 @@ const TableList = () => {
       width:400,
       sorter: (a, b) => a.Title.length - b.Title.length,
       sortDirections: ['descend', 'ascend'],
+      ellipsis:true
     },
     {
       title: '图书类别',
@@ -47,12 +47,12 @@ const TableList = () => {
         3: { text: '系统实践/设计类', status: 3 },
         4: { text: '文学/生活类', status: 4 }
       },
-      filters:[
-        { text: '企业/项目/时间管理类', value: 1 },
-        { text: '计算机/软件/网络工程开发类', value: 2 },
-        { text: '系统实践/设计类', value: 3 },
-        { text: '文学/生活类', value: 4 }
-      ],
+      // filters:[
+      //   { text: '企业/项目/时间管理类', value: 1 },
+      //   { text: '计算机/软件/网络工程开发类', value: 2 },
+      //   { text: '系统实践/设计类', value: 3 },
+      //   { text: '文学/生活类', value: 4 }
+      // ],
     },
     {
       title: '作者',
@@ -139,6 +139,11 @@ const TableList = () => {
     })
   }
 
+  // 清空查询
+  const clearSearchInput = () => {
+    setSearchValue('')
+  }
+
   return (
     <div>
       <ProTable
@@ -154,6 +159,9 @@ const TableList = () => {
               onSearch={value => handleNameFilter(value)}
               style={{ width: 200, fontSize: 10,marginRight:15 }}
             />
+            <Button key="1" type="primary" onClick={() => clearSearchInput()}>
+              清空查询
+            </Button>
             <Button key="1" type="primary" onClick={() => goEditPage()}>
               <PlusOutlined /> 新建
             </Button>
