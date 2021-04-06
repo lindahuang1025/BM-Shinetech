@@ -119,19 +119,6 @@ const BookEditPage = (props) => {
     });
   };
 
-  // 图片更新
-  const handleImgChange = (info) => {
-
-    // 设置上传完图片，图片的暂时显示
-    setFileList(info.fileList)
-    // 获取后台返回的data信息
-    if(info && info.file && info.file.originFileObj){
-      if(info.file.originFileObj.response?.Status === 0){
-        setImgUrl(info.file.originFileObj.response.Data || '');
-      }
-    }
-  };
-
   // 关闭预览窗口
   const handlePreviewCancel = () => {
     setPreviewVisible(false)
@@ -154,6 +141,12 @@ const BookEditPage = (props) => {
       }
       setPreviewImage(file.url || file.preview)
       setPreviewVisible(true)
+  };
+
+  // 删除当前上传图片
+  const handleDelete= () => {
+    setFileList([]);
+    setImgUrl('');
   };
 
   const goBack = () => {
@@ -210,11 +203,19 @@ const BookEditPage = (props) => {
                   <Upload
                       listType="picture-card"
                       className="avatar-uploader"
-                      action={uploadBookBgImg}
+                      customRequest={async(info)=>{
+                        const file = await uploadBookBgImg(info.file);
+                        const fileListTemp = {
+                          file:file,
+                          fileList:[file]
+                        };
+                        setFileList(fileListTemp.fileList);
+                        setImgUrl(file.response.Data || '');
+                      }}
                       fileList={fileList}
                       beforeUpload={beforeImgUpload}
                       onPreview={handlePreview}
-                      onChange={handleImgChange}
+                      onRemove={handleDelete}
                   >
                       {fileList.length >= 1 ? null : uploadButton}
                   </Upload>

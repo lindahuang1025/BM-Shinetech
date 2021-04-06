@@ -29,10 +29,9 @@ export async function uploadBookBgImg(file) {
         method: 'POST',
         data: formData
     });
-
     // 返回一个upload组件需要的结构，onChange会根据status触发获取response
-    const fileData = {...file};
+    file.status = 'done';
     file.response = res;
-
-    return fileData;
+    file.url=`${uploadImgUrl}${res.Data}`
+    return file;
 }
