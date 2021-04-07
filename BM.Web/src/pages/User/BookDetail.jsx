@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './BookDetail.less';
 import { borrowBook } from '@/services/bookBorrow';
-import { Button, Card, Modal, DatePicker, List } from 'antd-mobile';
+import { Modal, DatePicker, List  } from 'antd-mobile';
 import { message } from 'antd';
 import { connect, useIntl, history } from 'umi';
 import bookStatusEnum from '@/enums/bookStatusEnum';
 import { getStoredUser } from '@/utils/utils';
 import bookDefaultImg from '@/assets/defaultBg.jpg'
-import { BackTop, PageHeader } from 'antd';
+import { BackTop, PageHeader, Card } from 'antd';
 import moment from 'moment'
+
+const { Meta } = Card;
 
 const bookDetail = (props) => {
     // 本地化语言设置
@@ -67,20 +69,18 @@ const bookDetail = (props) => {
                     title= "图书详情"
                 />
                 {(bookInfo.Status || 0 )=== bookStatusEnum.Normal ? <></>: <div><div className="borrowDisablePrompt">本书在 {bookInfo.BorrowedBy} 处大约还有 <span className="global-borrow-fixed-btn-text-disable">{moment(bookInfo.PlanReturnDate).diff(moment(), 'days')}</span> 天释放</div><div className="borrowDisablePrompt">借阅日期：{moment(bookInfo.BorrowDate).format("YYYY-MM-DD")}</div></div> }
-                <Card className="book-info">
-                    <Card.Body className="global-flex-column-center">
-                        <img src={`${uploadImgUrl}${bookInfo.ImageUrl}`|| bookDefaultImg} className="book-img"/>
-                        <Card.Header
-                            title={<div className="global-flex-column-center">
-                                <div className="book-name">《{bookInfo.Title}》</div>
-                                <div className="book-author">{bookInfo.Author}</div>
-                            </div>}
-                    />
-                    </Card.Body>
-                    <Card.Footer content={<div className="book-description">{bookInfo.Description}</div>} />
+                <Card
+                    hoverable
+                    style={{ width: '100%' }}
+                    className="book-info"
+                    cover={<img alt="bookImg" className="book-img" src={bookInfo.ImageUrl?`${uploadImgUrl}${bookInfo.ImageUrl}`: bookDefaultImg} />}
+                >
+                    <Meta title={<div className="book-name">《{bookInfo.Title}》</div>} description={<div className="book-author">{bookInfo.Author}</div>} />
+                    <div className="book-description">{bookInfo.Description}</div>
                 </Card>
+      
                 {/* 浮动借阅 */}
-                {(bookInfo.Status || 0 ) === bookStatusEnum.Normal && <BackTop visibilityHeight={0} onClick={()=>{setBorrowModalVisable(true)}}>
+                {(bookInfo.Status || 0 ) === bookStatusEnum.Normal && <BackTop visibilityHeight={-50} onClick={()=>{setBorrowModalVisable(true)}}>
                     <div className="global-backTop"><div className="global-borrow-fixed-btn-text">借</div></div>
                 </BackTop>}
                 {/* 借阅弹框 */}
