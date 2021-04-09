@@ -80,5 +80,13 @@ namespace BM.WebAPI.Controllers
             var pageIndex = paramter["pageIndex"].ToObject<int>();
             return await bookInfoBLL.Query(keyword, pageSize, pageIndex);
         }
+
+        [HttpPost]
+        [Route("importByExcel")]
+        public async Task<Operate> ImportByExcel()
+        {
+            var httpRequest = HttpContext.Current.Request;
+            return await bookInfoBLL.ImportByExcel(httpRequest);
+        }
     }
 }

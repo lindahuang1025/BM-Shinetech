@@ -362,7 +362,6 @@ E:\Project\BM-Shinetech\BM\BM.WebAPI\obj\Release\BM.WebAPI.csproj.CoreCompileInp
 E:\Project\BM-Shinetech\BM\BM.WebAPI\obj\Release\BM.WebAPI.csproj.CopyComplete
 E:\Project\BM-Shinetech\BM\BM.WebAPI\obj\Release\BM.WebAPI.dll
 E:\Project\BM-Shinetech\BM\BM.WebAPI\obj\Release\BM.WebAPI.pdb
-C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.WebAPI.dll.config
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.WebAPI.dll
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.WebAPI.pdb
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\csc.exe
@@ -482,3 +481,10 @@ C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAP
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\obj\Release\BM.WebAPI.csproj.CopyComplete
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\obj\Release\BM.WebAPI.dll
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\obj\Release\BM.WebAPI.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\ExcelDataReader.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\ExcelDataReader.DataSet.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\ExcelDataReader.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\ExcelDataReader.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\ExcelDataReader.DataSet.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\ExcelDataReader.DataSet.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.WebAPI.dll.config

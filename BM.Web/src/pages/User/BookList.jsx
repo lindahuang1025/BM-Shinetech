@@ -32,7 +32,6 @@ const bookList = (props) => {
 
     useEffect(() => {
         setKeyword('');
-        console.log(props.history.location.state?.keyword)
         const word = props.history.location.state?.keyword || '';
         if(word) {
             setKeyword(word);
@@ -137,7 +136,7 @@ const bookList = (props) => {
                             <div className="book-author">{rowData.Author}</div>
                         </div>}
                         thumb={ rowData.ImageUrl? `${uploadImgUrl}${rowData.ImageUrl}`: bookDefaultImg}
-                        thumbStyle={{borderRadius: '5px',width: '50px',height: '50px'}}
+                        thumbStyle={{borderRadius: '5px',width: '50px',height: '60px'}}
                         extra={<span>{(rowData.Status || 0) === bookStatusEnum.Normal? <AlertTwoTone  twoToneColor="rgb(16, 212, 16)"/>:<AlertTwoTone  twoToneColor="red"/>}</span>}
                     />
             </Card.Body>

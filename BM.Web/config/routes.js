@@ -23,16 +23,31 @@ export default [
             path: '/',
             redirect: '/bookList',
           },
+          /* admin config start */
+          {
+            name: 'list.book-manage',
+            icon: 'table',
+            path: '/bookManage',
+            component: './Admin/BookManage.jsx',
+            authority: ['Admin'],
+            wrappers: [
+              '@/wrappers/authByAdmin.jsx',
+            ],
+          },
+          {
+            path: '/bookManage/edit',
+            component: './Admin/BookEdit.jsx',
+            authority: ['Admin'],
+          },
+          /* admin config end */
+
           /* user config start */
           {
             name: 'list.book-list',
             icon: 'table',
             path: '/bookList',
             component: './User/BookList.jsx',
-            authority: ['User'],
-            wrappers: [
-              '@/wrappers/authByUser.jsx',
-            ],
+            authority: ['User','Admin']
           },
           {
             name: 'list.borrow-list',
@@ -59,24 +74,6 @@ export default [
             authority: ['User'],
           },
           /* user config end */
-
-          /* admin config start */
-          {
-            name: 'list.book-manage',
-            icon: 'table',
-            path: '/bookManage',
-            component: './Admin/BookManage.jsx',
-            authority: ['Admin'],
-            wrappers: [
-              '@/wrappers/authByAdmin.jsx',
-            ],
-          },
-          {
-            path: '/bookManage/edit',
-            component: './Admin/BookEdit.jsx',
-            authority: ['Admin'],
-          },
-          /* admin config end */
           {
             component: './404',
           },

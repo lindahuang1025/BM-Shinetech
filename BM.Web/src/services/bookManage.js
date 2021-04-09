@@ -37,7 +37,10 @@ export async function uploadBookBgImg(file) {
 }
 
 export async function uploadBookListExcel(file) {
-    return request('/api/bookInfo/uploadBookListExcel', {
+    // 将file转为formData类型
+    const formData = new FormData();
+    formData.append('file', file);
+    return request('/api/bookInfo/importByExcel', {
         method: 'POST',
         data: formData
     });

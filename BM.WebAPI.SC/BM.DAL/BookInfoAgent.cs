@@ -42,5 +42,24 @@ namespace BM.DAL
                     .FirstOrDefaultAsync(x => x.Id == id);
             }
         }
+        public async Task<int> ImportByExcel(BookInfo entity)
+        {
+            using (var context = new BMDbContext())
+            {
+                entity.UpdateBy = GlobalVariance.UserName ?? "";
+                entity.UpdateDate = DateTime.Now;
+                var count = 0;
+                var hasExist = await context.BookInfo.FirstOrDefaultAsync(x => x.Title == entity.Title);
+
+                if (hasExist == null)
+                {
+                    count += 1;
+                    context.Set<BookInfo>().AddOrUpdate(entity);
+                    await context.SaveChangesAsync();
+                }
+
+                return count;
+            }
+        }
     }
 }

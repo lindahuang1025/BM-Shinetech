@@ -1,4 +1,4 @@
-import { PlusOutlined, EllipsisOutlined, LoadingOutlined, UploadOutlined } from '@ant-design/icons';
+import { PlusOutlined, EllipsisOutlined, LoadingOutlined, UploadOutlined, RedoOutlined } from '@ant-design/icons';
 import { Button, Divider, message, Input, Popconfirm,Tag, Popover, Avatar, Upload } from 'antd';
 import React, { useState, useRef } from 'react';
 import ProTable from '@ant-design/pro-table';
@@ -43,10 +43,11 @@ const TableList = () => {
       dataIndex: 'CategoryId',
       hideInForm: true,
       valueEnum: {
-        1: { text: '企业/项目/时间管理类', status: 1 },
+        1: { text: '综合类', status: 1 },
         2: { text: '计算机/软件/网络工程开发类', status: 2 },
         3: { text: '系统实践/设计类', status: 3 },
-        4: { text: '文学/生活类', status: 4 }
+        4: { text: '文学/生活类', status: 4 },
+        4: { text: '企业/项目/时间管理类', status: 5 }
       },
       // filters:[
       //   { text: '企业/项目/时间管理类', value: 1 },
@@ -140,41 +141,16 @@ const TableList = () => {
     })
   }
 
-  // 清空查询
-  const clearSearchInput = () => {
-    setSearchValue('')
-  }
-
   const beforeBookListUpload = (file) => {
-    console.log(file.type);
     const isSpreadsheets = (file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     let warningMessage = '';
     if (!isSpreadsheets) {
-      warningMessage += '请导入excel文件~';
+      warningMessage += '请导入excel文件哈~';
     }
     if (!isSpreadsheets) {
       message.error(warningMessage);
     }
     return isSpreadsheets;
-  }
-
-  const onUploadChange = (info) => {
-    if (info.file.status === 'uploading') {
-      setSheetUploading(true);
-    } else if (info.file.status === 'done') {
-      const isUploadSuccess = info.file.response.status === 1;
-      setSheetUploading(false);
-      if (isUploadSuccess) {
-        message.success('上传成功，页面即将刷新！');
-        // 重新加载列表
-        actionRef.current.reload();
-      } else {
-        message.warning(`上传 "${info.file.name}" 时出现 "${info.file.response.message}", 请再尝试一次.`,3);
-      }
-    } else if (info.file.status === 'error') {
-      setSheetUploading(false);
-      message.error('上传文件失败，请前去找程序员算账！');
-    }
   }
 
   return (
@@ -190,23 +166,34 @@ const TableList = () => {
             <Search
               placeholder="输入查询信息"
               onSearch={value => handleNameFilter(value)}
-              style={{ width: 200, fontSize: 10,marginRight:15 }}
+              style={{ width: 200, fontSize: 10}}
               allowClear={true}
             />
-            <Button key="1" type="primary" onClick={() => clearSearchInput()}>
-              清空查询
-            </Button>
             <Divider type="vertical" />
             <Upload
                     name="BookListFile"
-                    // action={uploadBookListExcel}
+                    customRequest={async(info)=>{
+                      setSheetUploading(true);
+                      const res = await uploadBookListExcel(info.file);
+                      setSheetUploading(false);
+                      if(res){
+                        if(res.Status === 0){
+                          // 重新加载列表
+                          actionRef.current.reload();
+                        }
+                        message.success(res.Message);
+                      }else{
+                        message.error('上传文件失败，刷新页面再上传试试！');
+                      }
+                    }}
                     showUploadList={false}
                     multiple={false}
-                    onChange={onUploadChange}
                     beforeUpload={beforeBookListUpload}
                     disabled={sheetUploading}
                   >
+                  <Popover content="请导入EXCEL文件~">
                     <Button icon={sheetUploading ? <LoadingOutlined /> : <UploadOutlined />}>批量导入书籍</Button>
+                  </Popover>
             </Upload>
             <Divider type="vertical" />
             <Button key="1" type="primary" onClick={() => goEditPage()}>

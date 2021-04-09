@@ -74,3 +74,9 @@ C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\o
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Release\BM.BLL.csproj.CopyComplete
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Release\BM.BLL.dll
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Release\BM.BLL.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.DataSet.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.DataSet.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.DataSet.xml

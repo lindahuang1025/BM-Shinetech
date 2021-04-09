@@ -81,7 +81,6 @@ const BookEditPage = (props) => {
     if(imgUrl !==''){
       values.ImageUrl = imgUrl;
     }
-    console.log(values)
     try {
       await bookAddOrUpdate({ ...values });
       if(hasBook?.Id) {message.success('修改成功')} else {message.success('添加成功')};
