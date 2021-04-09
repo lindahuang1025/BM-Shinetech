@@ -1,0 +1,20 @@
+﻿export default function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.when("/app/{{LowerCaseTemplate}}", "/app/{{LowerCaseTemplate}}/list");
+    $stateProvider
+        .state("app.{{LowerCaseTemplate}}.list", {
+            url: "/list",
+            templateUrl: "app/views/{{LowerCaseTemplate}}/{{LowerCaseTemplate}}.list.html",
+            controller: "{{LowerCaseTemplate}}ListCtrl",
+            ncyBreadcrumb: {
+                label: 'Listing'
+            }
+        })
+        .state("app.{{LowerCaseTemplate}}.edit", {
+            url: "/edit/:id",
+            templateUrl: "app/views/{{LowerCaseTemplate}}/{{LowerCaseTemplate}}.edit.html",
+            controller: "{{LowerCaseTemplate}}EditCtrl",
+            ncyBreadcrumb: {
+                label: 'Detail'
+            }
+        });
+}

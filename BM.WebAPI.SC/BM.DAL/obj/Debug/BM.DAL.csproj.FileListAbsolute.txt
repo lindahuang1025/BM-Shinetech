@@ -1,0 +1,64 @@
+E:\study\BookManager\BM\BM.DAL\obj\Debug\BM.DAL.csprojAssemblyReference.cache
+E:\study\BookManager\BM\BM.DAL\obj\Debug\BM.DAL.csproj.CoreCompileInputs.cache
+E:\Project\BMSite\BM\BM.DAL\obj\Debug\BM.DAL.csprojAssemblyReference.cache
+E:\Project\BMSite\BM\BM.DAL\obj\Debug\BM.DAL.csproj.CoreCompileInputs.cache
+E:\Project\BMSite\BM\BM.DAL\bin\Debug\BM.DAL.dll
+E:\Project\BMSite\BM\BM.DAL\bin\Debug\BM.DAL.pdb
+E:\Project\BMSite\BM\BM.DAL\bin\Debug\BM.DataModel.exe
+E:\Project\BMSite\BM\BM.DAL\bin\Debug\EntityFramework.dll
+E:\Project\BMSite\BM\BM.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project\BMSite\BM\BM.DAL\bin\Debug\BM.DataModel.pdb
+E:\Project\BMSite\BM\BM.DAL\bin\Debug\BM.DataModel.exe.config
+E:\Project\BMSite\BM\BM.DAL\bin\Debug\EntityFramework.xml
+E:\Project\BMSite\BM\BM.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project\BMSite\BM\BM.DAL\obj\Debug\BM.DAL.csproj.CopyComplete
+E:\Project\BMSite\BM\BM.DAL\obj\Debug\BM.DAL.dll
+E:\Project\BMSite\BM\BM.DAL\obj\Debug\BM.DAL.pdb
+E:\Project\BMSite-AngularJs\BM\BM.DAL\bin\Debug\BM.DAL.dll
+E:\Project\BMSite-AngularJs\BM\BM.DAL\bin\Debug\BM.DAL.pdb
+E:\Project\BMSite-AngularJs\BM\BM.DAL\bin\Debug\BM.DataModel.exe
+E:\Project\BMSite-AngularJs\BM\BM.DAL\bin\Debug\EntityFramework.dll
+E:\Project\BMSite-AngularJs\BM\BM.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project\BMSite-AngularJs\BM\BM.DAL\bin\Debug\BM.DataModel.pdb
+E:\Project\BMSite-AngularJs\BM\BM.DAL\bin\Debug\BM.DataModel.exe.config
+E:\Project\BMSite-AngularJs\BM\BM.DAL\bin\Debug\EntityFramework.xml
+E:\Project\BMSite-AngularJs\BM\BM.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project\BMSite-AngularJs\BM\BM.DAL\obj\Debug\BM.DAL.csprojAssemblyReference.cache
+E:\Project\BMSite-AngularJs\BM\BM.DAL\obj\Debug\BM.DAL.csproj.CoreCompileInputs.cache
+E:\Project\BMSite-AngularJs\BM\BM.DAL\obj\Debug\BM.DAL.csproj.CopyComplete
+E:\Project\BMSite-AngularJs\BM\BM.DAL\obj\Debug\BM.DAL.dll
+E:\Project\BMSite-AngularJs\BM\BM.DAL\obj\Debug\BM.DAL.pdb
+E:\Project\BM-Shinetech\BM\BM.DAL\obj\Debug\BM.DAL.csprojAssemblyReference.cache
+E:\Project\BM-Shinetech\BM\BM.DAL\obj\Debug\BM.DAL.csproj.CoreCompileInputs.cache
+E:\Project\BM-Shinetech\BM\BM.DAL\obj\Debug\BM.DAL.dll
+E:\Project\BM-Shinetech\BM\BM.DAL\obj\Debug\BM.DAL.pdb
+E:\Project\BM-Shinetech\BM\BM.DAL\bin\Debug\BM.DAL.dll
+E:\Project\BM-Shinetech\BM\BM.DAL\bin\Debug\BM.DAL.pdb
+E:\Project\BM-Shinetech\BM\BM.DAL\bin\Debug\BM.DataModel.exe
+E:\Project\BM-Shinetech\BM\BM.DAL\bin\Debug\EntityFramework.dll
+E:\Project\BM-Shinetech\BM\BM.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project\BM-Shinetech\BM\BM.DAL\bin\Debug\BM.DataModel.pdb
+E:\Project\BM-Shinetech\BM\BM.DAL\bin\Debug\BM.DataModel.exe.config
+E:\Project\BM-Shinetech\BM\BM.DAL\bin\Debug\EntityFramework.xml
+E:\Project\BM-Shinetech\BM\BM.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project\BM-Shinetech\BM\BM.DAL\obj\Debug\BM.DAL.csproj.CopyComplete
+E:\Project\BM-Shinetech\BM\BM.DAL\bin\Debug\BM.Common.dll
+E:\Project\BM-Shinetech\BM\BM.DAL\bin\Debug\log4net.dll
+E:\Project\BM-Shinetech\BM\BM.DAL\bin\Debug\BM.Common.pdb
+E:\Project\BM-Shinetech\BM\BM.DAL\bin\Debug\log4net.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Debug\BM.DAL.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Debug\BM.DAL.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Debug\BM.Common.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Debug\BM.DataModel.exe
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Debug\log4net.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Debug\BM.Common.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Debug\BM.DataModel.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Debug\BM.DataModel.exe.config
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Debug\EntityFramework.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Debug\log4net.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\obj\Debug\BM.DAL.csprojAssemblyReference.cache
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\obj\Debug\BM.DAL.csproj.CoreCompileInputs.cache
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\obj\Debug\BM.DAL.csproj.CopyComplete
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\obj\Debug\BM.DAL.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\obj\Debug\BM.DAL.pdb

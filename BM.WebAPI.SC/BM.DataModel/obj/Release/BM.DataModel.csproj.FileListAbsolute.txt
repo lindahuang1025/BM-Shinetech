@@ -1,0 +1,100 @@
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\BM.DataModel.exe.config
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\BM.DataModel.exe
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\BM.DataModel.pdb
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\EntityFramework.dll
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\EntityFramework.SqlServer.dll
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\Microsoft.Owin.dll
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\Newtonsoft.Json.dll
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\Owin.dll
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\System.Net.Http.Formatting.dll
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\System.Web.Http.dll
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\EntityFramework.xml
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\EntityFramework.SqlServer.xml
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\Microsoft.Owin.xml
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\Newtonsoft.Json.xml
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\System.Net.Http.Formatting.xml
+E:\Project\BMSite\BM\BM.DataModel\bin\Release\System.Web.Http.xml
+E:\Project\BMSite\BM\BM.DataModel\obj\Release\BM.DataModel.csprojAssemblyReference.cache
+E:\Project\BMSite\BM\BM.DataModel\obj\Release\BM.DataModel.Migrations.CreateNewTables.resources
+E:\Project\BMSite\BM\BM.DataModel\obj\Release\BM.DataModel.Migrations.CreateV_SysUser.resources
+E:\Project\BMSite\BM\BM.DataModel\obj\Release\BM.DataModel.Migrations.CreateV_BookInfo.resources
+E:\Project\BMSite\BM\BM.DataModel\obj\Release\BM.DataModel.csproj.GenerateResource.cache
+E:\Project\BMSite\BM\BM.DataModel\obj\Release\BM.DataModel.csproj.CoreCompileInputs.cache
+E:\Project\BMSite\BM\BM.DataModel\obj\Release\BM.DataModel.csproj.CopyComplete
+E:\Project\BMSite\BM\BM.DataModel\obj\Release\BM.DataModel.exe
+E:\Project\BMSite\BM\BM.DataModel\obj\Release\BM.DataModel.pdb
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\BM.DataModel.exe.config
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\BM.DataModel.exe
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\BM.DataModel.pdb
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\EntityFramework.dll
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\EntityFramework.SqlServer.dll
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\Microsoft.Owin.dll
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\Newtonsoft.Json.dll
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\Owin.dll
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\System.Net.Http.Formatting.dll
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\System.Web.Http.dll
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\EntityFramework.xml
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\EntityFramework.SqlServer.xml
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\Microsoft.Owin.xml
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\Newtonsoft.Json.xml
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\System.Net.Http.Formatting.xml
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\bin\Release\System.Web.Http.xml
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\obj\Release\BM.DataModel.csprojAssemblyReference.cache
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\obj\Release\BM.DataModel.csproj.GenerateResource.cache
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\obj\Release\BM.DataModel.csproj.CoreCompileInputs.cache
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\obj\Release\BM.DataModel.csproj.CopyComplete
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\obj\Release\BM.DataModel.exe
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\obj\Release\BM.DataModel.pdb
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\obj\Release\BM.DataModel.Migrations.view.resources
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\obj\Release\BM.DataModel.Migrations.updateBookBorrow.resources
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\obj\Release\BM.DataModel.Migrations.updateBookInfoView.resources
+E:\Project\BMSite-AngularJs\BM\BM.DataModel\obj\Release\BM.DataModel.Migrations.updateTableBookBorrow.resources
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\BM.DataModel.exe.config
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\BM.DataModel.exe
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\BM.DataModel.pdb
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\EntityFramework.dll
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\EntityFramework.SqlServer.dll
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\Microsoft.Owin.dll
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\Newtonsoft.Json.dll
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\Owin.dll
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\System.Net.Http.Formatting.dll
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\System.Web.Http.dll
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\EntityFramework.xml
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\EntityFramework.SqlServer.xml
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\Microsoft.Owin.xml
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\Newtonsoft.Json.xml
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\System.Net.Http.Formatting.xml
+E:\Project\BM-Shinetech\BM\BM.DataModel\bin\Release\System.Web.Http.xml
+E:\Project\BM-Shinetech\BM\BM.DataModel\obj\Release\BM.DataModel.csprojAssemblyReference.cache
+E:\Project\BM-Shinetech\BM\BM.DataModel\obj\Release\BM.DataModel.Migrations.updateTable.resources
+E:\Project\BM-Shinetech\BM\BM.DataModel\obj\Release\BM.DataModel.Migrations.UpdateForeignKey.resources
+E:\Project\BM-Shinetech\BM\BM.DataModel\obj\Release\BM.DataModel.Migrations.removeUserRole.resources
+E:\Project\BM-Shinetech\BM\BM.DataModel\obj\Release\BM.DataModel.Migrations.removeRequiredForUpdateBy.resources
+E:\Project\BM-Shinetech\BM\BM.DataModel\obj\Release\BM.DataModel.csproj.GenerateResource.cache
+E:\Project\BM-Shinetech\BM\BM.DataModel\obj\Release\BM.DataModel.csproj.CoreCompileInputs.cache
+E:\Project\BM-Shinetech\BM\BM.DataModel\obj\Release\BM.DataModel.csproj.CopyComplete
+E:\Project\BM-Shinetech\BM\BM.DataModel\obj\Release\BM.DataModel.exe
+E:\Project\BM-Shinetech\BM\BM.DataModel\obj\Release\BM.DataModel.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\BM.DataModel.exe.config
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\BM.DataModel.exe
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\BM.DataModel.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\EntityFramework.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\Microsoft.Owin.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\Newtonsoft.Json.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\Owin.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\System.Web.Http.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\EntityFramework.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\Microsoft.Owin.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\Newtonsoft.Json.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\System.Net.Http.Formatting.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\System.Web.Http.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.csprojAssemblyReference.cache
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.Migrations.phase4.resources
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.csproj.GenerateResource.cache
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.csproj.CoreCompileInputs.cache
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.csproj.CopyComplete
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.exe
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.pdb

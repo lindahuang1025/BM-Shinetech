@@ -1,0 +1,33 @@
+﻿using BM.DataModel;
+using BM.ViewModel.ViewModel;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BM.ViewModel.ModelConvert
+{
+    public static partial class ModelConvert
+    {
+        public static {{Template}}Model ToModel(this {{Template}} entity)
+        {
+            return new {{Template}}Model()
+            {
+                Id = entity.Id,
+                CreateBy = entity.CreateBy,
+                CreateDate = entity.CreateDate
+            };
+        }
+
+        public static {{Template}} ToEntity(this {{Template}}Model model)
+        {
+            return new {{Template}}()
+            {
+                Id = model.Id,
+                CreateBy = model.CreateBy,
+                CreateDate = model.CreateDate
+            };
+        }
+    }
+}

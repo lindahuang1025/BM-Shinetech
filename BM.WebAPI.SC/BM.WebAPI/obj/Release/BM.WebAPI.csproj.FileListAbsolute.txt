@@ -1,0 +1,484 @@
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.WebAPI.dll.config
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.WebAPI.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.WebAPI.pdb
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\csc.exe
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\csc.exe.config
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\csc.rsp
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\csi.exe
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\csi.exe.config
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\csi.rsp
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.AppContext.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Collections.Immutable.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Console.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.IO.Compression.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.IO.FileSystem.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.IO.Pipes.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Security.AccessControl.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Security.Claims.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Security.Principal.Windows.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.ValueTuple.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Xml.XPath.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\vbc.exe
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\vbc.exe.config
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\vbc.rsp
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\VBCSCompiler.exe
+E:\Project\BMSite\BM\BM.WebAPI\bin\roslyn\VBCSCompiler.exe.config
+E:\Project\BMSite\BM\BM.WebAPI\bin\Antlr3.Runtime.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.BLL.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.Common.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.DataModel.exe
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.ViewModel.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\EntityFramework.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\EntityFramework.SqlServer.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\log4net.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.Owin.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.Owin.Security.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.Web.Infrastructure.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\Newtonsoft.Json.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\Owin.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Net.Http.Formatting.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Helpers.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Http.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Http.Owin.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Http.WebHost.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Mvc.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Optimization.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Razor.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.WebPages.Deployment.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.WebPages.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.WebPages.Razor.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\WebGrease.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.DAL.dll
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.BLL.pdb
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.Common.pdb
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.DataModel.pdb
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.DataModel.exe.config
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.ViewModel.pdb
+E:\Project\BMSite\BM\BM.WebAPI\bin\EntityFramework.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\EntityFramework.SqlServer.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\log4net.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.Core.pdb
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.Owin.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.Owin.Security.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Net.Http.Formatting.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Http.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Http.Owin.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\Newtonsoft.Json.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Helpers.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Http.WebHost.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Mvc.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Optimization.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.Razor.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.WebPages.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.WebPages.Deployment.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\System.Web.WebPages.Razor.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\Antlr3.Runtime.pdb
+E:\Project\BMSite\BM\BM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Project\BMSite\BM\BM.WebAPI\bin\BM.DAL.pdb
+E:\Project\BMSite\BM\BM.WebAPI\obj\Release\BM.WebAPI.csprojAssemblyReference.cache
+E:\Project\BMSite\BM\BM.WebAPI\obj\Release\BM.WebAPI.csproj.CoreCompileInputs.cache
+E:\Project\BMSite\BM\BM.WebAPI\obj\Release\BM.WebAPI.csproj.CopyComplete
+E:\Project\BMSite\BM\BM.WebAPI\obj\Release\BM.WebAPI.dll
+E:\Project\BMSite\BM\BM.WebAPI\obj\Release\BM.WebAPI.pdb
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.WebAPI.dll.config
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.WebAPI.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.WebAPI.pdb
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\csc.exe
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\csc.exe.config
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\csc.rsp
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\csi.exe
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\csi.exe.config
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\csi.rsp
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.AppContext.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Collections.Immutable.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Console.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.IO.Compression.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.IO.FileSystem.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.IO.Pipes.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Security.AccessControl.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Security.Claims.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Security.Principal.Windows.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.ValueTuple.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Xml.XPath.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\vbc.exe
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\vbc.exe.config
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\vbc.rsp
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\VBCSCompiler.exe
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\roslyn\VBCSCompiler.exe.config
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Antlr3.Runtime.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.BLL.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.Common.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.DataModel.exe
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.ViewModel.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\EntityFramework.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\EntityFramework.SqlServer.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\log4net.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.Owin.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.Owin.Security.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.Web.Infrastructure.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Newtonsoft.Json.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Owin.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Net.Http.Formatting.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Helpers.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Http.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Http.Owin.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Http.WebHost.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Mvc.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Optimization.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Razor.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.WebPages.Deployment.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.WebPages.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.WebPages.Razor.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\WebGrease.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.DAL.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.BLL.pdb
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.Common.pdb
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.DataModel.pdb
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.DataModel.exe.config
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.ViewModel.pdb
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\EntityFramework.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\EntityFramework.SqlServer.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\log4net.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.Core.pdb
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.Owin.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.Owin.Security.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Net.Http.Formatting.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Http.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Http.Owin.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Newtonsoft.Json.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Helpers.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Http.WebHost.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Mvc.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Optimization.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.Razor.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.WebPages.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.WebPages.Deployment.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\System.Web.WebPages.Razor.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Antlr3.Runtime.pdb
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\bin\BM.DAL.pdb
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\obj\Release\BM.WebAPI.csprojAssemblyReference.cache
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\obj\Release\BM.WebAPI.csproj.CoreCompileInputs.cache
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\obj\Release\BM.WebAPI.csproj.CopyComplete
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\obj\Release\BM.WebAPI.dll
+E:\Project\BMSite-AngularJs\BM\BM.WebAPI\obj\Release\BM.WebAPI.pdb
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\BM.WebAPI.dll.config
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\BM.WebAPI.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\BM.WebAPI.pdb
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\csc.exe
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\csc.exe.config
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\csc.rsp
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\csi.exe
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\csi.exe.config
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\csi.rsp
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.AppContext.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Collections.Immutable.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Console.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.IO.Compression.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.IO.FileSystem.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.IO.Pipes.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Security.AccessControl.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Security.Claims.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Security.Principal.Windows.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.ValueTuple.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Xml.XPath.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\vbc.exe
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\vbc.exe.config
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\vbc.rsp
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\VBCSCompiler.exe
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\roslyn\VBCSCompiler.exe.config
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Antlr3.Runtime.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\BM.BLL.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\BM.Common.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\BM.DataModel.exe
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\EntityFramework.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\EntityFramework.SqlServer.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\log4net.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.Owin.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.Owin.Security.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.Web.Infrastructure.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Newtonsoft.Json.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Owin.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Net.Http.Formatting.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Helpers.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Http.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Http.Owin.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Http.WebHost.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Mvc.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Optimization.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Razor.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.WebPages.Deployment.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.WebPages.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.WebPages.Razor.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\WebGrease.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\BM.DAL.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\BM.BLL.pdb
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\BM.Common.pdb
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\BM.DataModel.pdb
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\BM.DataModel.exe.config
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\EntityFramework.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\EntityFramework.SqlServer.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\log4net.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.Core.pdb
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.Owin.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.Owin.Security.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Net.Http.Formatting.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Http.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Http.Owin.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Newtonsoft.Json.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Helpers.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Http.WebHost.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Mvc.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Optimization.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.Razor.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.WebPages.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.WebPages.Deployment.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\System.Web.WebPages.Razor.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Antlr3.Runtime.pdb
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Project\BM-Shinetech\BM\BM.WebAPI\bin\BM.DAL.pdb
+E:\Project\BM-Shinetech\BM\BM.WebAPI\obj\Release\BM.WebAPI.csprojAssemblyReference.cache
+E:\Project\BM-Shinetech\BM\BM.WebAPI\obj\Release\BM.WebAPI.csproj.CoreCompileInputs.cache
+E:\Project\BM-Shinetech\BM\BM.WebAPI\obj\Release\BM.WebAPI.csproj.CopyComplete
+E:\Project\BM-Shinetech\BM\BM.WebAPI\obj\Release\BM.WebAPI.dll
+E:\Project\BM-Shinetech\BM\BM.WebAPI\obj\Release\BM.WebAPI.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.WebAPI.dll.config
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.WebAPI.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.WebAPI.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\csc.exe
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\csc.exe.config
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\csc.rsp
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\csi.exe
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\csi.exe.config
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\csi.rsp
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.AppContext.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Console.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.IO.Compression.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.IO.Pipes.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Security.Claims.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.ValueTuple.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Xml.XPath.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\vbc.exe
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\vbc.exe.config
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\vbc.rsp
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Antlr3.Runtime.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.BLL.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.Common.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.DataModel.exe
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\EntityFramework.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\log4net.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.Owin.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.Owin.Security.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Newtonsoft.Json.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Owin.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Helpers.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Http.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Http.Owin.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Http.WebHost.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Mvc.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Optimization.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Razor.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.WebPages.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.WebPages.Razor.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\WebGrease.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.DAL.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.BLL.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.Common.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.DataModel.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.DataModel.exe.config
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\EntityFramework.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\log4net.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.AspNet.SignalR.Core.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.Owin.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.Owin.Security.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Net.Http.Formatting.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Http.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Http.Owin.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Newtonsoft.Json.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Helpers.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Mvc.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Optimization.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.Razor.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.WebPages.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\System.Web.WebPages.Razor.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Antlr3.Runtime.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\BM.DAL.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\obj\Release\BM.WebAPI.csprojAssemblyReference.cache
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\obj\Release\BM.WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\obj\Release\BM.WebAPI.csproj.CopyComplete
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\obj\Release\BM.WebAPI.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\obj\Release\BM.WebAPI.pdb

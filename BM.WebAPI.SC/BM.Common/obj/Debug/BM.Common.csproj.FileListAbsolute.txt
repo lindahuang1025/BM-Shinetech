@@ -1,0 +1,45 @@
+E:\study\BookManager\BM\BM.Common\bin\Debug\BM.Common.dll
+E:\study\BookManager\BM\BM.Common\bin\Debug\BM.Common.pdb
+E:\study\BookManager\BM\BM.Common\bin\Debug\log4net.dll
+E:\study\BookManager\BM\BM.Common\bin\Debug\log4net.xml
+E:\study\BookManager\BM\BM.Common\obj\Debug\BM.Common.csprojAssemblyReference.cache
+E:\study\BookManager\BM\BM.Common\obj\Debug\BM.Common.csproj.CoreCompileInputs.cache
+E:\study\BookManager\BM\BM.Common\obj\Debug\BM.Common.csproj.CopyComplete
+E:\study\BookManager\BM\BM.Common\obj\Debug\BM.Common.dll
+E:\study\BookManager\BM\BM.Common\obj\Debug\BM.Common.pdb
+E:\Project\BMSite\BM\BM.Common\bin\Debug\BM.Common.dll
+E:\Project\BMSite\BM\BM.Common\bin\Debug\BM.Common.pdb
+E:\Project\BMSite\BM\BM.Common\bin\Debug\log4net.dll
+E:\Project\BMSite\BM\BM.Common\bin\Debug\log4net.xml
+E:\Project\BMSite\BM\BM.Common\obj\Debug\BM.Common.csproj.CoreCompileInputs.cache
+E:\Project\BMSite\BM\BM.Common\obj\Debug\BM.Common.csproj.CopyComplete
+E:\Project\BMSite\BM\BM.Common\obj\Debug\BM.Common.dll
+E:\Project\BMSite\BM\BM.Common\obj\Debug\BM.Common.pdb
+E:\Project\BMSite\BM\BM.Common\obj\Debug\BM.Common.csprojAssemblyReference.cache
+E:\Project\BMSite-AngularJs\BM\BM.Common\bin\Debug\BM.Common.dll
+E:\Project\BMSite-AngularJs\BM\BM.Common\bin\Debug\BM.Common.pdb
+E:\Project\BMSite-AngularJs\BM\BM.Common\bin\Debug\log4net.dll
+E:\Project\BMSite-AngularJs\BM\BM.Common\bin\Debug\log4net.xml
+E:\Project\BMSite-AngularJs\BM\BM.Common\obj\Debug\BM.Common.csproj.CoreCompileInputs.cache
+E:\Project\BMSite-AngularJs\BM\BM.Common\obj\Debug\BM.Common.csproj.CopyComplete
+E:\Project\BMSite-AngularJs\BM\BM.Common\obj\Debug\BM.Common.dll
+E:\Project\BMSite-AngularJs\BM\BM.Common\obj\Debug\BM.Common.pdb
+E:\Project\BMSite-AngularJs\BM\BM.Common\obj\Debug\BM.Common.csprojAssemblyReference.cache
+E:\Project\BM-Shinetech\BM\BM.Common\bin\Debug\BM.Common.dll
+E:\Project\BM-Shinetech\BM\BM.Common\bin\Debug\BM.Common.pdb
+E:\Project\BM-Shinetech\BM\BM.Common\bin\Debug\log4net.dll
+E:\Project\BM-Shinetech\BM\BM.Common\bin\Debug\log4net.xml
+E:\Project\BM-Shinetech\BM\BM.Common\obj\Debug\BM.Common.csproj.CoreCompileInputs.cache
+E:\Project\BM-Shinetech\BM\BM.Common\obj\Debug\BM.Common.csproj.CopyComplete
+E:\Project\BM-Shinetech\BM\BM.Common\obj\Debug\BM.Common.dll
+E:\Project\BM-Shinetech\BM\BM.Common\obj\Debug\BM.Common.pdb
+E:\Project\BM-Shinetech\BM\BM.Common\obj\Debug\BM.Common.csprojAssemblyReference.cache
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.Common\bin\Debug\BM.Common.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.Common\bin\Debug\BM.Common.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.Common\bin\Debug\log4net.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.Common\bin\Debug\log4net.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.Common\obj\Debug\BM.Common.csprojAssemblyReference.cache
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.Common\obj\Debug\BM.Common.csproj.CoreCompileInputs.cache
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.Common\obj\Debug\BM.Common.csproj.CopyComplete
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.Common\obj\Debug\BM.Common.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.Common\obj\Debug\BM.Common.pdb

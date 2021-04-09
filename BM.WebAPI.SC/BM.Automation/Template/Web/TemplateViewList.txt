@@ -1,0 +1,29 @@
+﻿<div list-container
+     ng-init="init()">
+    <div class="search-panel form-inline">
+        <div class="form-group">
+            <input type="text"
+                   class="form-control"
+                   ng-model="keyword"
+                   ng-keydown="onSearchKeydown(event)"
+                   placeholder="keyword">
+            <button class="btn btn-default"
+                    ng-click="onSearchClick()">
+                Search
+            </button>
+        </div>
+        <div class="form-group pull-right">
+            <button class="btn btn-success"
+                    ng-click="onAddClicked()">
+                Add
+            </button>
+        </div>
+    </div>
+</div>
+<div ui-grid="gridOptions"
+     class="grid"
+     ui-grid-pinning
+     ui-grid-pagination
+     ui-grid-auto-resize
+     ui-grid-resize-columns
+     ui-grid-move-columns></div>

@@ -1,0 +1,78 @@
+﻿using BM.Common;
+using BM.DataModel;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BM.DAL
+{
+    public class {{Template}}Agent
+    {
+        public async Task AddOrUpdate({{Template}} entity)
+        {
+            using (var context = new BMDbContext())
+            {
+				entity.UpdateBy = GlobalVariance.UserName;
+                entity.UpdateDate = DateTime.Now;
+                context.{{Template}}.AddOrUpdate(entity);
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public async Task DeleteById(long id)
+        {
+            using (var context = new BMDbContext())
+            {
+                var item = context.{{Template}}.FirstOrDefault(x => x.Id == id);
+                if (item != null)
+                {
+                    context.{{Template}}.Remove(item);
+                }
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<{{Template}}> GetById(long id)
+        {
+            using (var context = new BMDbContext())
+            {
+                return await context.{{Template}}.FirstOrDefaultAsync(x => x.Id == id);
+            }
+        }
+
+		public async Task<List<{{Template}}>> Query(string keyword, int pageSize, int pageIndex)
+        {
+            using (var context = new BMDbContext())
+            {
+                var dataList = context.{{Template}}.AsQueryable();
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    dataList = dataList;
+                }
+                return await dataList
+                    .OrderByDescending(x => x.CreateDate)
+                    .Skip((pageIndex - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync();
+            }
+        }
+
+        public async Task<int> QueryCount(string keyword)
+        {
+            using (var context = new BMDbContext())
+            {
+                var dataList = context.{{Template}}.AsQueryable();
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    dataList = dataList;
+                }
+                return await dataList
+                    .CountAsync();
+            }
+        }
+    }
+}

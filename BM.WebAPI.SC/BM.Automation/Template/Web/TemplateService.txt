@@ -1,0 +1,39 @@
+﻿export default function {{LowerCaseTemplate}}Agent($http, $q) {
+    const baseUrl = configuration.baseUrl;
+    return {
+        query: function (keyword, pageIndex, pageSize) {
+            var url = `${baseUrl}api/{{LowerCaseTemplate}}/query`;
+            return $http({
+                url: url,
+                data: {
+                    keyword: keyword,
+                    pageIndex: pageIndex,
+                    pageSize: pageSize
+                },
+                method: 'POST'
+            });
+        },
+        getById: function (id) {
+            var url = `${baseUrl}api/{{LowerCaseTemplate}}/getById/${id}`;
+            return $http({
+                url: url,
+                method: 'GET'
+            });
+        },
+        addOrUpdate: function (model) {
+            var resp = $http({
+                url: `${baseUrl}api/{{LowerCaseTemplate}}/addOrUpdate`,
+                data: model,
+                method: "POST"
+            });
+            return resp;
+        },
+        deleteById: function (id) {
+            var url = `${baseUrl}api/{{LowerCaseTemplate}}/deleteById/${id}`;
+            return $http({
+                url: url,
+                method: 'POST'
+            });
+        }
+    }
+}

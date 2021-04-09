@@ -1,0 +1,105 @@
+
+Exception Time£º2020-04-02 21:32:55,607 [44] 
+Exception Level£ºERROR 
+Exception Detail: 
+ 
+ System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.DbContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.DbContext.SaveChangesAsync()
+   at BM.DAL.SysUserAgent.<AddOrUpdate>d__0.MoveNext() in E:\Project\BMSite\BM\BM.DAL\SysUserAgent.cs:line 19
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at BM.BLL.SysUserBLL.<AddOrUpdateUser>d__6.MoveNext() in E:\Project\BMSite\BM\BM.BLL\SysUserBLL.cs:line 62
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at BM.BLL.SysUserBLL.<AddOrUpdate>d__5.MoveNext() in E:\Project\BMSite\BM\BM.BLL\SysUserBLL.cs:line 46
+
+Exception Time£º2020-04-02 21:48:44,656 [60] 
+Exception Level£ºERROR 
+Exception Detail: 
+ 
+ System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.DbContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.DbContext.SaveChangesAsync()
+   at BM.DAL.SysUserAgent.<AddOrUpdate>d__0.MoveNext() in E:\Project\BMSite\BM\BM.DAL\SysUserAgent.cs:line 19
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at BM.BLL.SysUserBLL.<AddOrUpdateUser>d__6.MoveNext() in E:\Project\BMSite\BM\BM.BLL\SysUserBLL.cs:line 62
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at BM.BLL.SysUserBLL.<AddOrUpdate>d__5.MoveNext() in E:\Project\BMSite\BM\BM.BLL\SysUserBLL.cs:line 46
+
+Exception Time£º2020-04-02 21:49:15,685 [54] 
+Exception Level£ºERROR 
+Exception Detail: 
+ 
+ System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.DbContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.DbContext.SaveChangesAsync()
+   at BM.DAL.SysUserAgent.<AddOrUpdate>d__0.MoveNext() in E:\Project\BMSite\BM\BM.DAL\SysUserAgent.cs:line 19
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at BM.BLL.SysUserBLL.<AddOrUpdateUser>d__6.MoveNext() in E:\Project\BMSite\BM\BM.BLL\SysUserBLL.cs:line 62
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at BM.BLL.SysUserBLL.<AddOrUpdate>d__5.MoveNext() in E:\Project\BMSite\BM\BM.BLL\SysUserBLL.cs:line 46
+
+Exception Time£º2020-04-02 21:50:15,966 [54] 
+Exception Level£ºERROR 
+Exception Detail: 
+ 
+ System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.DbContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.DbContext.SaveChangesAsync()
+   at BM.DAL.SysUserAgent.<AddOrUpdate>d__0.MoveNext() in E:\Project\BMSite\BM\BM.DAL\SysUserAgent.cs:line 19
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at BM.BLL.SysUserBLL.<AddOrUpdateUser>d__6.MoveNext() in E:\Project\BMSite\BM\BM.BLL\SysUserBLL.cs:line 62
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at BM.BLL.SysUserBLL.<AddOrUpdate>d__5.MoveNext() in E:\Project\BMSite\BM\BM.BLL\SysUserBLL.cs:line 46
+
+Exception Time£º2020-04-02 21:51:10,631 [60] 
+Exception Level£ºERROR 
+Exception Detail: 
+ 
+ System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.DbContext.SaveChangesAsync(CancellationToken cancellationToken)
+   at System.Data.Entity.DbContext.SaveChangesAsync()
+   at BM.DAL.SysUserAgent.<AddOrUpdate>d__0.MoveNext() in E:\Project\BMSite\BM\BM.DAL\SysUserAgent.cs:line 19
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at BM.BLL.SysUserBLL.<AddOrUpdateUser>d__6.MoveNext() in E:\Project\BMSite\BM\BM.BLL\SysUserBLL.cs:line 62
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at BM.BLL.SysUserBLL.<AddOrUpdate>d__5.MoveNext() in E:\Project\BMSite\BM\BM.BLL\SysUserBLL.cs:line 46

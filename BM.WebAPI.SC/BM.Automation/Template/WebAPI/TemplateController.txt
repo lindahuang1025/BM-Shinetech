@@ -1,0 +1,55 @@
+﻿using BM.BLL;
+using BM.ViewModel;
+using BM.ViewModel.ViewModel;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Http;
+
+namespace BM.WebAPI.Controllers
+{
+    [Authorize]
+    [RoutePrefix("api/{{LowerCaseTemplate}}")]
+    public class {{Template}}Controller : ApiController
+    {
+        private readonly {{Template}}BLL {{LowerCaseTemplate}}BLL;
+        public {{Template}}Controller()
+        {
+            this.{{LowerCaseTemplate}}BLL = new {{Template}}BLL();
+        }
+
+        [HttpPost]
+        [Route("addOrUpdate")]
+        public async Task<Operate> AddOrUpdate({{Template}}Model model)
+        {
+            return await {{LowerCaseTemplate}}BLL.AddOrUpdate(model);
+        }
+
+        [HttpPost]
+        [Route("deleteById/{id}")]
+        public async Task<Operate> DeleteById([FromUri]long id)
+        {
+            return await {{LowerCaseTemplate}}BLL.DeleteById(id);
+        }
+
+        [HttpGet]
+        [Route("getById/{id}")]
+        public async Task<ViewResult<{{Template}}Model>> GetById(long id)
+        {
+            return await {{LowerCaseTemplate}}BLL.GetById(id);
+        }
+
+		[HttpPost]
+        [Route("query")]
+        public async Task<MulitViewResult<{{Template}}Model>> Query(JObject paramter)
+        {
+            var keyword = paramter["keyword"].ToObject<string>();
+            var pageSize = paramter["pageSize"].ToObject<int>();
+            var pageIndex = paramter["pageIndex"].ToObject<int>();
+            return await {{LowerCaseTemplate}}BLL.Query(keyword, pageSize, pageIndex);
+        }
+    }
+}

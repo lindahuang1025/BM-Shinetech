@@ -1,0 +1,83 @@
+﻿import {
+    gridColumnFilter
+} from './../../common/common.helper';
+import gridOptionSetting from "./../../enum/gridOptionSetting";
+import columnsDef from "./../../template/columnSetting/{{LowerCaseTemplate}}.column";
+
+export default function ($scope, $uibModal, $all, uiGridConstants, $location) {
+    "ngInject";
+
+    const columns = gridColumnFilter(columnsDef, uiGridConstants);
+    $scope.gridOptions = {
+        data: [],
+        enableFiltering: true,
+        paginationPageSizes: gridOptionSetting.pageSizeArray,
+        paginationPageSize: gridOptionSetting.pageSize,
+        paginationCurrentPage: gridOptionSetting.pageIndex,
+        treeRowHeaderAlwaysVisible: false,
+        enableColumnMenus: true,
+        columnDefs: columns,
+        useExternalPagination: true,
+        onRegisterApi: function (gridApi) {
+            $scope.gridApi = gridApi;
+            gridApi.pagination.on.paginationChanged($scope,
+                function (newPage, pageSize) {
+                    $scope.query($scope.gridOptions.paginationCurrentPage, $scope.gridOptions.paginationPageSize);
+                });
+        }
+    }
+
+    $scope.init = function () {
+        $scope.query($scope.gridOptions.paginationCurrentPage, $scope.gridOptions.paginationPageSize);
+    }
+
+    $scope.query = function (pageIndex, pageSize) {
+        let keyword = $scope.keyword || "";
+        $all.${{LowerCaseTemplate}}.query(keyword, pageIndex, pageSize)
+            .then(function (results) {
+                var ret = $all.$responseChecker.hasError(results);
+                if (ret.Status && ret.Status === -1) {
+                    $all.$alert.error(ret.Message);
+                    return;
+                }
+                $scope.gridOptions.totalItems = results.data.Total;
+                $scope.gridOptions.data = results.data.Datas;
+            });
+    }
+
+    $scope.onAddClicked = function () {
+        $location.path(`/app/{{LowerCaseTemplate}}/edit/0`);
+    }
+
+    $scope.onEditClick = function (entity) {
+        $location.path(`/app/{{LowerCaseTemplate}}/edit/${entity.Id}`);
+    }
+
+    $scope.onDeleteClick = function (entity) {
+        let id = entity.Id || 0;
+        $all.$alert.show("Warning", "Are you sure you want to delete this data ?", "Yes", "No")
+            .then(function () {
+                $all.${{LowerCaseTemplate}}.deleteById(id).then((result) => {
+                    if (result.data.Status < 0) {
+                        $all.$alert.error(result.data.Message);
+                        return;
+                    }
+                    $all.$alert.success().then(() => {
+                        $scope.onSearchClick();
+                    });
+                });
+            });
+    }
+
+    $scope.onSearchClick = function () {
+        $scope.gridOptions.paginationCurrentPage = 1;
+        $scope.query($scope.gridOptions.paginationCurrentPage, $scope.gridOptions.paginationPageSize);
+    }
+
+    $scope.onSearchKeydown = function (event) {
+        let evt = window.event || event;
+        if (evt.keyCode == 13) {
+            $scope.onSearchClick();
+        }
+    }
+}

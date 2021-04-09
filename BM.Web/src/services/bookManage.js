@@ -35,3 +35,10 @@ export async function uploadBookBgImg(file) {
     file.url=`${uploadImgUrl}${res.Data}`
     return file;
 }
+
+export async function uploadBookListExcel(file) {
+    return request('/api/bookInfo/uploadBookListExcel', {
+        method: 'POST',
+        data: formData
+    });
+}

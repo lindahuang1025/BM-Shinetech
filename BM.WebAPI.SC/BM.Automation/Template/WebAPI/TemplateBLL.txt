@@ -1,0 +1,92 @@
+﻿using BM.Common;
+using BM.Common.Log;
+using BM.DAL;
+using BM.ViewModel;
+using BM.ViewModel.ModelConvert;
+using BM.ViewModel.ViewModel;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BM.BLL
+{
+    public class {{Template}}BLL
+    {
+        private readonly {{Template}}Agent {{LowerCaseTemplate}}Agent;
+        public {{Template}}BLL()
+        {
+            this.{{LowerCaseTemplate}}Agent = new {{Template}}Agent();
+        }
+
+
+        public async Task<Operate> AddOrUpdate({{Template}}Model model)
+        {
+            var result = new Operate();
+            try
+            {
+                var entity = model.ToEntity();
+                await {{LowerCaseTemplate}}Agent.AddOrUpdate(entity);
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = ex.Message;
+                Logger.WriteErrorLog(ex);
+            }
+            return result;
+        }
+
+        public async Task<Operate> DeleteById(long id)
+        {
+            var result = new Operate();
+            try
+            {
+                await {{LowerCaseTemplate}}Agent.DeleteById(id);
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = ex.Message;
+                Logger.WriteErrorLog(ex);
+            }
+            return result;
+        }
+
+        public async Task<ViewResult<{{Template}}Model>> GetById(long id)
+        {
+            var result = new ViewResult<{{Template}}Model>();
+            try
+            {
+                var data = await {{LowerCaseTemplate}}Agent.GetById(id);
+                result.Data = data.ToModel();
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = ex.Message;
+                Logger.WriteErrorLog(ex);
+            }
+            return result;
+        }
+
+		public async Task<MulitViewResult<{{Template}}Model>> Query(string keyword, int pageSize, int pageIndex)
+        {
+            var result = new MulitViewResult<{{Template}}Model>();
+            try
+            {
+                var datalist = await {{LowerCaseTemplate}}Agent.Query(keyword, pageSize, pageIndex);
+                result.Datas = datalist.Select(x => x.ToModel()).ToList();
+                result.Total = await {{LowerCaseTemplate}}Agent.QueryCount(keyword);
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = ex.Message;
+                Logger.WriteErrorLog(ex);
+            }
+            return result;
+        }
+    }
+}

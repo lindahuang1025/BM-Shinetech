@@ -1,0 +1,48 @@
+﻿export default function ($scope, $stateParams, $q, $all, $location) {
+    "ngInject";
+    const Id = parseInt($stateParams.id || 0);
+
+    $scope.model = {};
+
+     $scope.init = () => {
+        getById();
+    }
+
+    function getById() {
+        let promise = new Promise((resolve, reject) => {
+            resolve();
+        });
+        if (Id == 0) {
+            return promise;
+        }
+        promise = new Promise((resolve, reject) => {
+            $all.$bookInfo.getById(Id).then((result) => {
+                if (result.data.Status < 0) {
+                    $all.$alert.error(result.data.Message);
+                    resolve();
+                    return;
+                }
+                $scope.model = result.data.Data || {};
+                resolve();
+            });
+        });
+        return promise;
+    }
+
+    $scope.onBackClick = function () {
+        history.go(-1);
+    }
+
+    $scope.onSaveClick = function () {
+        let model = $scope.model || {};
+        $all.${{LowerCaseTemplate}}.addOrUpdate(model).then((result) => {
+            if (result.data.Status < 0) {
+                $all.$alert.error(result.data.Message);
+                return;
+            }
+            $all.$alert.success().then(() => {
+                $location.path("/app/{{LowerCaseTemplate}}/list");
+            });
+        });
+    }
+}

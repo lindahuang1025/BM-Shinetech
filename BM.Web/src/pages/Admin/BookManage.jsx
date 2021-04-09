@@ -1,9 +1,9 @@
-import { PlusOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Button, Divider, message, Input, Popconfirm,Tag, Popover, Avatar } from 'antd';
+import { PlusOutlined, EllipsisOutlined, LoadingOutlined, UploadOutlined } from '@ant-design/icons';
+import { Button, Divider, message, Input, Popconfirm,Tag, Popover, Avatar, Upload } from 'antd';
 import React, { useState, useRef } from 'react';
 import ProTable from '@ant-design/pro-table';
 import { queryBookListByAdmin } from '@/services/book';
-import { bookDeleted } from '@/services/bookManage';
+import { bookDeleted, uploadBookListExcel } from '@/services/bookManage';
 import { history } from 'umi';
 
 const { Search } = Input;
@@ -11,6 +11,7 @@ const { Search } = Input;
 const TableList = () => {
   const actionRef = useRef();
   const [searchValue, setSearchValue] = useState("");
+  const [sheetUploading, setSheetUploading] = useState(false);
 
   const columns = [
     {
@@ -144,6 +145,38 @@ const TableList = () => {
     setSearchValue('')
   }
 
+  const beforeBookListUpload = (file) => {
+    console.log(file.type);
+    const isSpreadsheets = (file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    let warningMessage = '';
+    if (!isSpreadsheets) {
+      warningMessage += '请导入excel文件~';
+    }
+    if (!isSpreadsheets) {
+      message.error(warningMessage);
+    }
+    return isSpreadsheets;
+  }
+
+  const onUploadChange = (info) => {
+    if (info.file.status === 'uploading') {
+      setSheetUploading(true);
+    } else if (info.file.status === 'done') {
+      const isUploadSuccess = info.file.response.status === 1;
+      setSheetUploading(false);
+      if (isUploadSuccess) {
+        message.success('上传成功，页面即将刷新！');
+        // 重新加载列表
+        actionRef.current.reload();
+      } else {
+        message.warning(`上传 "${info.file.name}" 时出现 "${info.file.response.message}", 请再尝试一次.`,3);
+      }
+    } else if (info.file.status === 'error') {
+      setSheetUploading(false);
+      message.error('上传文件失败，请前去找程序员算账！');
+    }
+  }
+
   return (
     <div>
       <ProTable
@@ -158,10 +191,24 @@ const TableList = () => {
               placeholder="输入查询信息"
               onSearch={value => handleNameFilter(value)}
               style={{ width: 200, fontSize: 10,marginRight:15 }}
+              allowClear={true}
             />
             <Button key="1" type="primary" onClick={() => clearSearchInput()}>
               清空查询
             </Button>
+            <Divider type="vertical" />
+            <Upload
+                    name="BookListFile"
+                    // action={uploadBookListExcel}
+                    showUploadList={false}
+                    multiple={false}
+                    onChange={onUploadChange}
+                    beforeUpload={beforeBookListUpload}
+                    disabled={sheetUploading}
+                  >
+                    <Button icon={sheetUploading ? <LoadingOutlined /> : <UploadOutlined />}>批量导入书籍</Button>
+            </Upload>
+            <Divider type="vertical" />
             <Button key="1" type="primary" onClick={() => goEditPage()}>
               <PlusOutlined /> 新建
             </Button>

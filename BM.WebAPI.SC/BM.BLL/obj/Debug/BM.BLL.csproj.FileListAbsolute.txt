@@ -1,0 +1,78 @@
+E:\study\BookManager\BM\BM.BLL\obj\Debug\BM.BLL.csprojAssemblyReference.cache
+E:\study\BookManager\BM\BM.BLL\obj\Debug\BM.BLL.csproj.CoreCompileInputs.cache
+E:\Project\BMSite\BM\BM.BLL\obj\Debug\BM.BLL.csprojAssemblyReference.cache
+E:\Project\BMSite\BM\BM.BLL\obj\Debug\BM.BLL.csproj.CoreCompileInputs.cache
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\BM.BLL.dll
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\BM.BLL.pdb
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\BM.Common.dll
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\BM.DAL.dll
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\BM.DataModel.exe
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\BM.ViewModel.dll
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\log4net.dll
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\EntityFramework.dll
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\BM.Common.pdb
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\BM.DAL.pdb
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\BM.DataModel.pdb
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\BM.DataModel.exe.config
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\BM.ViewModel.pdb
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\log4net.xml
+E:\Project\BMSite\BM\BM.BLL\bin\Debug\EntityFramework.xml
+E:\Project\BMSite\BM\BM.BLL\obj\Debug\BM.BLL.csproj.CopyComplete
+E:\Project\BMSite\BM\BM.BLL\obj\Debug\BM.BLL.dll
+E:\Project\BMSite\BM\BM.BLL\obj\Debug\BM.BLL.pdb
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\BM.BLL.dll
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\BM.BLL.pdb
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\BM.Common.dll
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\BM.DAL.dll
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\BM.DataModel.exe
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\BM.ViewModel.dll
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\log4net.dll
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\EntityFramework.dll
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\BM.Common.pdb
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\BM.DAL.pdb
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\BM.DataModel.pdb
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\BM.DataModel.exe.config
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\BM.ViewModel.pdb
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\log4net.xml
+E:\Project\BMSite-AngularJs\BM\BM.BLL\bin\Debug\EntityFramework.xml
+E:\Project\BMSite-AngularJs\BM\BM.BLL\obj\Debug\BM.BLL.csprojAssemblyReference.cache
+E:\Project\BMSite-AngularJs\BM\BM.BLL\obj\Debug\BM.BLL.csproj.CoreCompileInputs.cache
+E:\Project\BMSite-AngularJs\BM\BM.BLL\obj\Debug\BM.BLL.csproj.CopyComplete
+E:\Project\BMSite-AngularJs\BM\BM.BLL\obj\Debug\BM.BLL.dll
+E:\Project\BMSite-AngularJs\BM\BM.BLL\obj\Debug\BM.BLL.pdb
+E:\Project\BM-Shinetech\BM\BM.BLL\obj\Debug\BM.BLL.csprojAssemblyReference.cache
+E:\Project\BM-Shinetech\BM\BM.BLL\obj\Debug\BM.BLL.csproj.CoreCompileInputs.cache
+E:\Project\BM-Shinetech\BM\BM.BLL\obj\Debug\BM.BLL.dll
+E:\Project\BM-Shinetech\BM\BM.BLL\obj\Debug\BM.BLL.pdb
+E:\Project\BM-Shinetech\BM\BM.BLL\bin\Debug\BM.BLL.dll
+E:\Project\BM-Shinetech\BM\BM.BLL\bin\Debug\BM.BLL.pdb
+E:\Project\BM-Shinetech\BM\BM.BLL\bin\Debug\BM.Common.dll
+E:\Project\BM-Shinetech\BM\BM.BLL\bin\Debug\BM.DAL.dll
+E:\Project\BM-Shinetech\BM\BM.BLL\bin\Debug\BM.DataModel.exe
+E:\Project\BM-Shinetech\BM\BM.BLL\bin\Debug\log4net.dll
+E:\Project\BM-Shinetech\BM\BM.BLL\bin\Debug\EntityFramework.dll
+E:\Project\BM-Shinetech\BM\BM.BLL\bin\Debug\BM.Common.pdb
+E:\Project\BM-Shinetech\BM\BM.BLL\bin\Debug\BM.DAL.pdb
+E:\Project\BM-Shinetech\BM\BM.BLL\bin\Debug\BM.DataModel.pdb
+E:\Project\BM-Shinetech\BM\BM.BLL\bin\Debug\BM.DataModel.exe.config
+E:\Project\BM-Shinetech\BM\BM.BLL\bin\Debug\log4net.xml
+E:\Project\BM-Shinetech\BM\BM.BLL\bin\Debug\EntityFramework.xml
+E:\Project\BM-Shinetech\BM\BM.BLL\obj\Debug\BM.BLL.csproj.CopyComplete
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\BM.BLL.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\BM.BLL.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\BM.Common.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\BM.DAL.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\BM.DataModel.exe
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\log4net.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\EntityFramework.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\BM.Common.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\BM.DAL.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\BM.DataModel.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\BM.DataModel.exe.config
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\log4net.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\EntityFramework.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Debug\BM.BLL.csprojAssemblyReference.cache
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Debug\BM.BLL.csproj.CoreCompileInputs.cache
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Debug\BM.BLL.csproj.CopyComplete
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Debug\BM.BLL.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Debug\BM.BLL.pdb

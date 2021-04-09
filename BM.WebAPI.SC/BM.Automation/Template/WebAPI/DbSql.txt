@@ -1,0 +1,1 @@
+﻿public DbSet<{{Template}}> {{Template}} { get; set; }

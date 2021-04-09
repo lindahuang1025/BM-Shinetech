@@ -1,0 +1,14 @@
+﻿export default [
+    {
+        name: "Created By",
+        field: "CreateBy"
+    }, {
+        name: "Created Date",
+        field: "CreateDate",
+        type: 'date',
+        cellFilter: "jmsDate:true"
+    }, {
+        name: "Operation",
+        cellTemplate: require('./../../template/gridOperate/common.cell.template.html')
+    }
+];

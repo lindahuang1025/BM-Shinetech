@@ -1,0 +1,24 @@
+
+Exception Time£º2020-04-01 15:20:56,968 [22] 
+Exception Level£ºERROR 
+Exception Detail: 
+ 
+ System.NullReferenceException: Object reference not set to an instance of an object.
+   at BM.ViewModel.ModelConvert.ModelConvert.ToModel(BookCategory entity) in E:\Project\BMSite\BM\BM.ViewModel\ModelConvert\BookCategoryModel.cs:line 15
+   at BM.BLL.BookCategoryBLL.<GetById>d__4.MoveNext() in E:\Project\BMSite\BM\BM.BLL\BookCategoryBLL.cs:line 74
+
+Exception Time£º2020-04-01 15:21:35,031 [11] 
+Exception Level£ºERROR 
+Exception Detail: 
+ 
+ System.NullReferenceException: Object reference not set to an instance of an object.
+   at BM.ViewModel.ModelConvert.ModelConvert.ToModel(BookCategory entity) in E:\Project\BMSite\BM\BM.ViewModel\ModelConvert\BookCategoryModel.cs:line 15
+   at BM.BLL.BookCategoryBLL.<GetById>d__4.MoveNext() in E:\Project\BMSite\BM\BM.BLL\BookCategoryBLL.cs:line 74
+
+Exception Time£º2020-04-01 15:21:42,044 [28] 
+Exception Level£ºERROR 
+Exception Detail: 
+ 
+ System.NullReferenceException: Object reference not set to an instance of an object.
+   at BM.ViewModel.ModelConvert.ModelConvert.ToModel(BookCategory entity) in E:\Project\BMSite\BM\BM.ViewModel\ModelConvert\BookCategoryModel.cs:line 15
+   at BM.BLL.BookCategoryBLL.<GetById>d__4.MoveNext() in E:\Project\BMSite\BM\BM.BLL\BookCategoryBLL.cs:line 74

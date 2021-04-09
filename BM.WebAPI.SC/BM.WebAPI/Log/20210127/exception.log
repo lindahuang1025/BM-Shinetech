@@ -1,0 +1,105 @@
+
+Exception Time£º2021-01-27 14:21:28,039 [8] 
+Exception Level£ºERROR 
+Exception Detail: 
+ 
+ System.NullReferenceException: Object reference not set to an instance of an object.
+   at BM.DAL.BookInfoAgent.<>c.<QueryByParameter>b__5_5(<>f__AnonymousType1`2 <>h__TransparentIdentifier0, BookBorrow bb) in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 66
+   at System.Linq.Enumerable.<SelectManyIterator>d__23`3.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BM.DAL.BookInfoAgent.<QueryByParameter>d__5.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 62
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at BM.DAL.BookInfoAgent.<Query>d__3.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 46
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at BM.BLL.BookInfoBLL.<Query>d__5.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.BLL\BookInfoBLL.cs:line 82
+
+Exception Time£º2021-01-27 14:22:29,003 [5] 
+Exception Level£ºERROR 
+Exception Detail: 
+ 
+ System.NullReferenceException: Object reference not set to an instance of an object.
+   at BM.DAL.BookInfoAgent.<>c.<QueryByParameter>b__5_5(<>f__AnonymousType1`2 <>h__TransparentIdentifier0, BookBorrow bb) in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 66
+   at System.Linq.Enumerable.<SelectManyIterator>d__23`3.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BM.DAL.BookInfoAgent.<QueryByParameter>d__5.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 62
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at BM.DAL.BookInfoAgent.<Query>d__3.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 46
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at BM.BLL.BookInfoBLL.<Query>d__5.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.BLL\BookInfoBLL.cs:line 82
+
+Exception Time£º2021-01-27 14:24:29,371 [12] 
+Exception Level£ºERROR 
+Exception Detail: 
+ 
+ System.NullReferenceException: Object reference not set to an instance of an object.
+   at BM.DAL.BookInfoAgent.<>c.<QueryByParameter>b__5_5(<>f__AnonymousType1`2 <>h__TransparentIdentifier0, BookBorrow bb) in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 66
+   at System.Linq.Enumerable.<SelectManyIterator>d__23`3.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BM.DAL.BookInfoAgent.<QueryByParameter>d__5.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 62
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at BM.DAL.BookInfoAgent.<Query>d__3.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 46
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at BM.BLL.BookInfoBLL.<Query>d__5.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.BLL\BookInfoBLL.cs:line 82
+
+Exception Time£º2021-01-27 14:27:46,950 [23] 
+Exception Level£ºERROR 
+Exception Detail: 
+ 
+ System.NullReferenceException: Object reference not set to an instance of an object.
+   at BM.DAL.BookInfoAgent.<>c.<QueryByParameter>b__5_5(<>f__AnonymousType1`2 <>h__TransparentIdentifier0, BookBorrow j_bb) in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 66
+   at System.Linq.Enumerable.<SelectManyIterator>d__23`3.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BM.DAL.BookInfoAgent.<QueryByParameter>d__5.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 62
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at BM.DAL.BookInfoAgent.<Query>d__3.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 46
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at BM.BLL.BookInfoBLL.<Query>d__5.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.BLL\BookInfoBLL.cs:line 82
+
+Exception Time£º2021-01-27 14:29:34,062 [19] 
+Exception Level£ºERROR 
+Exception Detail: 
+ 
+ System.NullReferenceException: Object reference not set to an instance of an object.
+   at BM.DAL.BookInfoAgent.<>c.<QueryByParameter>b__5_5(<>f__AnonymousType1`2 <>h__TransparentIdentifier0, BookBorrow j_bb) in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 66
+   at System.Linq.Enumerable.<SelectManyIterator>d__23`3.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BM.DAL.BookInfoAgent.<QueryByParameter>d__5.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 62
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at BM.DAL.BookInfoAgent.<Query>d__3.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.DAL\BookInfoAgent.cs:line 46
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at BM.BLL.BookInfoBLL.<Query>d__5.MoveNext() in E:\Project\BMSite-AngularJs\BM\BM.BLL\BookInfoBLL.cs:line 82
