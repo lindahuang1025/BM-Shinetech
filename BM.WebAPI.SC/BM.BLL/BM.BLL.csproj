@@ -55,6 +55,7 @@
     <Compile Include="BookCategoryBLL.cs" />
     <Compile Include="BookInfoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserCommentsBLL.cs" />
     <Compile Include="SysUserBLL.cs" />
   </ItemGroup>
   <ItemGroup>

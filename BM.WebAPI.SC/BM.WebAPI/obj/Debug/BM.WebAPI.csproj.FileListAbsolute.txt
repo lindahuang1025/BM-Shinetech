@@ -484,3 +484,9 @@ C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAP
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\obj\Debug\BM.WebAPI.csproj.CopyComplete
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\obj\Debug\BM.WebAPI.dll
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\obj\Debug\BM.WebAPI.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\ExcelDataReader.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\ExcelDataReader.DataSet.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\ExcelDataReader.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\ExcelDataReader.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\ExcelDataReader.DataSet.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.WebAPI\bin\ExcelDataReader.DataSet.xml

@@ -26,5 +26,6 @@ namespace BM.DataModel
         public DbSet<BookCategory> BookCategory { get; set; }
         public DbSet<BookInfo> BookInfo { get; set; }
         public DbSet<BookBorrow> BookBorrow { get; set; }
+        public DbSet<UserComments> UserComments { get; set; }
     }
 }

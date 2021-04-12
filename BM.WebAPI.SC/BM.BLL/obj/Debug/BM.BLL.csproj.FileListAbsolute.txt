@@ -70,9 +70,14 @@ C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\b
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\BM.DataModel.pdb
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\BM.DataModel.exe.config
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\log4net.xml
-C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\EntityFramework.xml
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Debug\BM.BLL.csprojAssemblyReference.cache
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Debug\BM.BLL.csproj.CoreCompileInputs.cache
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Debug\BM.BLL.csproj.CopyComplete
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Debug\BM.BLL.dll
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Debug\BM.BLL.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\ExcelDataReader.dll
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\ExcelDataReader.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\ExcelDataReader.xml
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Debug\ExcelDataReader.DataSet.xml

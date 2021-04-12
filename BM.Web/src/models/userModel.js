@@ -1,9 +1,11 @@
-import { queryCurrent, query as queryUsers } from '@/services/user';
+import { queryCurrent, query as queryUsers , getUserCommentsList } from '@/services/user';
+import moment from 'moment';
 
 const UserModel = {
     namespace: 'user',
     state: {
         currentUser: {},
+        userCommentsList:[]
     },
     effects: {
         * fetch(_, { call, put }) {
@@ -21,6 +23,26 @@ const UserModel = {
                 payload: response,
             });
         },
+
+        * fetchUserCommentsList(_, { call, put }) {
+            const response = yield call(getUserCommentsList);
+            let commentsList = [];
+            if(response && response.Datas){
+                commentsList = response.Datas.map(function(item) {
+                    return {
+                        author: "Ta说",
+                        avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+                        content: item.Comment,
+                        datetime: moment(item.UpdateDate).format('YYYY.MM.DD HH:mm')
+                    }
+                })
+            }
+            yield put({
+                type: 'ChangeUserCommentsList',
+                payload: commentsList,
+            });
+        },
+
     },
     reducers: {
         saveCurrentUser(state, action) {
@@ -41,6 +63,10 @@ const UserModel = {
                     unreadCount: action.payload.unreadCount,
                 },
             };
+        },
+
+        ChangeUserCommentsList(state, action) {
+            return {...state, userCommentsList: action.payload };
         },
     },
 };

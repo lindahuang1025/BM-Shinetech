@@ -98,3 +98,4 @@ C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataM
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.csproj.CopyComplete
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.exe
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.pdb
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.Migrations.addUserComments.resources

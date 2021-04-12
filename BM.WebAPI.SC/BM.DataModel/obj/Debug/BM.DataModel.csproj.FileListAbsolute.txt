@@ -101,3 +101,4 @@ C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataM
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Debug\BM.DataModel.pdb
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Debug\BM.DataModel.Migrations.phase4.resources
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Debug\BM.DataModel.csproj.GenerateResource.cache
+C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Debug\BM.DataModel.Migrations.addUserComments.resources

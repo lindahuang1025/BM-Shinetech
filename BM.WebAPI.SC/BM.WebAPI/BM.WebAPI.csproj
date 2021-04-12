@@ -204,6 +204,7 @@
     <Compile Include="Controllers\BookCategoryController.cs" />
     <Compile Include="Controllers\BookInfoController.cs" />
     <Compile Include="Controllers\ConnectController.cs" />
+    <Compile Include="Controllers\UserCommentsController.cs" />
     <Compile Include="Controllers\SysUserController.cs" />
     <Compile Include="Filter\CrossDomainFilter.cs" />
     <Compile Include="Fomatter\JsonContentNegotiator.cs" />

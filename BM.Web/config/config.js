@@ -31,10 +31,10 @@ export default defineConfig({
         'primary-color': defaultSettings.primaryColor,
     },
     define: {
-        // apiUrl: 'http://localhost:2021/server',
-        // uploadImgUrl: 'http://localhost:2021/server/File/BookFile/',
-        apiUrl: 'https://shinetechbm.cn.utools.club/server',
-        uploadImgUrl: 'https://shinetechbm.cn.utools.club/server/File/BookFile/',
+        apiUrl: 'http://localhost:2021/server',
+        uploadImgUrl: 'http://localhost:2021/server/File/BookFile/',
+        // apiUrl: 'https://shinetechbm.cn.utools.club/server',
+        // uploadImgUrl: 'https://shinetechbm.cn.utools.club/server/File/BookFile/',
         pageSize: 20
     },
     title: false,

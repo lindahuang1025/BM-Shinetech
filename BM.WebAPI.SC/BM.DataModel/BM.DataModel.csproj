@@ -78,10 +78,15 @@
     <Compile Include="Migrations\202104081032178_phase4.designer.cs">
       <DependentUpon>202104081032178_phase4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104120541509_addUserComments.cs" />
+    <Compile Include="Migrations\202104120541509_addUserComments.designer.cs">
+      <DependentUpon>202104120541509_addUserComments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultModel.cs" />
+    <Compile Include="UserComments.cs" />
     <Compile Include="VerificationCode.cs" />
     <Compile Include="SysUser.cs" />
   </ItemGroup>
@@ -92,6 +97,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202104081032178_phase4.resx">
       <DependentUpon>202104081032178_phase4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104120541509_addUserComments.resx">
+      <DependentUpon>202104120541509_addUserComments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

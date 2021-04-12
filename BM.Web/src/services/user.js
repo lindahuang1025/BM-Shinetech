@@ -10,3 +10,18 @@ export async function queryCurrent() {
 export async function queryNotices() {
     return request('/api/notices');
 }
+
+export async function getUserCommentsList() {
+    return request('/api/userComments/getAll', {
+      method: 'GET'
+    });
+}
+
+export async function UserCommentsAddOrUpdate(params) {
+    return request('/api/userComments/addOrUpdate', {
+        method: 'POST',
+        data: {
+            ...params
+        }
+    });
+}
