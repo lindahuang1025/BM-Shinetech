@@ -11,7 +11,7 @@ const { TextArea } = Input;
 const Editor = ({ onChange, onSubmit, submitting, editorValue }) => (
   <>
     <Form.Item>
-      <TextArea rows={5} onChange={onChange} value={editorValue} placeholder="自由发言啦，大家可以在这里留下想说的话，什么都可以，对书的感受，生活工作的心得，暗恋日记，当成树洞等，最后救救孩子吧，给点软件优化建议哈~  （PS：是匿名显示滴，社恐患者不要慌哈）"/>
+      <TextArea rows={5} onChange={onChange} value={editorValue} placeholder="自由发言啦，大家可以在这里留下想说的话，什么都可以，对书的感受，生活工作的心得，当成树洞等，最后救救孩子吧，给点软件优化建议哈~  （PS：是匿名显示滴，社恐患者不要慌哈）"/>
     </Form.Item>
     <Form.Item>
       <Button loading={submitting} onClick={onSubmit} type="primary">
@@ -97,9 +97,6 @@ const User = (props) => {
     } catch (error) {
       message.error('出错了，再试一下看看或者刷新看看，不行就去找程序员算账！');
     }
-
-
-
   }
 
   return <div className="userContainer">

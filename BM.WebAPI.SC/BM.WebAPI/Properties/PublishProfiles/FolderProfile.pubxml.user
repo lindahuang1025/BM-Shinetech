@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI</_PublishTargetUrl>
+    <_PublishTargetUrl>F:\BM.WebAPI.Publish</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Areas/HelpPage/HelpPage.css">
@@ -100,7 +100,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2021 16:57:29</publishTime>
     </File>
     <File Include="bin/BM.DataModel.exe.config">
-      <publishTime>02/29/2020 15:07:15</publishTime>
+      <publishTime>04/13/2021 11:25:00</publishTime>
     </File>
     <File Include="bin/BM.DataModel.pdb">
       <publishTime>04/12/2021 16:57:29</publishTime>
@@ -112,10 +112,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/28/2021 10:43:07</publishTime>
     </File>
     <File Include="bin/BM.WebAPI.dll">
-      <publishTime>04/12/2021 17:17:20</publishTime>
+      <publishTime>04/13/2021 09:39:24</publishTime>
     </File>
     <File Include="bin/BM.WebAPI.pdb">
-      <publishTime>04/12/2021 17:17:20</publishTime>
+      <publishTime>04/13/2021 09:39:24</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>11/16/2019 03:00:22</publishTime>
@@ -454,7 +454,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/29/2020 15:07:46</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/12/2021 16:57:32</publishTime>
+      <publishTime>04/13/2021 11:27:01</publishTime>
     </File>
   </ItemGroup>
 </Project>
