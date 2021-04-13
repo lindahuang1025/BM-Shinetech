@@ -5,21 +5,9 @@ import { WhiteSpace, Button } from 'antd-mobile';
 import { message, Comment, List, Avatar, Form , Input  } from 'antd';
 import { UserCommentsAddOrUpdate } from '@/services/user';
 import InfiniteScroll from 'react-infinite-scroller';
+import "animate.css";
 
 const { TextArea } = Input;
-
-const Editor = ({ onChange, onSubmit, submitting, editorValue }) => (
-  <>
-    <Form.Item>
-      <TextArea rows={5} onChange={onChange} value={editorValue} placeholder="自由发言啦，大家可以在这里留下想说的话，什么都可以，对书的感受，生活工作的心得，当成树洞等，最后救救孩子吧，给点软件优化建议哈~  （PS：是匿名显示滴，社恐患者不要慌哈）"/>
-    </Form.Item>
-    <Form.Item>
-      <Button loading={submitting} onClick={onSubmit} type="primary">
-         biu~ 发射到公告
-      </Button>
-    </Form.Item>
-  </>
-);
 
 const CommentList = ({ comments }) => (
   <InfiniteScroll
@@ -76,9 +64,13 @@ const User = (props) => {
   }
 
   const handleSubmit = async() => {
-    if (!editorValue) {
-      return message.info("随便来一句吧，冲个留言KPI业绩也行啊");
-    }
+      rocketRef.current.className = 'animated rotateOutUpRight';
+    // rocketRef.current.style.transform = 'translate(500px, 200px)';;
+
+
+    // if (!editorValue) {
+    //   return message.info("随便来一句吧，冲个留言KPI业绩也行啊");
+    // }
     try {
       // await UserCommentsAddOrUpdate({ 
       //     UserName: currentUser.UserName,
@@ -88,6 +80,10 @@ const User = (props) => {
       // getUserCommentsList();
       // handleChange(null);
       console.log(rocketRef)
+      // rocketRef.current.style.left = '90%';
+      // rocketRef.current.style.top = '20%';
+      // rocketRef.current.style.transform = 'translateY(-8px)';
+
       // const timeout = setTimeout(() => {
       //   setEditorValue('')
       // }, 1000);
@@ -106,7 +102,7 @@ const User = (props) => {
             <div>{currentUser.UserName}</div>
           </div>
       </Button>
-      <div id="animation" ref={rocketRef}>
+      <div id="animation" ref={rocketRef} >
             <div className="spaceship">
                 <div className="body"></div>
                 <div className="window"></div>
@@ -131,15 +127,20 @@ const User = (props) => {
               <Avatar
                 src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
                 alt="靓仔/靓女说："
+                className="animated bounce"
               />
             }
             content={
-              <Editor
-                onChange={handleChange}
-                onSubmit={handleSubmit}
-                submitting={submitting}
-                value={editorValue}
-              />
+              <>
+              <Form.Item>
+                <TextArea rows={5} onChange={handleChange} value={editorValue} placeholder="自由发言啦，大家可以在这里留下想说的话，什么都可以，对书的感受，生活工作的心得，当成树洞等，最后救救孩子吧，给点软件优化建议哈~  （PS：是匿名显示滴，社恐患者不要慌哈）"/>
+                </Form.Item>
+                <Form.Item>
+                  <Button loading={submitting} onClick={handleSubmit} type="primary">
+                    biu~ 发射到公告
+                  </Button>
+                </Form.Item>
+              </>
             }
           />
 

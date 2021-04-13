@@ -16,7 +16,7 @@ namespace BM.DAL
         {
             using (var context = new BMDbContext())
             {
-                return await context.UserComments.ToListAsync();
+                return await context.UserComments.OrderByDescending(x=>x.UpdateDate).ToListAsync();
             }
         }
     }
