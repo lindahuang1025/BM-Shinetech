@@ -173,8 +173,12 @@ const bookList = (props) => {
                 <div className="global-backTop"><ArrowUpOutlined className="global-backTop-icon"/></div>
             </BackTop>
             {/* 没有更多加载，显示提示信息 */}
-               {!hasMore && <Result
+            {!hasMore && <Result
                     message={intl.formatMessage({id:`${intlString}noMoreFound`})}
+                    style={{ backgroundColor: 'transparent' }}
+            />}
+            {(hasMore && bookList.length === 0) && <Result
+                    message='（⊙o⊙）翻遍了角落也没有找到你想要的书籍，快去 【我-公告留言】里写下你想看的书吧，管理员会响应哈'
                     style={{ backgroundColor: 'transparent' }}
             />}
         </div>

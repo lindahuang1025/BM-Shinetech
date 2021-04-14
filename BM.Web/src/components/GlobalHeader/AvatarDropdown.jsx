@@ -45,12 +45,13 @@ class AvatarDropdown extends React.Component {
     ): <div></div>;
     return currentUser && currentUser.UserName ? (
         <span className={`${styles.action} ${styles.account}`}>
-          {isMobile ? <UserOutlined className={styles.userIcon} onClick={this.onUserClick}/> :  <HeaderDropdown overlay={menuHeaderDropdown}>
+          <UserOutlined className={styles.userIcon} onClick={this.onUserClick}/> 
+          {/* <HeaderDropdown overlay={menuHeaderDropdown}>
             <span className={`${styles.action} ${styles.account}`}>
               <UserOutlined className={styles.userIcon} style={{marginRight:'5px'}}/>
               <span className={`${styles.name} anticon`}>{currentUser.UserName}</span>
             </span>
-          </HeaderDropdown>}
+          </HeaderDropdown> */}
         </span>
     ) : (
       <span className={`${styles.action} ${styles.account}`}>

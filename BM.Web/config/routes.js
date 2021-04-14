@@ -54,24 +54,24 @@ export default [
             icon: 'crown',
             path: '/borrowList',
             component: './User/MyBorrow.jsx',
-            authority: ['User'],
+            authority: ['User','Admin'],
           },
           {
             path: '/search',
             component: './User/SearchPage.jsx',
-            authority: ['User'],
+            authority: ['User','Admin'],
           },
           {
             path: '/bookDetail',
             component: './User/BookDetail.jsx',
-            authority: ['User'],
+            authority: ['User','Admin'],
           },
           {
             name: 'list.user-info',
             icon: 'user',
             path: '/userInfo',
             component: './User/User.jsx',
-            authority: ['User'],
+            authority: ['User','Admin'],
           },
           /* user config end */
           {

@@ -19,5 +19,5 @@ export default {
     'pages.bookList.returnNotFound': '快去借阅书箱，把墨水给喝饱吧!',
     'pages.bookList.returnFoundFrist': '您一共有',
     'pages.bookList.returnFoundLast': '本书正在借阅中！',
-    'pages.bookList.noMoreFound': '没有更多藏书啦~',
+    'pages.bookList.noMoreFound': '没有更多藏书啦~可以去【我-公告留言】里写下你想看的书吧，管理员会响应哈',
 };
