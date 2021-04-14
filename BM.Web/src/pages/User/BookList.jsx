@@ -31,10 +31,19 @@ const bookList = (props) => {
     const [refreshing, setRefreshing] = useState(false);
 
     useEffect(() => {
-        setKeyword('');
         const word = props.history.location.state?.keyword || '';
         if(word) {
-            setKeyword(word);
+            setKeyword(word)
+            dispatch({
+                type: 'BookListSpace/query',
+                payload: {
+                    keyword:word,
+                    pageIndex:pageNo,
+                    pageSize:pageSize
+                  }
+            });
+        }else{
+            getlistData();
         }
     }, []);
 
@@ -47,7 +56,7 @@ const bookList = (props) => {
         dispatch({
             type: 'BookListSpace/query',
             payload: {
-                keyword:keyword,
+                keyword:'',
                 pageIndex:pageNo,
                 pageSize:pageSize
               }
@@ -87,6 +96,7 @@ const bookList = (props) => {
           return;
         }
         setPageNo(pageNo + 1) ;
+        getlistData();
     }
 
     //下拉重新加载
@@ -108,7 +118,8 @@ const bookList = (props) => {
 
     // 取消搜索
     const onSearchCancel= () => {
-        setKeyword('')
+        setKeyword('');
+        getlistData();
     }
 
     // 跳转详情页面
@@ -122,9 +133,6 @@ const bookList = (props) => {
     }
 
     // 用户向下滑动和借阅操作都会触发重新加载列表
-    useEffect(() => {
-        getlistData();
-    }, [pageNo,keyword]);
 
     const row = (rowData, sectionID, rowID) => {
         // 这里rowData,就是上面方法cloneWithRows的数组遍历的单条数据了，直接用就行

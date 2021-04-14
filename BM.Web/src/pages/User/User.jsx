@@ -64,32 +64,18 @@ const User = (props) => {
   }
 
   const handleSubmit = async() => {
-      rocketRef.current.style.top = '80%';
-    // rocketRef.current.style.transform = 'translate(500px, 200px)';;
-
-
-    // if (!editorValue) {
-    //   return message.info("随便来一句吧，冲个留言KPI业绩也行啊");
-    // }
+    if (!editorValue) {
+      return message.info("随便来一句吧，冲个留言KPI业绩也行啊");
+    }
     try {
-      // await UserCommentsAddOrUpdate({ 
-      //     UserName: currentUser.UserName,
-      //     Comment: editorValue
-      //  });
-      // message.success('biu~ 触发彩蛋🚀 ');
-      // getUserCommentsList();
-      // handleChange(null);
-      console.log(rocketRef)
+      await UserCommentsAddOrUpdate({ 
+          UserName: currentUser.UserName,
+          Comment: editorValue
+       });
+      message.success('biu~ 🚀 ');
+      getUserCommentsList();
+      handleChange(null);
       // rocketRef.current.style.left = '90%';
-      // rocketRef.current.style.top = '20%';
-      // rocketRef.current.style.transform = 'translateY(-8px)';
-
-      // const timeout = setTimeout(() => {
-      //   setEditorValue('')
-      // }, 1000);
-      // return function cleanup() {
-      //     clearTimeout(timeout);
-      // };
     } catch (error) {
       message.error('出错了，再试一下看看或者刷新看看，不行就去找程序员算账！');
     }
