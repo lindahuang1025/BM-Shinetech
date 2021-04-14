@@ -133,7 +133,7 @@ const User = (props) => {
             content={
               <>
               <Form.Item>
-                <TextArea rows={5} onChange={handleChange} value={editorValue} placeholder="自由发言啦，大家可以在这里留下想说的话，什么都可以，对书的感受，生活工作的心得，当成树洞等，最后救救孩子吧，给点软件优化建议吧 （PS：是匿名显示滴，社恐患者不要慌哈）"/>
+                <TextArea rows={5} onChange={handleChange} value={editorValue} placeholder="自由发言啦，大家可以在这里留下想说的话:想看的书或观后感、生活工作的心得、当成树洞等等，最后最后，各位看官，来点软件优化建议吧（PS：是匿名显示滴，社恐患者不要慌哈）"/>
                 </Form.Item>
                 <Form.Item>
                   <Button loading={submitting} onClick={handleSubmit} type="primary">
