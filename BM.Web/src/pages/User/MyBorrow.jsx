@@ -137,13 +137,11 @@ const borrowList = (props) => {
                                 title={<div className="global-flex-column">
                                     <div className="book-name">《{rowData.BookInfo.Title}》</div>
                                     <div className="deadline">
-
-
                                         <BellTwoTone twoToneColor={(moment(rowData.PlanReturnDate).diff(moment(), 'days')<= 3)? "orangered":"rgb(16, 212, 16)"}/>{(moment(rowData.PlanReturnDate).diff(moment(), 'days') >= 0)? <span> {intl.formatMessage({id:`${intlString}borrowDate`})}</span>:<span> {intl.formatMessage({id:`${intlString}borrowDateOverdue`})}</span>}<span className={(moment(rowData.PlanReturnDate).diff(moment(), 'days')<= 3)? "deadline-number-orange":"deadline-number-green"}>{Math.abs(moment(rowData.PlanReturnDate).diff(moment(), 'days')) } </span>{intl.formatMessage({id:`${intlString}borrowDateLast`})}
                                     </div>
                                 </div>}
-                                thumb={rowData.BookInfo.ImageUrl || bookDefaultImg}
-                                thumbStyle={{borderRadius: '5px',width: '50px',height: '80px'}}
+                                thumb={rowData.BookInfo.ImageUrl? `${uploadImgUrl}${rowData.BookInfo.ImageUrl}`: bookDefaultImg}
+                                thumbStyle={{borderRadius: '5px',width: 'auto',height: '80px'}}
                                 extra={<Button type="primary" onClick={()=>{onReturnClicked(rowData.BookId)}}>{intl.formatMessage({id:`${intlString}return`})}</Button>}
                             />
                     </Card.Body>
