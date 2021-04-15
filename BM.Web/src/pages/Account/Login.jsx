@@ -36,7 +36,11 @@ const Login = (props) => {
   return (
     <div className={styles.main}>
       <ProForm
+      
         submitter={{
+          // searchConfig: {
+          //   submitText: "gogogog",
+          // },
           render: (_, dom) => dom.pop(),
           submitButtonProps: {
             loading: loading,
@@ -62,8 +66,8 @@ const Login = (props) => {
           fieldProps={{
             size: 'large',
             prefix: <UserOutlined className={styles.prefixIcon} />,
+            placeholder:"公司Beacon账号互通" 
           }}
-          placeholder={intl.formatMessage({id:`${intlString}username.required`})}
           rules={[
             {
               required: true,
@@ -77,10 +81,12 @@ const Login = (props) => {
         />
         <ProFormText.Password
           name="password"
+          placeholder = "公司Beacon账号互通"
           fieldProps={{
             size: 'large',
             prefix: <LockTwoTone className={styles.prefixIcon} />,
           }}
+
           rules={[
             {
               required: true,
