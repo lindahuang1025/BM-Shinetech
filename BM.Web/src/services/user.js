@@ -25,3 +25,9 @@ export async function UserCommentsAddOrUpdate(params) {
         }
     });
 }
+
+export async function UserCommentsDeleted(id) {
+    return request(`/api/userComments/deleteById/${id}`, {
+        method: 'POST'
+    });
+}

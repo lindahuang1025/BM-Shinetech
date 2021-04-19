@@ -1,33 +1,34 @@
 import "./User.less";
 import React, {useState, useEffect, useRef} from 'react'
 import { connect } from 'umi';
-import { WhiteSpace, Button } from 'antd-mobile';
+import { Button, Modal } from 'antd-mobile';
 import { message, Comment, List, Avatar, Form , Input  } from 'antd';
 import { UserCommentsAddOrUpdate } from '@/services/user';
 import InfiniteScroll from 'react-infinite-scroller';
 import "animate.css";
+import { CloseCircleOutlined  } from '@ant-design/icons';
+import { UserCommentsDeleted } from '@/services/user';
 
 const { TextArea } = Input;
 
-const CommentList = ({ comments }) => (
-  <InfiniteScroll
-  initialLoad={false}
-  pageStart={0}
+const CommentList = ({ currentUser, comments, onDeleted }) => (
+  // 滚动加载
+  // <InfiniteScroll
+  // initialLoad={false}
+  // pageStart={0}
   // loadMore={this.handleInfiniteOnLoad}
   // hasMore={!this.state.loading && this.state.hasMore}
-  useWindow={false}
-  >
+  // useWindow={false}
+  // >
     <div className="commentList">
       <List
         dataSource={comments}
         itemLayout="horizontal"
-        renderItem={props => <Comment {...props} />}
+        renderItem={comment => <div className="global-flex-row global-flex-row-between global-flex-row-center"><Comment {...comment} /> {currentUser.UserRole === 1 && <CloseCircleOutlined style={{ fontSize: '22px', color: 'red' }} onClick={()=>{onDeleted(comment)}}/>} </div> }
       />
     </div>
-
-  </InfiniteScroll>
+  // </InfiniteScroll>
 );
-
 
 const User = (props) => {
   // 获取props数据
@@ -35,6 +36,7 @@ const User = (props) => {
   const [submitting, setSubmitting] = useState(false);
   const [editorValue, setEditorValue] = useState('');
   const rocketRef = useRef(null);
+  const {alert} = Modal;
 
   useEffect(() => {
     getUserCommentsList();
@@ -57,6 +59,21 @@ const User = (props) => {
       });
     }
     return;
+  }
+
+  const deletedCommentByAdmin = (comment)=>{
+    alert("确认删除用户留言", '', [
+      { text: "取消" },
+      { text: "确认", onPress: async() => {
+              try {
+                  await UserCommentsDeleted(comment.Id);
+                  message.success("删除成功！");
+                  getUserCommentsList();
+              } catch (error) {
+                  message.error(error.Message);
+              }
+      } },
+    ])
   }
 
   const handleChange = (e) => {
@@ -107,7 +124,7 @@ const User = (props) => {
               </div>
       </div>
       <div>
-          {userCommentsList.length > 0 && <CommentList comments={userCommentsList} />}
+          {userCommentsList.length > 0 && <CommentList currentUser = {currentUser} comments={userCommentsList} onDeleted={deletedCommentByAdmin} />}
           <Comment
             avatar={
               <Avatar

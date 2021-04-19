@@ -30,6 +30,7 @@ const UserModel = {
             if(response && response.Datas){
                 commentsList = response.Datas.map(function(item) {
                     return {
+                        Id:item.Id,
                         author: "Ta说",
                         avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
                         content: item.Comment,

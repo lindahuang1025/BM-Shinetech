@@ -57,5 +57,21 @@ namespace BM.BLL
             }
             return result;
         }
+
+        public async Task<Operate> DeleteById(long id)
+        {
+            var result = new Operate();
+            try
+            {
+                await userCommentsAgent.DeleteById(id);
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = ex.Message;
+                Logger.WriteErrorLog(ex);
+            }
+            return result;
+        }
     }
 }

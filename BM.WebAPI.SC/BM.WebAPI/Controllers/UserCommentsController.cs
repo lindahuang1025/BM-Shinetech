@@ -35,5 +35,12 @@ namespace BM.WebAPI.Controllers
         {
             return await userCommentsBLL.AddOrUpdate(model);
         }
+
+        [HttpPost]
+        [Route("deleteById/{id}")]
+        public async Task<Operate> DeleteById([FromUri] long id)
+        {
+            return await userCommentsBLL.DeleteById(id);
+        }
     }
 }
