@@ -24,7 +24,7 @@ const CommentList = ({ currentUser, comments, onDeleted }) => (
       <List
         dataSource={comments}
         itemLayout="horizontal"
-        renderItem={comment => <div className="global-flex-row global-flex-row-between global-flex-row-center"><Comment {...comment} /> {currentUser.UserRole === 1 && <CloseCircleOutlined style={{ fontSize: '22px', color: 'red' }} onClick={()=>{onDeleted(comment)}}/>} </div> }
+        renderItem={comment => <div className="global-flex-row" style={{alignItems:'center'}}><Comment {...comment} /> {currentUser.UserRole === 1 && <CloseCircleOutlined style={{ fontSize: '22px', color: 'red' }} onClick={()=>{onDeleted(comment)}}/>} </div> }
       />
     </div>
   // </InfiniteScroll>
