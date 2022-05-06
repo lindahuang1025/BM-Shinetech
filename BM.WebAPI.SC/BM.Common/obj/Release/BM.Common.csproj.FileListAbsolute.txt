@@ -34,3 +34,11 @@ C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.Commo
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.Common\obj\Release\BM.Common.csproj.CopyComplete
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.Common\obj\Release\BM.Common.dll
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.Common\obj\Release\BM.Common.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Common\bin\Release\BM.Common.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Common\bin\Release\BM.Common.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Common\bin\Release\log4net.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Common\bin\Release\log4net.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Common\obj\Release\BM.Common.csproj.AssemblyReference.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Common\obj\Release\BM.Common.csproj.CoreCompileInputs.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Common\obj\Release\BM.Common.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Common\obj\Release\BM.Common.pdb

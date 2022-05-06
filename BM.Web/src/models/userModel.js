@@ -1,5 +1,6 @@
 import { queryCurrent, query as queryUsers , getUserCommentsList } from '@/services/user';
 import moment from 'moment';
+// import { User } from '@/types/User'
 
 const UserModel = {
     namespace: 'user',

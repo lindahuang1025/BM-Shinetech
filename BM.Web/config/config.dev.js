@@ -11,5 +11,6 @@ export default defineConfig({
     exclude: [],
     babelPlugins: [],
     babelOptions: {},
+    mfsu:{},
   },
 });

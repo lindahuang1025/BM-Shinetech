@@ -1,0 +1,7 @@
+
+Exception Time：2022-05-05 17:22:31,084 [43] 
+Exception Level：ERROR 
+Exception Detail: 
+ 
+ System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 BM.BLL.BookBorrowBLL.<BorrowBook>d__7.MoveNext() 位置 C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\BookBorrowBLL.cs:行号 97

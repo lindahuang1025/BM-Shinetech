@@ -80,3 +80,25 @@ C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\b
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.xml
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.DataSet.pdb
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.DataSet.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\BM.BLL.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\BM.BLL.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\BM.Common.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\BM.DAL.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\BM.DataModel.exe
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.DataSet.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\log4net.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\EntityFramework.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\BM.Common.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\BM.DAL.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\BM.DataModel.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\BM.DataModel.exe.config
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.DataSet.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\ExcelDataReader.DataSet.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\bin\Release\log4net.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Release\BM.BLL.csproj.AssemblyReference.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Release\BM.BLL.csproj.CoreCompileInputs.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Release\BM.BLL.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.BLL\obj\Release\BM.BLL.pdb

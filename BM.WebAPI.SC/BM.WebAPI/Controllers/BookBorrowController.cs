@@ -70,5 +70,15 @@ namespace BM.WebAPI.Controllers
             var userId = paramter["userId"].ToObject<long>();
             return await bookBorrowBLL.ReturnBook(bookId, userId);
         }
+
+        [HttpPost]
+        [Route("outStock")]
+        public async Task<Operate> OutStock(JObject paramter)
+        {
+            var bookId = paramter["bookId"].ToObject<long>();
+            var userId = paramter["userId"].ToObject<long>();
+            var planReturnDate = paramter["planReturnDate"].ToObject<DateTime>();
+            return await bookBorrowBLL.BorrowBook(bookId, userId, planReturnDate);
+        }
     }
 }

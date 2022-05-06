@@ -1,0 +1,14 @@
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\bin\Release\BM.Automation.exe.config
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\bin\Release\BM.Automation.exe
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\bin\Release\BM.Automation.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\bin\Release\BM.Common.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\bin\Release\log4net.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\bin\Release\BM.Common.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\bin\Release\log4net.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\obj\Release\BM.Automation.csproj.AssemblyReference.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\obj\Release\BM.Automation.Properties.Resource.resources
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\obj\Release\BM.Automation.csproj.GenerateResource.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\obj\Release\BM.Automation.csproj.CoreCompileInputs.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\obj\Release\BM.Automation.csproj.CopyComplete
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\obj\Release\BM.Automation.exe
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.Automation\obj\Release\BM.Automation.pdb

@@ -82,6 +82,14 @@
     <Compile Include="Migrations\202104120541509_addUserComments.designer.cs">
       <DependentUpon>202104120541509_addUserComments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205050239171_add_users_columns.cs" />
+    <Compile Include="Migrations\202205050239171_add_users_columns.designer.cs">
+      <DependentUpon>202205050239171_add_users_columns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205050243575_add_users_columns1.cs" />
+    <Compile Include="Migrations\202205050243575_add_users_columns1.designer.cs">
+      <DependentUpon>202205050243575_add_users_columns1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +108,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104120541509_addUserComments.resx">
       <DependentUpon>202104120541509_addUserComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205050239171_add_users_columns.resx">
+      <DependentUpon>202205050239171_add_users_columns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205050243575_add_users_columns1.resx">
+      <DependentUpon>202205050243575_add_users_columns1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

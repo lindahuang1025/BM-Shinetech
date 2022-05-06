@@ -26,7 +26,7 @@ const bookList = (props) => {
     const [currentData, setCurrentData] = useState([]);
     // 获取props数据
     const { bookListModel = {}, loading, dispatch } = props;
-    const { bookList } = bookListModel;
+    const { bookList } = bookListModel; 
     //下拉刷新
     const [refreshing, setRefreshing] = useState(false);
 

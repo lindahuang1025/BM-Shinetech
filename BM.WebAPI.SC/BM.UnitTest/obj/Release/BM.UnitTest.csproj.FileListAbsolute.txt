@@ -1,0 +1,14 @@
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\bin\Release\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\bin\Release\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\bin\Release\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\bin\Release\BM.UnitTest.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\bin\Release\BM.UnitTest.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\bin\Release\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\bin\Release\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\bin\Release\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\bin\Release\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\obj\Release\BM.UnitTest.csproj.AssemblyReference.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\obj\Release\BM.UnitTest.csproj.CoreCompileInputs.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\obj\Release\BM.UnitTest.csproj.CopyComplete
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\obj\Release\BM.UnitTest.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.UnitTest\obj\Release\BM.UnitTest.pdb

@@ -17,3 +17,12 @@ export async function borrowBook(params) {
         }
     });
 }
+
+export async function outStock(params){
+    return request('api/bookBorrow/outStock',{
+        method: 'POST',
+        data:{
+            ...params
+        }
+    });
+}

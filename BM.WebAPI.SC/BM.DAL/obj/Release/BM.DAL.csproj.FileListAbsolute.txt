@@ -60,3 +60,17 @@ C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\o
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\obj\Release\BM.DAL.csproj.CopyComplete
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\obj\Release\BM.DAL.dll
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DAL\obj\Release\BM.DAL.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Release\BM.DAL.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Release\BM.DAL.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Release\BM.Common.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Release\BM.DataModel.exe
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Release\log4net.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Release\BM.Common.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Release\BM.DataModel.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Release\BM.DataModel.exe.config
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\bin\Release\log4net.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\obj\Release\BM.DAL.csproj.AssemblyReference.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\obj\Release\BM.DAL.csproj.CoreCompileInputs.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\obj\Release\BM.DAL.csproj.CopyComplete
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\obj\Release\BM.DAL.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DAL\obj\Release\BM.DAL.pdb

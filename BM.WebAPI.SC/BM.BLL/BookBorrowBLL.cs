@@ -135,6 +135,8 @@ namespace BM.BLL
                     }
                     scope.Complete();
                 }
+                result.Status = 1;
+                result.Message = "Sucessful.";
             }
             catch (Exception ex)
             {

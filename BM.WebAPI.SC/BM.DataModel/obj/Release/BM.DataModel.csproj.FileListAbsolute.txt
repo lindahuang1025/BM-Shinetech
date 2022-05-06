@@ -99,3 +99,29 @@ C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataM
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.exe
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.pdb
 C:\Users\shinetech\Desktop\VS CODE work space\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.Migrations.addUserComments.resources
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\BM.DataModel.exe.config
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\BM.DataModel.exe
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\BM.DataModel.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\EntityFramework.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\EntityFramework.SqlServer.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\Microsoft.Owin.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\Newtonsoft.Json.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\Owin.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\System.Net.Http.Formatting.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\System.Web.Http.dll
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\EntityFramework.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\EntityFramework.SqlServer.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\Microsoft.Owin.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\Newtonsoft.Json.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\System.Net.Http.Formatting.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\bin\Release\System.Web.Http.xml
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.csproj.AssemblyReference.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.Migrations.phase4.resources
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.Migrations.addUserComments.resources
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.csproj.GenerateResource.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.csproj.CoreCompileInputs.cache
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.exe
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.pdb
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.Migrations.add_users_columns.resources
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.Migrations.add_users_columns1.resources
+C:\D\ReactNative\bm\BM-Shinetech\BM.WebAPI.SC\BM.DataModel\obj\Release\BM.DataModel.csproj.CopyComplete

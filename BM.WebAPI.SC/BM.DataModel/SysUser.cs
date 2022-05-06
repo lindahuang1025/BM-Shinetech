@@ -20,5 +20,13 @@ namespace BM.DataModel
 
         public long UserRole { get; set; }
 
+        [StringLength(256)]
+        public string Nickname { get; set; }
+
+        public int PhoneNumber { get; set; }
+
+        [StringLength(256)]
+        public string Website { get; set; }
+
     }
 }

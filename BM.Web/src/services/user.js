@@ -31,3 +31,12 @@ export async function UserCommentsDeleted(id) {
         method: 'POST'
     });
 }
+
+export async function UserEdit(params) {
+    return request('/api/addOrUpdate',{
+        method: 'POST',
+        data: {
+            ...params
+        }
+    })
+}

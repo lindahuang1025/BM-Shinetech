@@ -23,8 +23,9 @@ namespace BM.WebAPI.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [Route("addOrUpdate")]
-        [PageRightFilterAttribute("User Add/Edit")]
+        //[PageRightFilterAttribute("User Add/Edit")]
         public async Task<Operate> AddOrUpdate(SysUser model)
         {
             return await sysUserBLL.AddOrUpdate(model);
@@ -84,6 +85,9 @@ namespace BM.WebAPI.Controllers
                 ["UserName"] = userInfo.UserName,
                 ["UserRole"] = userInfo.UserRole,
                 ["RoleName"] = roleName,
+                ["PhoneNumber"] = userInfo.PhoneNumber,
+                ["Website"] = userInfo.Website,
+                ["Nickname"] = userInfo.Nickname,
                 ["AccessToken"] = Startup.OAuthBearerOptions.AccessTokenFormat.Protect(ticket),
             };
             result.Data = data;
